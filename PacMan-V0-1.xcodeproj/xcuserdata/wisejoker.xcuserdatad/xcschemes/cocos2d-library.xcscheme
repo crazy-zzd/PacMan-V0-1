@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62F9605A182CDE6800152AE2"
-               BuildableName = "PacMan-V0-1.app"
-               BlueprintName = "PacMan-V0-1"
+               BlueprintIdentifier = "62F96214182CDE8600152AE2"
+               BuildableName = "libcocos2d-library.a"
+               BlueprintName = "cocos2d-library"
                ReferencedContainer = "container:PacMan-V0-1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62F96221182CDE8700152AE2"
-               BuildableName = "cocos2d-libraryTests.xctest"
-               BlueprintName = "cocos2d-libraryTests"
-               ReferencedContainer = "container:PacMan-V0-1.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62F9605A182CDE6800152AE2"
-            BuildableName = "PacMan-V0-1.app"
-            BlueprintName = "PacMan-V0-1"
-            ReferencedContainer = "container:PacMan-V0-1.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -58,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62F9605A182CDE6800152AE2"
-            BuildableName = "PacMan-V0-1.app"
-            BlueprintName = "PacMan-V0-1"
-            ReferencedContainer = "container:PacMan-V0-1.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62F9605A182CDE6800152AE2"
-            BuildableName = "PacMan-V0-1.app"
-            BlueprintName = "PacMan-V0-1"
-            ReferencedContainer = "container:PacMan-V0-1.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
