@@ -15,8 +15,8 @@
 {
     if (self = [super init]) {
 //        position = ccp(400, 200);
-        sprite = [[CCSprite alloc] initWithFile:@"Safari.png"];
-        [self setPointPosition:CGPointMake(1, 1)];
+        sprite = [[CCSprite alloc] initWithFile:@"Blue.png"];
+        [self setPointPosition:CGPointMake(3, 3)];
 
     }
     return self;

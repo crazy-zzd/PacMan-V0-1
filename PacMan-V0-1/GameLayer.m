@@ -33,8 +33,6 @@
     gameLayer.theTouchLayer = touchLayer;
     gameLayer.theControNode = controlNode;
     
-//    gameLayer.theTouchLayer.delegate = gameLayer;
-    
     [scene addChild:gameLayer z:0 tag:TAG_GAMELAYER];
     [scene addChild:touchLayer z:1 tag:TAG_TOUCHLAYER];
     [scene addChild:controlNode z:0 tag:TAG_CONTROLNODE];
@@ -52,8 +50,16 @@
     
     [self loadPlayer];
     [self loadBeans];
-    [self loadMonsters];
+//    [self loadMonsters];
     [self loadStartButton];
+    [self draw];                                  
+}
+
+- (void)draw
+{
+    ccPointSize(175); //设置方块的大小
+    ccDrawColor4B(0,0,255,128);
+    ccDrawPoint(ccp(262.5, 112.5));//位置
 }
 
 - (void)loadPlayer
@@ -88,7 +94,7 @@
     CCMenuItemFont * item = [CCMenuItemFont itemWithString:@"start"	target:theControNode selector:@selector(startMoving)];
     
     CCMenu * menu = [CCMenu menuWithItems:item, nil];
-    menu.position = ccp(200, 200);
+    menu.position = ccp(300, 250);
     [self addChild:menu];
 }
 

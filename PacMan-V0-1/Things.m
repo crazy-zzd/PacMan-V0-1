@@ -42,9 +42,9 @@
 
 - (void)changePointPosition
 {
-    int x = 0, y = 0;
-    x = PLAYVIEW_X + POINT_LENGTH * pointPosition.x;
-    y = PLAYVIEW_Y + POINT_LENGTH * pointPosition.y;
+    GLfloat x = 0, y = 0;
+    x = PLAYVIEW_X + POINT_LENGTH * pointPosition.x + 0.5 * POINT_LENGTH;
+    y = PLAYVIEW_Y + POINT_LENGTH * pointPosition.y + 0.5 * POINT_LENGTH;
     sprite.position = CGPointMake(x, y);
 }
 

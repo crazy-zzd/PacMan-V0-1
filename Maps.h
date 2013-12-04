@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "MyHeader.h"
 
 @interface Maps : CCNode {
     CCSprite * theMap;
     BOOL pointMap [40][40];
+    int width,heigth;
 }
 
 @property (nonatomic, strong) NSString * mapsData;
@@ -21,6 +23,8 @@
 
 -(void)setMap:(NSString *)fileName;
 
--(BOOL)isWall:(CGPoint)thePointPosition;
+-(BOOL)isWallWithPointPosition:(CGPoint)thePointPosition;
+
+//-(BOOL)isWallWithPosition:(CGPoint)thePosition;
 
 @end

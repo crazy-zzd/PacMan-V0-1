@@ -17,7 +17,7 @@
 #define LEFT_MOVEMENT CGPointMake(-MOVEMENT ,0)
 #define RIGHT_MOVEMENT CGPointMake(+MOVEMENT ,0)
 
-#define TIME_MOVE 1
+#define TIME_MOVE 5
 
 @interface Man : Things {
     int direction;

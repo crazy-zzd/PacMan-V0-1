@@ -16,7 +16,7 @@
     if (self = [super init]) {
         direction = leftDirection;
         sprite = [[CCSprite alloc] initWithFile:@"Blue.png"];
-        [self setPointPosition:CGPointMake(0, 0)];
+        [self setPointPosition:CGPointMake(1, 1)];
     }
     return self;
 }
