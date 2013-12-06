@@ -11,9 +11,19 @@
 
 @implementation Things
 
-@synthesize sprite;
-
 #pragma mark - 接口
+
+#pragma mark - Getter和Setter
+
+- (CCSprite *)sprite
+{
+    return sprite;
+}
+
+- (CGRect)spriteRect
+{
+    return [sprite boundingBox];
+}
 
 - (void)setPointPosition:(CGPoint)thePointPosition
 {
@@ -40,6 +50,7 @@
 
 #pragma mark - 私有方法
 
+//点坐标转变到图坐标
 - (void)changePointPosition
 {
     GLfloat x = 0, y = 0;
@@ -48,6 +59,7 @@
     sprite.position = CGPointMake(x, y);
 }
 
+//图坐标到点坐标
 - (void)changePosition
 {
     int x = 0, y = 0;

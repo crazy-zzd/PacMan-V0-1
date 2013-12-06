@@ -13,39 +13,44 @@
 
 @synthesize delegate;
 
+#pragma mrak - 初始化
+
 -(id)init
 {
     if (self = [super init]) {
-        
-        CCSprite * upSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
-        upSpr.position = ccp(100, 150);
-        upRect = upSpr.boundingBox;
-        [self addChild:upSpr z:0 tag:tagUp];
-        
-        CCSprite * downSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
-        downSpr.position = ccp(100, 50);
-        downSpr.rotation = 180;
-        downRect = downSpr.boundingBox;
-        [self addChild:downSpr z:0 tag:tagDown];
-        
-        CCSprite * leftSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
-        leftSpr.position = ccp(50, 100);
-        leftSpr.rotation = 270;
-        leftRect = leftSpr.boundingBox;
-        [self addChild:leftSpr z:0 tag:tagLeft];
-        
-        CCSprite * rightSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
-        rightSpr.position = ccp(150, 100);
-        rightSpr.rotation = 90;
-        rightRect = rightSpr.boundingBox;
-        [self addChild:rightSpr z:0 tag:tagRight];
-        
-        
+        [self loadArrows];
         [self setTouchEnabled:YES];
         
     }
     return self;
 }
+
+- (void)loadArrows
+{
+    CCSprite * upSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
+    upSpr.position = ccp(100, 150);
+    upRect = upSpr.boundingBox;
+    [self addChild:upSpr z:0 tag:tagUp];
+    
+    CCSprite * downSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
+    downSpr.position = ccp(100, 50);
+    downSpr.rotation = 180;
+    downRect = downSpr.boundingBox;
+    [self addChild:downSpr z:0 tag:tagDown];
+    
+    CCSprite * leftSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
+    leftSpr.position = ccp(50, 100);
+    leftSpr.rotation = 270;
+    leftRect = leftSpr.boundingBox;
+    [self addChild:leftSpr z:0 tag:tagLeft];
+    
+    CCSprite * rightSpr = [[CCSprite alloc] initWithFile:@"Arrow.png"];
+    rightSpr.position = ccp(150, 100);
+    rightSpr.rotation = 90;
+    rightRect = rightSpr.boundingBox;
+    [self addChild:rightSpr z:0 tag:tagRight];
+}
+
 -(void) onEnter
 {
 	[super onEnter];

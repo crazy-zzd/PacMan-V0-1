@@ -20,6 +20,7 @@
 @synthesize player;
 @synthesize monsters;
 @synthesize beans;
+@synthesize score;
 
 #pragma mark - 初始化
 
@@ -34,6 +35,8 @@
         [self initBeans];
         
         [self initMaps];
+        
+        [self initScore];
         
         stateNow = gamePause;
     }
@@ -56,7 +59,7 @@
 
 - (void)initBeans
 {
-    Beans * firstBeans = [[Beans alloc] init];
+    Beans * firstBeans = [[Beans alloc] initWithPosition:CGPointMake(3, 3) withScore:1];
     
     beans = [[NSMutableArray alloc] init];
     [beans addObject:firstBeans];
@@ -65,6 +68,12 @@
 - (void)initMaps
 {
     theMap = [Maps sharedMap];
+}
+
+- (void)initScore
+{
+    score = [[CCLabelTTF alloc] initWithString:@"0" fontName:Nil fontSize:20];
+    score.position = ccp(100, 270);
 }
 
 #pragma mark - 对外接口
@@ -82,13 +91,22 @@
     if (stateNow == gameStart) {
         stateNow = gamePause;
         [self unschedule:@selector(updatePlayer:)];
+        [self unschedule:@selector(updateMonsters:)];
+//        [self stopMonstersAction];
     }
     else
     {
         stateNow = gameStart;
         [self schedule:@selector(updatePlayer:) interval:PLAYER_SPEED];
+        [self schedule:@selector(updateMonsters:) interval:MONSTERS_TIME];
     }
 }
+
+- (void)gameOver
+{
+    exit(0);
+}
+
 
 #pragma mark - 私有方法
 
@@ -96,81 +114,53 @@
 
 - (void)updatePlayer:(ccTime)delta
 {
-    CGPoint movement;
-    switch (player.direction) {
-        case upDirection:
-            movement = PLAYER_MOVEUP;
-            break;
-        case downDirection:
-            movement = PLAYER_MOVEDOWN;
-            break;
-        case leftDirection:
-            movement = PLAYER_MOVELEFT;
-            break;
-        case rightDirection:
-            movement = PLAYER_MOVERIGHT;
-            break;
-        default:
-            break;
-    }
-    CGPoint oldPosition = [player mapPosition];
-    CGPoint newPosition = ccpAdd([player mapPosition], movement);
-    [player setPosition:newPosition];
-    
-    if ([self isCrashedWallWithPointPosition:[player pointPosition] withPosition:[player mapPosition]]) {
-        [player setPosition:oldPosition];
-    }
-    
-    
-    CCLOG(@"x=%f,y=%f",player.sprite.position.x,player.sprite.position.y);
-    CCLOG(@"%f,%f",[player pointPosition].x,[player pointPosition].y);
+    [player move];
+    [self crashMonsters];
+    [self eatBeans];
 }
 
-//只通过图坐标实现碰撞，通过中心图坐标计算出四个角的图坐标。
-//图坐标实现有问题，给定一个图坐标无法确定这个点是不是有障碍物，因为在分界线上总共有两种可能。可能可以解决的方法：看看是哪个点的坐标
-//- (BOOL)isCrashedWallWithPosition:(CGPoint)thePosition
-//{
-//    BOOL isCrashed;
-//    
-//    return isCrashed;
-//}
-
-
-//通过点坐标和图坐标实现碰撞
-- (BOOL)isCrashedWallWithPointPosition:(CGPoint)thePointPosition withPosition:(CGPoint)thePosition
+- (void)crashMonsters
 {
-    //第一种方法检测是否撞墙
-    int thePosX,thePosY;
-    thePosX = thePosition.x - (PLAYVIEW_X + POINT_LENGTH * thePointPosition.x + 0.5 * POINT_LENGTH);
-    thePosY = thePosition.y - (PLAYVIEW_Y + POINT_LENGTH * thePointPosition.y + 0.5 * POINT_LENGTH);
-    BOOL isCrashed = NO;
-    if (thePosX > 0) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x + 1, thePointPosition.y)];
-        
+    MonsterMan * theMonster;
+    for (int i = 0; i < [monsters count]; i ++) {
+        theMonster = [monsters objectAtIndex:i];
+        if ([player isCrashedWithRect:[theMonster spriteRect]]) {
+            [self gameOver];
+        }
     }
-    if (thePosX < 0) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x - 1, thePointPosition.y)];
-    }
-    if (thePosY > 0) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x, thePointPosition.y + 1)];
-    }
-    if (thePosY < 0) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x, thePointPosition.y - 1)];
-    }
-    if ((thePosX > 0)&&(thePosY > 0)) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x + 1, thePointPosition.y + 1)];
-    }
-    if ((thePosX < 0)&&(thePosY > 0)) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x - 1, thePointPosition.y + 1)];
-    }
-    if ((thePosX > 0)&&(thePosY < 0)) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x + 1, thePointPosition.y - 1)];
-    }
-    if ((thePosX < 0)&&(thePosY < 0)) {
-        isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x - 1, thePointPosition.y - 1)];
-    }
-    return isCrashed;
 }
 
+- (void)eatBeans
+{
+    Beans * theBean;
+    for (int i = 0; i < [beans count]; i ++) {
+        theBean = [beans objectAtIndex:i];
+        if ([player isCrashedWithRect:[theBean spriteRect]]) {
+            [theBean beEaten];
+            [player eatBean];
+            score.string = [NSString stringWithFormat:@"%d",player.score];
+            [beans removeObjectAtIndex:i];
+            i --;
+        }
+    }
+}
+
+- (void)updateMonsters:(ccTime)delta
+{
+    MonsterMan * theMonster;
+    for (int i = 0; i < [monsters count]; i ++) {
+        theMonster = [monsters objectAtIndex:i];
+        [theMonster move];
+    }
+}
+
+//- (void)stopMonstersAction
+//{
+//    MonsterMan * theMonster;
+//    for (int i = 0; i < [monsters count]; i ++) {
+//        theMonster = [monsters objectAtIndex:i];
+////        [theMonster pauseActions];
+//    }
+//}
 
 @end

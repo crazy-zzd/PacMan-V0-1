@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621CF03F1851F64B006F5E2F /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0351851F64B006F5E2F /* background@2x.png */; };
+		621CF0401851F64B006F5E2F /* V0-1-1.psd in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0361851F64B006F5E2F /* V0-1-1.psd */; };
+		621CF0411851F64B006F5E2F /* HP.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0381851F64B006F5E2F /* HP.png */; };
+		621CF0421851F64B006F5E2F /* pac-man-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0391851F64B006F5E2F /* pac-man-open.png */; };
+		621CF0431851F64B006F5E2F /* pacman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03A1851F64B006F5E2F /* pacman@2x.png */; };
+		621CF0441851F64B006F5E2F /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03B1851F64B006F5E2F /* pause@2x.png */; };
+		621CF0451851F64B006F5E2F /* 物件大小.txt in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03C1851F64B006F5E2F /* 物件大小.txt */; };
+		621CF0461851F64B006F5E2F /* bean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03D1851F64B006F5E2F /* bean@2x.png */; };
+		621CF0471851F64B006F5E2F /* monster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03E1851F64B006F5E2F /* monster@2x.png */; };
 		622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF571182F19AD0038BF0D /* TouchLayer.m */; };
 		622FF57B182F1B800038BF0D /* ControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF57A182F1B800038BF0D /* ControlNode.m */; };
 		6287118E1836584A00A66DA7 /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = 6287118D1836584A00A66DA7 /* Maps.m */; };
@@ -177,6 +186,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		621CF0351851F64B006F5E2F /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		621CF0361851F64B006F5E2F /* V0-1-1.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "V0-1-1.psd"; sourceTree = "<group>"; };
+		621CF0381851F64B006F5E2F /* HP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HP.png; sourceTree = "<group>"; };
+		621CF0391851F64B006F5E2F /* pac-man-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-open.png"; sourceTree = "<group>"; };
+		621CF03A1851F64B006F5E2F /* pacman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pacman@2x.png"; sourceTree = "<group>"; };
+		621CF03B1851F64B006F5E2F /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		621CF03C1851F64B006F5E2F /* 物件大小.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "物件大小.txt"; sourceTree = "<group>"; };
+		621CF03D1851F64B006F5E2F /* bean@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bean@2x.png"; sourceTree = "<group>"; };
+		621CF03E1851F64B006F5E2F /* monster@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster@2x.png"; sourceTree = "<group>"; };
 		622FF570182F19AD0038BF0D /* TouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLayer.h; sourceTree = "<group>"; };
 		622FF571182F19AD0038BF0D /* TouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayer.m; sourceTree = "<group>"; };
 		622FF579182F1B800038BF0D /* ControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlNode.h; path = ../ControlNode.h; sourceTree = "<group>"; };
@@ -538,9 +556,42 @@
 			name = sprites;
 			sourceTree = "<group>";
 		};
+		621CF0331851F63F006F5E2F /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				621CF0341851F64B006F5E2F /* V0-1-1-map */,
+				621CF0371851F64B006F5E2F /* V0-1-1-things */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		621CF0341851F64B006F5E2F /* V0-1-1-map */ = {
+			isa = PBXGroup;
+			children = (
+				621CF0351851F64B006F5E2F /* background@2x.png */,
+				621CF0361851F64B006F5E2F /* V0-1-1.psd */,
+			);
+			path = "V0-1-1-map";
+			sourceTree = "<group>";
+		};
+		621CF0371851F64B006F5E2F /* V0-1-1-things */ = {
+			isa = PBXGroup;
+			children = (
+				621CF0381851F64B006F5E2F /* HP.png */,
+				621CF0391851F64B006F5E2F /* pac-man-open.png */,
+				621CF03A1851F64B006F5E2F /* pacman@2x.png */,
+				621CF03B1851F64B006F5E2F /* pause@2x.png */,
+				621CF03C1851F64B006F5E2F /* 物件大小.txt */,
+				621CF03D1851F64B006F5E2F /* bean@2x.png */,
+				621CF03E1851F64B006F5E2F /* monster@2x.png */,
+			);
+			path = "V0-1-1-things";
+			sourceTree = "<group>";
+		};
 		62F96052182CDE6800152AE2 = {
 			isa = PBXGroup;
 			children = (
+				621CF0331851F63F006F5E2F /* resources */,
 				62F9653F182CDF0900152AE2 /* libs */,
 				62F96072182CDE6800152AE2 /* PacMan-V0-1 */,
 				62F96217182CDE8600152AE2 /* cocos2d-library */,
@@ -1123,22 +1174,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621CF0471851F64B006F5E2F /* monster@2x.png in Resources */,
 				62F966CD182CE1DF00152AE2 /* Blue.png in Resources */,
 				62F96085182CDE6800152AE2 /* Icon.png in Resources */,
 				62F96077182CDE6800152AE2 /* Default@2x.png in Resources */,
 				62F966C7182CE1D600152AE2 /* Browser.png in Resources */,
+				621CF0421851F64B006F5E2F /* pac-man-open.png in Resources */,
+				621CF0441851F64B006F5E2F /* pause@2x.png in Resources */,
 				62F966C5182CE1D600152AE2 /* Thunder.png in Resources */,
 				62F96081182CDE6800152AE2 /* Icon-Small.png in Resources */,
 				62F9607D182CDE6800152AE2 /* Icon-72.png in Resources */,
 				62F96075182CDE6800152AE2 /* Default.png in Resources */,
+				621CF0461851F64B006F5E2F /* bean@2x.png in Resources */,
 				62F966D1182CE1DF00152AE2 /* Orange.png in Resources */,
+				621CF03F1851F64B006F5E2F /* background@2x.png in Resources */,
+				621CF0431851F64B006F5E2F /* pacman@2x.png in Resources */,
 				62F966C4182CE1D600152AE2 /* Play.png in Resources */,
 				62F966D0182CE1DF00152AE2 /* Green.png in Resources */,
+				621CF0451851F64B006F5E2F /* 物件大小.txt in Resources */,
 				62F9607F182CDE6800152AE2 /* Icon-Small-50.png in Resources */,
 				62F966CF182CE1DF00152AE2 /* Gray.png in Resources */,
 				62F966C6182CE1D600152AE2 /* Safari.png in Resources */,
 				62F9608A182CDE6800152AE2 /* iTunesArtwork in Resources */,
 				62F966CE182CE1DF00152AE2 /* Carbon.png in Resources */,
+				621CF0411851F64B006F5E2F /* HP.png in Resources */,
+				621CF0401851F64B006F5E2F /* V0-1-1.psd in Resources */,
 				62F96083182CDE6800152AE2 /* Icon-Small@2x.png in Resources */,
 				62F9607B182CDE6800152AE2 /* Default-Landscape~ipad.png in Resources */,
 				62F96079182CDE6800152AE2 /* Default-568h@2x.png in Resources */,

@@ -20,6 +20,9 @@
 //游戏界面的最小单位格的大小
 #define POINT_LENGTH 25
 
+//屏幕大小
+#define SCREEN_WIDTH 568
+#define SCREEN_HEIGHT 320
 
 enum gameState {
     gameStart = 1,
@@ -33,5 +36,23 @@ enum direction {
     rightDirection,
     noDirection
 };
+
+enum manState {
+    moving = 1,
+    standing = 2
+    };
+
+//图标的图片文件名
+#pragma mark - 图标
+#define PNG_BACKGROUND @"background@2x.png"
+#define PNG_PACMAN @"pacman@2x.png"
+#define PNG_MONSTER @"monster@2x.png"
+#define PNG_BEAN @"bean@2x.png"
+#define PNG_PAUSE @"pause@2x.png"
+
+
+
+
+
 
 #endif

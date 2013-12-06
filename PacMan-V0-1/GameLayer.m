@@ -26,17 +26,21 @@
 {
     CCScene * scene = [CCScene node];
     
+    //创建三个层，分别初始化
     GameLayer * gameLayer = [GameLayer node];
     TouchLayer * touchLayer = [TouchLayer node];
     ControlNode * controlNode = [ControlNode node];
     
+    //把触摸层和控制层归到游戏层下
     gameLayer.theTouchLayer = touchLayer;
     gameLayer.theControNode = controlNode;
     
+    //把三个层添加到场景里
     [scene addChild:gameLayer z:0 tag:TAG_GAMELAYER];
     [scene addChild:touchLayer z:1 tag:TAG_TOUCHLAYER];
     [scene addChild:controlNode z:0 tag:TAG_CONTROLNODE];
     
+    //三个层的初始化
     [gameLayer viewDidLoad];
     
     return scene;
@@ -46,47 +50,65 @@
 
 - (void)viewDidLoad
 {
+    //设置触摸委托
     theTouchLayer.delegate = self;
     
+    //添加游戏对象
     [self loadPlayer];
     [self loadBeans];
-//    [self loadMonsters];
+    [self loadMonsters];
+    
+    //添加背景
+//    [self loadBackGround];
+    
+    //添加分数
+    [self loadScore];
+    
+    //添加并初始化游戏界面元素
     [self loadStartButton];
-    [self draw];                                  
+    
+    
+    //测试
+    [self draw];
+    
 }
 
-- (void)draw
-{
-    ccPointSize(175); //设置方块的大小
-    ccDrawColor4B(0,0,255,128);
-    ccDrawPoint(ccp(262.5, 112.5));//位置
-}
-
+//添加吃豆人
 - (void)loadPlayer
 {
-    [self addChild:theControNode.player.sprite];
+    [self addChild:[theControNode.player sprite]];
 }
 
+//添加怪兽
 - (void)loadMonsters
 {
     NSMutableArray * monsters = theControNode.monsters;
     MonsterMan * aMonster;
     for (int i = 0; i < monsters.count; i ++) {
         aMonster = (MonsterMan *)[monsters objectAtIndex:i];
-        [self addChild:aMonster.sprite];
+        [self addChild:[aMonster sprite]];
     }
 }
 
+//添加豆子
 - (void)loadBeans
 {
     NSMutableArray * beans = theControNode.beans;
     Beans * aBean;
     for (int i = 0; i < beans.count; i ++) {
         aBean = (Beans *)[beans objectAtIndex:i];
-        [self addChild:aBean.sprite];
+        [self addChild:[aBean sprite]];
     }
 }
 
+- (void)loadBackGround
+{
+    CCSprite * background = [[CCSprite alloc] initWithFile:PNG_BACKGROUND];
+    background.position = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    [self addChild:background z:0];
+}
+
+//添加并初始化开始按钮
 - (void)loadStartButton
 {
     [CCMenuItemFont setFontName:@"Helvetica-BoldOblique"];
@@ -99,6 +121,13 @@
 }
 
 
+//添加分数
+- (void)loadScore
+{
+    [self addChild:theControNode.score];
+}
+
+
 #pragma mark - TouchLayerDelegate
 
 - (void)moveWithDirection:(int)theDirection
@@ -107,6 +136,14 @@
 }
 
 
+#pragma mark - testMethod
+//测试地图
+- (void)draw
+{
+    ccPointSize(175); //设置方块的大小
+    ccDrawColor4B(0,0,255,128);
+    ccDrawPoint(ccp(262.5, 112.5));//位置
+}
 
 
 @end

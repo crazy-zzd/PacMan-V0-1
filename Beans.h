@@ -9,9 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Things.h"
+#import "MyHeader.h"
 
 @interface Beans : Things {
-    
+    int beanScore;
 }
+
+- (id)initWithPosition:(CGPoint)thePosition withScore:(int)theScore;
+
+- (int)beanScore;
+
+- (void)beEaten;
 
 @end

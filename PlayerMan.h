@@ -9,9 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Man.h"
+#import "MyHeader.h"
+
+@class Maps;
+
 
 @interface PlayerMan : Man {
-    
+    int score;
 }
+
+-(BOOL)isCrashedWithRect:(CGRect)theRect;
+
+-(int)score;
+
+-(void)eatBean;
 
 @end

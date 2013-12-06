@@ -17,23 +17,35 @@
 #define LEFT_MOVEMENT CGPointMake(-MOVEMENT ,0)
 #define RIGHT_MOVEMENT CGPointMake(+MOVEMENT ,0)
 
-#define TIME_MOVE 5
+#define PLAYER_MOVEMENT 1
+#define PLAYER_MOVEUP CGPointMake(0, PLAYER_MOVEMENT)
+#define PLAYER_MOVEDOWN CGPointMake(0, -PLAYER_MOVEMENT)
+#define PLAYER_MOVELEFT CGPointMake(-PLAYER_MOVEMENT, 0)
+#define PLAYER_MOVERIGHT CGPointMake(PLAYER_MOVEMENT, 0)
+
+
+#define TIME_MOVE 2
+
+@class Maps;
 
 @interface Man : Things {
     int direction;
+    
+    int state;
+    
     
     CCMoveBy * moveLeft;
     CCMoveBy * moveRight;
     CCMoveBy * moveUp;
     CCMoveBy * moveDown;
     
+    Maps * theMap;
+    
 }
 
 @property int direction;
 
-
--(void)updateSpr;
-
+-(void)move;
 
 
 

@@ -28,7 +28,6 @@
 
 +(CCScene *)Scene;
 
--(void)viewDidLoad;
 
 
 @end

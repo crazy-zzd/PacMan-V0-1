@@ -16,8 +16,6 @@
     CCSprite * sprite;
 }
 
-@property CCSprite * sprite;
-
 //设置坐标，获取坐标
 -(void)setPosition:(CGPoint) thePosition;
 -(CGPoint)mapPosition;
@@ -26,5 +24,10 @@
 -(void)setPointPosition:(CGPoint) thePointPosition;
 -(CGPoint)pointPosition;
 
+//获得精灵
+-(CCSprite *)sprite;
+
+//获得精灵的大小
+-(CGRect)spriteRect;
 
 @end

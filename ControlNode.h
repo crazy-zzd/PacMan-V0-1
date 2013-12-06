@@ -10,13 +10,10 @@
 #import "cocos2d.h"
 #import "MyHeader.h"
 
-#define PLAYER_MOVEMENT 1
-#define PLAYER_MOVEUP CGPointMake(0, PLAYER_MOVEMENT)
-#define PLAYER_MOVEDOWN CGPointMake(0, -PLAYER_MOVEMENT)
-#define PLAYER_MOVELEFT CGPointMake(-PLAYER_MOVEMENT, 0)
-#define PLAYER_MOVERIGHT CGPointMake(PLAYER_MOVEMENT, 0)
 
 #define PLAYER_SPEED 0
+
+#define MONSTERS_TIME 0
 
 @class Man;
 @class PlayerMan;
@@ -29,6 +26,8 @@
     NSMutableArray * monsters;
     NSMutableArray * beans;
     
+    CCLabelTTF * score;
+    
     Maps * theMap;
     
     enum gameState stateNow;
@@ -38,6 +37,7 @@
 @property PlayerMan * player;
 @property NSMutableArray * monsters;
 @property NSMutableArray * beans;
+@property CCLabelTTF * score;
 
 - (void)moveWithDirection:(int)theDirection;
 - (void)startMoving;

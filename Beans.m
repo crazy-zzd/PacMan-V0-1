@@ -11,15 +11,27 @@
 
 @implementation Beans
 
-- (id)init
+- (id)initWithPosition:(CGPoint)thePosition withScore:(int)theScore
+//-(id)init
 {
     if (self = [super init]) {
-//        position = ccp(400, 200);
-        sprite = [[CCSprite alloc] initWithFile:@"Blue.png"];
-        [self setPointPosition:CGPointMake(3, 3)];
+        sprite = [[CCSprite alloc] initWithFile:PNG_BEAN];
+//        [self setPointPosition:CGPointMake(4, 4)];
+        [self setPointPosition:thePosition];
 
+        beanScore = theScore;
     }
     return self;
+}
+
+- (int)beanScore
+{
+    return beanScore;
+}
+
+- (void)beEaten
+{
+    [sprite removeFromParent];
 }
 
 @end

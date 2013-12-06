@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Man.h"
+#import "MyHeader.h"
+
+@class Maps;
 
 @interface MonsterMan : Man {
-    
 }
 
--(void)moveWithDirection:(int)theDirection;
+//-(void)moveWithDirection:(int)theDirection;
 
+//-(void)pauseActions;
 
 @end
