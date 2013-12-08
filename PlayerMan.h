@@ -21,6 +21,8 @@
 
 -(BOOL)isCrashedWithRect:(CGRect)theRect;
 
+-(BOOL)isContainWithRect:(CGRect)theRect;
+
 -(int)score;
 
 -(void)eatBean;

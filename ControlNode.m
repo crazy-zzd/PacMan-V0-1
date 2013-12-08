@@ -45,13 +45,13 @@
 
 - (void)initPlayer
 {
-    player = [[PlayerMan alloc] initWithPointPosition:PLAYER_POINTPOSITION withDirection:leftDirection];
+    player = [[PlayerMan alloc] initWithPointPosition:PLAYER_POINTPOSITION withDirection:PLAYER_DIRECTION];
 }
 
 - (void)initMonsters
 {
-    MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:downDirection];
-    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:upDirection];
+    MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:MONSTER_DIRECTION1];
+    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];

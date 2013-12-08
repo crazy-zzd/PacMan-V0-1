@@ -21,8 +21,6 @@
         theMap = [Maps sharedMap];
         
         state = standing;
-
-        [self setPointPosition:thePointPosition];
         
         direction = theDrection;
     }
