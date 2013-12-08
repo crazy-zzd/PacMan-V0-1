@@ -18,6 +18,7 @@
     int score;
 }
 
+
 -(BOOL)isCrashedWithRect:(CGRect)theRect;
 
 -(int)score;

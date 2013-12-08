@@ -16,8 +16,4 @@
 @interface MonsterMan : Man {
 }
 
-//-(void)moveWithDirection:(int)theDirection;
-
-//-(void)pauseActions;
-
 @end

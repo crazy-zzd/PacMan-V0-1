@@ -12,18 +12,17 @@
 
 @implementation PlayerMan
 
-- (id)init
+- (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
 {
-    if (self = [super init]) {
-        direction = leftDirection;
+    if (self = [super initWithPointPosition:thePointPosition withDirection:theDrection]) {
+        
         sprite = [[CCSprite alloc] initWithFile:PNG_PACMAN];
-        [self setPointPosition:CGPointMake(1, 1)];
         
         score = 0;
-        
     }
     return self;
 }
+
 
 - (void)eatBean
 {

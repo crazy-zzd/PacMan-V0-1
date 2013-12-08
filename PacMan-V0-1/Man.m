@@ -14,40 +14,36 @@
 
 @synthesize direction;
 
-- (id)init 
+- (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
 {
-    if (self = [super init]) {
-        moveUp = [CCMoveBy actionWithDuration:TIME_MOVE position:UP_MOVEMENT];
-        moveDown = [CCMoveBy actionWithDuration:TIME_MOVE position:DOWN_MOVEMENT];
-        moveLeft = [CCMoveBy actionWithDuration:TIME_MOVE position:LEFT_MOVEMENT];
-        moveRight = [CCMoveBy actionWithDuration:TIME_MOVE position:RIGHT_MOVEMENT];
-        
+    if (self = [self init]) {
+
         theMap = [Maps sharedMap];
         
         state = standing;
+
+        [self setPointPosition:thePointPosition];
+        
+        direction = theDrection;
     }
     return self;
 }
-
-
-
-
 
 - (void)move
 {
     CGPoint movement;
     switch (direction) {
         case upDirection:
-            movement = PLAYER_MOVEUP;
+            movement = UP_MOVEMENT;
             break;
         case downDirection:
-            movement = PLAYER_MOVEDOWN;
+            movement = DOWN_MOVEMENT;
             break;
         case leftDirection:
-            movement = PLAYER_MOVELEFT;
+            movement = LEFT_MOVEMENT;
             break;
         case rightDirection:
-            movement = PLAYER_MOVERIGHT;
+            movement = RIGHT_MOVEMENT;
             break;
         default:
             break;

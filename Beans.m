@@ -12,11 +12,9 @@
 @implementation Beans
 
 - (id)initWithPosition:(CGPoint)thePosition withScore:(int)theScore
-//-(id)init
 {
     if (self = [super init]) {
         sprite = [[CCSprite alloc] initWithFile:PNG_BEAN];
-//        [self setPointPosition:CGPointMake(4, 4)];
         [self setPointPosition:thePosition];
 
         beanScore = theScore;

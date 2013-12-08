@@ -52,14 +52,16 @@
 {
     //设置触摸委托
     theTouchLayer.delegate = self;
+
+    //添加背景
+    [self loadBackGround];
     
     //添加游戏对象
     [self loadPlayer];
     [self loadBeans];
     [self loadMonsters];
     
-    //添加背景
-//    [self loadBackGround];
+
     
     //添加分数
     [self loadScore];
@@ -69,7 +71,7 @@
     
     
     //测试
-    [self draw];
+//    [self draw];
     
 }
 

@@ -45,15 +45,17 @@
 
 - (void)initPlayer
 {
-    player = [[PlayerMan alloc] init];
+    player = [[PlayerMan alloc] initWithPointPosition:PLAYER_POINTPOSITION withDirection:leftDirection];
 }
 
 - (void)initMonsters
 {
-    MonsterMan * firstMonster = [[MonsterMan alloc] init];
+    MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:downDirection];
+    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:upDirection];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];
+    [monsters addObject:secondMonster];
     
 }
 
@@ -154,13 +156,6 @@
     }
 }
 
-//- (void)stopMonstersAction
-//{
-//    MonsterMan * theMonster;
-//    for (int i = 0; i < [monsters count]; i ++) {
-//        theMonster = [monsters objectAtIndex:i];
-////        [theMonster pauseActions];
-//    }
-//}
+
 
 @end

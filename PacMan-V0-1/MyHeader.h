@@ -45,15 +45,29 @@ enum manState {
 
 //图标的图片文件名
 #pragma mark - 图标
-#define PNG_BACKGROUND @"background@2x.png"
+#define PNG_BACKGROUND @"background1@2x.png"
 #define PNG_PACMAN @"pacman@2x.png"
 #define PNG_MONSTER @"monster@2x.png"
 #define PNG_BEAN @"bean@2x.png"
 #define PNG_PAUSE @"pause@2x.png"
 
+//Man.m 移动
+#define MOVEMENT 1
+#define UP_MOVEMENT CGPointMake(0 ,MOVEMENT)
+#define DOWN_MOVEMENT CGPointMake(0 ,-MOVEMENT)
+#define LEFT_MOVEMENT CGPointMake(-MOVEMENT ,0)
+#define RIGHT_MOVEMENT CGPointMake(+MOVEMENT ,0)
 
 
+//Monster初始位置、方向
+#define MONSTER_POINTPOSITION1 CGPointMake(5, 5)
+#define MONSTER_DIRECTION1 upDirection
+#define MONSTER_POINTPOSITION2 CGPointMake(6, 5)
+#define MONSTER_DIRECTION2 leftDirection
 
+//PacMan初始位置、方向
+#define PLAYER_POINTPOSITION CGPointMake(1, 1)
+#define PLAYER_DIRECTION rightDirection
 
 
 #endif

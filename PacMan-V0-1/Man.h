@@ -11,20 +11,6 @@
 #import "MyHeader.h"
 #import "Things.h"
 
-#define MOVEMENT 100
-#define UP_MOVEMENT CGPointMake(0 ,MOVEMENT)
-#define DOWN_MOVEMENT CGPointMake(0 ,-MOVEMENT)
-#define LEFT_MOVEMENT CGPointMake(-MOVEMENT ,0)
-#define RIGHT_MOVEMENT CGPointMake(+MOVEMENT ,0)
-
-#define PLAYER_MOVEMENT 1
-#define PLAYER_MOVEUP CGPointMake(0, PLAYER_MOVEMENT)
-#define PLAYER_MOVEDOWN CGPointMake(0, -PLAYER_MOVEMENT)
-#define PLAYER_MOVELEFT CGPointMake(-PLAYER_MOVEMENT, 0)
-#define PLAYER_MOVERIGHT CGPointMake(PLAYER_MOVEMENT, 0)
-
-
-#define TIME_MOVE 2
 
 @class Maps;
 
@@ -32,18 +18,14 @@
     int direction;
     
     int state;
-    
-    
-    CCMoveBy * moveLeft;
-    CCMoveBy * moveRight;
-    CCMoveBy * moveUp;
-    CCMoveBy * moveDown;
-    
+
     Maps * theMap;
     
 }
 
 @property int direction;
+
+-(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;
 
 -(void)move;
 
