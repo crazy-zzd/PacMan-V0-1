@@ -16,9 +16,9 @@
 
 - (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
 {
-    if (self = [self init]) {
+    if (self = [super init]) {
 
-        theMap = [Maps sharedMap];
+//        theMap = [Maps sharedMap];
         
         state = standing;
         
@@ -49,14 +49,22 @@
     CGPoint oldPosition = [self mapPosition];
     CGPoint newPosition = ccpAdd([self mapPosition], movement);
     [self setPosition:newPosition];
-    
-    if ([self isCrashedWallWithPointPosition:[self pointPosition] withPosition:[self mapPosition]]) {
+
+    if ([theMap isCrashedWallWithCentrePosition:[self mapPosition] withLengthPoint:2 withDirection:direction]) {
         state = standing;
         [self setPosition:oldPosition];
     }
     else{
         state = moving;
     }
+    
+//    if ([self isCrashedWallWithPointPosition:[self pointPosition] withPosition:[self mapPosition]]) {
+//        state = standing;
+//        [self setPosition:oldPosition];
+//    }
+//    else{
+//        state = moving;
+//    }
     
     
     //    CCLOG(@"x=%f,y=%f",sprite.position.x,sprite.position.y);
@@ -80,8 +88,8 @@
 {
     //第一种方法检测是否撞墙
     int thePosX,thePosY;
-    thePosX = thePosition.x - (PLAYVIEW_X + POINT_LENGTH * thePointPosition.x + 0.5 * POINT_LENGTH);
-    thePosY = thePosition.y - (PLAYVIEW_Y + POINT_LENGTH * thePointPosition.y + 0.5 * POINT_LENGTH);
+    thePosX = thePosition.x - (PLAYVIEW_X + POINT_LENGTH * thePointPosition.x + 1 * POINT_LENGTH);
+    thePosY = thePosition.y - (PLAYVIEW_Y + POINT_LENGTH * thePointPosition.y + 1 * POINT_LENGTH);
     BOOL isCrashed = NO;
     if (thePosX > 0) {
         isCrashed = isCrashed || [theMap isWallWithPointPosition:ccp(thePointPosition.x + 1, thePointPosition.y)];

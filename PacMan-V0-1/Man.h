@@ -19,7 +19,7 @@
     
     int state;
 
-    Maps * theMap;
+//    Maps * theMap;
     
 }
 

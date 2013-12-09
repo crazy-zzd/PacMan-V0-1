@@ -15,7 +15,7 @@
 {
     if (self = [super init]) {
         sprite = [[CCSprite alloc] initWithFile:PNG_BEAN];
-        [self setPointPosition:thePosition];
+        [self setPosition:thePosition];
 
         beanScore = theScore;
     }

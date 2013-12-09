@@ -7,10 +7,19 @@
 //
 
 #import "Things.h"
+#import "Maps.h"
 
 
 @implementation Things
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        theMap = [Maps sharedMap];
+    }
+    return self;
+}
 #pragma mark - 接口
 
 #pragma mark - Getter和Setter
@@ -53,10 +62,11 @@
 //点坐标转变到图坐标
 - (void)changePointPosition
 {
-    GLfloat x = 0, y = 0;
-    x = PLAYVIEW_X + POINT_LENGTH * pointPosition.x + 0.5 * POINT_LENGTH;
-    y = PLAYVIEW_Y + POINT_LENGTH * pointPosition.y + 0.5 * POINT_LENGTH;
-    sprite.position = CGPointMake(x, y);
+//    GLfloat x = 0, y = 0;
+//    x = PLAYVIEW_X + POINT_LENGTH * pointPosition.x + 1 * POINT_LENGTH;
+//    y = PLAYVIEW_Y + POINT_LENGTH * pointPosition.y + 1 * POINT_LENGTH;
+//    sprite.position = CGPointMake(x, y);
+    sprite.position = [theMap getCentrePositionFromPointPosition:pointPosition withLengthPoint:2];
 }
 
 //图坐标到点坐标

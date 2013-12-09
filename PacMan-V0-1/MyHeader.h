@@ -14,12 +14,16 @@
 #define TAG_GAMELAYER 102
 
 //游戏界面的左下角坐标
-#define PLAYVIEW_X 150
-#define PLAYVIEW_Y 0
+#define PLAYVIEW_X 0
+#define PLAYVIEW_Y 80
 
 
 //游戏界面的最小单位格的大小
-#define POINT_LENGTH 25
+#define POINT_LENGTH 10
+
+//地图的长宽格子数
+#define MAP_WIDTH_POINT 57
+#define MAP_HEIGTH_POINT 22
 
 //屏幕大小
 #define SCREEN_WIDTH 568
@@ -60,14 +64,22 @@ enum manState {
 
 
 //Monster初始位置、方向
-#define MONSTER_POINTPOSITION1 CGPointMake(5, 5)
+#define MONSTER_POINTPOSITION1 CGPointMake(26, 9)
 #define MONSTER_DIRECTION1 upDirection
-#define MONSTER_POINTPOSITION2 CGPointMake(6, 5)
+#define MONSTER_POINTPOSITION2 CGPointMake(29, 9)
 #define MONSTER_DIRECTION2 leftDirection
 
 //PacMan初始位置、方向
-#define PLAYER_POINTPOSITION CGPointMake(1, 1)
+#define PLAYER_POINTPOSITION CGPointMake(0, 0)
 #define PLAYER_DIRECTION rightDirection
 
+//分数显示牌的位置
+#define SCORE_INIT_STRING @"0"
+#define SCORE_POSITION CGPointMake(284, 160)
+#define SCORE_FONTNAME nil
+#define SCORE_FONTSIZE 20
+
+//beans分数
+#define BEAN_SCORE 10
 
 #endif

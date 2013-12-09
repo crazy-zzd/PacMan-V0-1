@@ -10,10 +10,13 @@
 #import "cocos2d.h"
 #import "MyHeader.h"
 
+@class Maps;
 
 @interface Things : CCNode {
     CGPoint pointPosition;
     CCSprite * sprite;
+    
+    Maps * theMap;
 }
 
 //设置坐标，获取坐标

@@ -12,7 +12,7 @@
 
 @interface Maps : CCNode {
     CCSprite * theMap;
-    BOOL pointMap [40][40];
+    BOOL pointMap [100][100];
     int width,heigth;
 }
 
@@ -24,6 +24,14 @@
 -(void)setMap:(NSString *)fileName;
 
 -(BOOL)isWallWithPointPosition:(CGPoint)thePointPosition;
+
+-(CGPoint)getCentrePositionFromPointPosition:(CGPoint)thePointPosition withLengthPoint:(int)length;
+
+-(CGPoint)getPointPositionFromCentrePosition:(CGPoint)theCentrePosition;
+
+-(BOOL)isCrashedWallWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withDirection:(int)theDirection;
+
+
 
 //-(BOOL)isWallWithPosition:(CGPoint)thePosition;
 

@@ -28,13 +28,13 @@
 {
     if (self = [super init]) {
         
+        [self initMaps];
+        
         [self initPlayer];
         
         [self initMonsters];
         
         [self initBeans];
-        
-        [self initMaps];
         
         [self initScore];
         
@@ -51,20 +51,32 @@
 - (void)initMonsters
 {
     MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:MONSTER_DIRECTION1];
-    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
+//    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];
-    [monsters addObject:secondMonster];
+//    [monsters addObject:secondMonster];
     
 }
 
 - (void)initBeans
 {
-    Beans * firstBeans = [[Beans alloc] initWithPosition:CGPointMake(3, 3) withScore:1];
-    
     beans = [[NSMutableArray alloc] init];
-    [beans addObject:firstBeans];
+    for (int x = 0; x < MAP_WIDTH_POINT - 1; x ++) {
+        for (int y = 0; y < MAP_HEIGTH_POINT - 1; y ++) {
+            if (!([theMap isWallWithPointPosition:CGPointMake(x, y)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y) ]||[theMap isWallWithPointPosition:CGPointMake(x, y +1)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y + 1)])) {
+                GLfloat theX = 0, theY = 0;
+                theX = PLAYVIEW_X + POINT_LENGTH * (x + 1);
+                theY = PLAYVIEW_Y + POINT_LENGTH * (y + 1);
+                Beans * theBean = [[Beans alloc] initWithPosition:CGPointMake(theX, theY) withScore:BEAN_SCORE];
+                [beans addObject:theBean];
+            }
+        }
+    }
+//    Beans * firstBeans = [[Beans alloc] initWithPosition:CGPointMake(3, 3) withScore:1];
+//    
+//    beans = [[NSMutableArray alloc] init];
+//    [beans addObject:firstBeans];
 }
 
 - (void)initMaps
@@ -74,8 +86,8 @@
 
 - (void)initScore
 {
-    score = [[CCLabelTTF alloc] initWithString:@"0" fontName:Nil fontSize:20];
-    score.position = ccp(100, 270);
+    score = [[CCLabelTTF alloc] initWithString:SCORE_INIT_STRING fontName:SCORE_FONTNAME fontSize:SCORE_FONTSIZE];
+    score.position = SCORE_POSITION;
 }
 
 #pragma mark - 对外接口
@@ -94,7 +106,6 @@
         stateNow = gamePause;
         [self unschedule:@selector(updatePlayer:)];
         [self unschedule:@selector(updateMonsters:)];
-//        [self stopMonstersAction];
     }
     else
     {
@@ -137,7 +148,7 @@
     Beans * theBean;
     for (int i = 0; i < [beans count]; i ++) {
         theBean = [beans objectAtIndex:i];
-        if ([player isCrashedWithRect:[theBean spriteRect]]) {
+        if ([player isContainWithRect:[theBean spriteRect]]) {
             [theBean beEaten];
             [player eatBean];
             score.string = [NSString stringWithFormat:@"%d",player.score];
