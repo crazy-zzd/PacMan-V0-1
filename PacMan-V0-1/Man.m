@@ -27,8 +27,6 @@
     return self;
 }
 
-
-
 - (void)move
 {
     CGPoint movement;

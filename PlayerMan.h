@@ -27,7 +27,4 @@
 
 -(void)eatBean;
 
--(void)setPlayerDirection:(int)theDirection;
-
 @end
-
