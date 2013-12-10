@@ -27,6 +27,7 @@
 
 -(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;
 
+
 -(void)move;
 
 

@@ -53,7 +53,11 @@
     return NO;
 }
 
-
+- (void)setPlayerDirection:(int)theDirection
+{
+    sprite.rotation += (theDirection - direction) * 90;
+    direction = theDirection;
+}
 
 
 @end

@@ -51,11 +51,11 @@
 - (void)initMonsters
 {
     MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:MONSTER_DIRECTION1];
-//    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
+    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];
-//    [monsters addObject:secondMonster];
+    [monsters addObject:secondMonster];
     
 }
 
@@ -95,7 +95,8 @@
 
 - (void)moveWithDirection:(int)theDirection
 {
-    player.direction = theDirection;
+//    player.direction = theDirection;
+    [player setPlayerDirection:theDirection];
 }
 
 #pragma mark - 玩家开始移动或者暂停移动

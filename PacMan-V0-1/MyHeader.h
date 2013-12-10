@@ -35,10 +35,10 @@ enum gameState {
     };
 
 enum direction {
-    upDirection = 1,
+    upDirection = 0,
+    rightDirection,
     downDirection,
     leftDirection,
-    rightDirection,
     noDirection
 };
 
@@ -67,7 +67,9 @@ enum manState {
 #define MONSTER_POINTPOSITION1 CGPointMake(26, 9)
 #define MONSTER_DIRECTION1 upDirection
 #define MONSTER_POINTPOSITION2 CGPointMake(29, 9)
-#define MONSTER_DIRECTION2 leftDirection
+#define MONSTER_DIRECTION2 upDirection
+#define MONSTER_CHANGEDIRECTION_TIME_LEATEST 0.3
+#define MONSTER_CHANGEDIRECTION_TIME_MOST 1.8
 
 //PacMan初始位置、方向
 #define PLAYER_POINTPOSITION CGPointMake(0, 0)
@@ -75,7 +77,7 @@ enum manState {
 
 //分数显示牌的位置
 #define SCORE_INIT_STRING @"0"
-#define SCORE_POSITION CGPointMake(284, 160)
+#define SCORE_POSITION CGPointMake(470, 310)
 #define SCORE_FONTNAME nil
 #define SCORE_FONTSIZE 20
 
