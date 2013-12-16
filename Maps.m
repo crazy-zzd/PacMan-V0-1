@@ -105,8 +105,8 @@ static Maps * sharedMap = nil;
     
     NSArray *lines = [textFileContents componentsSeparatedByString:@"\n"];
     
-    NSLog(@"Number of lines in the file:%d", [lines count] );
-    NSLog(@"%@",[lines objectAtIndex:0]);
+//    NSLog(@"Number of lines in the file:%d", [lines count] );
+//    NSLog(@"%@",[lines objectAtIndex:0]);
     NSString * theLine;
     char theChar;
     for (int i = 0; i < MAP_HEIGTH_POINT; i ++) {

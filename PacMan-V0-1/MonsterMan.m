@@ -42,10 +42,11 @@
 - (void)changeDirection
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(changeDirection) object:self];
-    direction = CCRANDOM_0_1() * 4 + 1;
+//    nowDirection = CCRANDOM_0_1() * 4 + 1;
+    [self setDirection:CCRANDOM_0_1() * 4 + 1];
     GLfloat theTime;
     theTime = CCRANDOM_0_1() * (MONSTER_CHANGEDIRECTION_MOSTTIME - MONSTER_CHANGEDIRECTION_LEASTTIME) + MONSTER_CHANGEDIRECTION_LEASTTIME;
-    CCLOG(@"%f,%d",theTime,direction);
+//    CCLOG(@"%f,%d",theTime,direction);
     [self performSelector:@selector(changeDirection) withObject:self afterDelay:theTime];
     
 }

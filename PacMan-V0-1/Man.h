@@ -15,18 +15,20 @@
 @class Maps;
 
 @interface Man : Things {
-    int direction;
+    int nowDirection;
+    int nextDirection;
     
     int state;
     
 }
 
-@property int direction;
+//@property int nowDirection;
 
 -(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;
 
 -(void)move;
 
+-(void)setDirection:(int)theDirection;
 
 
 @end

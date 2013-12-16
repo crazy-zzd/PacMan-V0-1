@@ -12,7 +12,7 @@
 
 @implementation Man
 
-@synthesize direction;
+//@synthesize nowDirection;
 
 - (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
 {
@@ -20,15 +20,37 @@
         
         state = standing;
         
-        direction = theDrection;
+        nowDirection = theDrection;
+        nextDirection = theDrection;
     }
     return self;
 }
 
+- (void)setDirection:(int)theDirection
+{
+    nextDirection = theDirection;
+}
+
 - (void)move
 {
+    if (nowDirection != nextDirection) {
+        [self moveWithDirection:nextDirection];
+        if (state == moving) {
+            nowDirection = nextDirection;
+            return;
+        }
+    }
+    
+    [self moveWithDirection:nowDirection];
+    
+}
+
+#pragma mark - 私有方法
+
+- (void)moveWithDirection:(int)theDirection
+{
     CGPoint movement;
-    switch (direction) {
+    switch (theDirection) {
         case upDirection:
             movement = UP_MOVEMENT;
             break;
@@ -47,17 +69,15 @@
     CGPoint oldPosition = [self mapPosition];
     CGPoint newPosition = ccpAdd([self mapPosition], movement);
     [self setPosition:newPosition];
-
-    if ([theMap isCrashedWallWithCentrePosition:[self mapPosition] withLengthPoint:length withDirection:direction]) {
+    
+    if ([theMap isCrashedWallWithCentrePosition:[self mapPosition] withLengthPoint:length withDirection:theDirection]) {
         state = standing;
         [self setPosition:oldPosition];
     }
     else{
         state = moving;
     }
-    
-}
 
-#pragma mark - 私有方法
+}
 
 @end

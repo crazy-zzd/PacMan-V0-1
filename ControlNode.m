@@ -91,7 +91,8 @@
 
 - (void)moveWithDirection:(int)theDirection
 {
-    player.direction = theDirection;
+//    player.nowDirection = theDirection;
+    [player setDirection:theDirection];
 }
 
 #pragma mark - 玩家开始移动或者暂停移动
