@@ -107,8 +107,8 @@
     else
     {
         stateNow = gameStart;
-        [self schedule:@selector(updatePlayer:) interval:PLAYER_SPEED];
-        [self schedule:@selector(updateMonsters:) interval:MONSTERS_TIME];
+        [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
+        [self schedule:@selector(updateMonsters:) interval:1.0/MONSTERS_SPEED];
     }
 }
 

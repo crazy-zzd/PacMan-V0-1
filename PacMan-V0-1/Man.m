@@ -34,8 +34,8 @@
 - (void)move
 {
     if (nowDirection != nextDirection) {
-        [self moveWithDirection:nextDirection];
-        if (state == moving) {
+        if ([self moveWithDirection:nextDirection]) {
+            [self changeSpriteDirection];
             nowDirection = nextDirection;
             return;
         }
@@ -47,7 +47,7 @@
 
 #pragma mark - 私有方法
 
-- (void)moveWithDirection:(int)theDirection
+- (BOOL)moveWithDirection:(int)theDirection
 {
     CGPoint movement;
     switch (theDirection) {
@@ -73,11 +73,38 @@
     if ([theMap isCrashedWallWithCentrePosition:[self mapPosition] withLengthPoint:length withDirection:theDirection]) {
         state = standing;
         [self setPosition:oldPosition];
+        return NO;
     }
     else{
         state = moving;
+        return YES;
     }
-
+    return NO;
 }
+
+- (void)changeSpriteDirection
+{
+    int theRotation = (nextDirection - nowDirection) * 90;
+    if (theRotation < 0) {
+        theRotation = theRotation + 360;
+    }
+    sprite.rotation = [sprite rotation] + theRotation;
+}
+
+//- (void)handleWithPosition
+//{
+//    int theX = [self changeFloat:[self mapPosition].x];
+//    int theY = [self changeFloat:[self mapPosition].y];
+//    [self setPosition:CGPointMake(theX, theY)];
+//}
+
+//- (int)changeFloat:(CGFloat)theNum
+//{
+//    if (theNum - (int)theNum > 0.5) {
+//        return (int)theNum + 1;
+//    }
+//    return (int)theNum;
+//}
+
 
 @end

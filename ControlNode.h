@@ -10,11 +10,6 @@
 #import "cocos2d.h"
 #import "MyHeader.h"
 
-
-#define PLAYER_SPEED 0
-
-#define MONSTERS_TIME 0
-
 @class Man;
 @class PlayerMan;
 @class MonsterMan;
