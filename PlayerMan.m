@@ -19,7 +19,7 @@
         sprite = [[CCSprite alloc] initWithFile:PNG_PACMAN];
         
         //setPointPosition必须在sprite设置过以后才能正常工作
-        [self setPointPosition:thePointPosition];
+        [self setPointPosition:thePointPosition withLength:2];
         
         score = 0;
     }

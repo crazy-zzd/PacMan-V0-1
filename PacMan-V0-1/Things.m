@@ -16,6 +16,9 @@
 {
     self = [super init];
     if (self) {
+        
+        length = 1;
+        
         theMap = [Maps sharedMap];
     }
     return self;
@@ -34,17 +37,15 @@
     return [sprite boundingBox];
 }
 
-- (void)setPointPosition:(CGPoint)thePointPosition
+- (void)setPointPosition:(CGPoint)thePointPosition withLength:(int)theLength
 {
-    pointPosition = thePointPosition;
-    [self changePointPosition];
-    
+    length = theLength;
+    sprite.position = [theMap getCentrePositionFromPointPosition:thePointPosition withLengthPoint:length];
 }
 
 - (void)setPosition:(CGPoint)thePosition
 {
     sprite.position = thePosition;
-    [self changePosition];
 }
 
 - (CGPoint)mapPosition
@@ -52,30 +53,5 @@
     return sprite.position;
 }
 
-- (CGPoint)pointPosition
-{
-    return pointPosition;
-}
-
 #pragma mark - 私有方法
-
-//点坐标转变到图坐标
-- (void)changePointPosition
-{
-//    GLfloat x = 0, y = 0;
-//    x = PLAYVIEW_X + POINT_LENGTH * pointPosition.x + 1 * POINT_LENGTH;
-//    y = PLAYVIEW_Y + POINT_LENGTH * pointPosition.y + 1 * POINT_LENGTH;
-//    sprite.position = CGPointMake(x, y);
-    sprite.position = [theMap getCentrePositionFromPointPosition:pointPosition withLengthPoint:2];
-}
-
-//图坐标到点坐标
-- (void)changePosition
-{
-    int x = 0, y = 0;
-    x = (sprite.position.x - PLAYVIEW_X) / POINT_LENGTH;
-    y = (sprite.position.y - PLAYVIEW_Y) / POINT_LENGTH;
-    pointPosition = CGPointMake(x, y);
-}
-
 @end

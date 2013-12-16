@@ -21,18 +21,12 @@
 
 +(Maps *)sharedMap;
 
--(void)setMap:(NSString *)fileName;
+//-(void)setMap:(NSString *)fileName;
 
 -(BOOL)isWallWithPointPosition:(CGPoint)thePointPosition;
 
 -(CGPoint)getCentrePositionFromPointPosition:(CGPoint)thePointPosition withLengthPoint:(int)length;
 
--(CGPoint)getPointPositionFromCentrePosition:(CGPoint)theCentrePosition;
-
 -(BOOL)isCrashedWallWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withDirection:(int)theDirection;
-
-
-
-//-(BOOL)isWallWithPosition:(CGPoint)thePosition;
 
 @end

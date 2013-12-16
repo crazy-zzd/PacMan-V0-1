@@ -103,6 +103,7 @@
     }
 }
 
+//添加并初始化背景图片
 - (void)loadBackGround
 {
     CCSprite * background = [[CCSprite alloc] initWithFile:PNG_BACKGROUND];
@@ -118,7 +119,7 @@
     CCMenuItemFont * item = [CCMenuItemFont itemWithString:@"start"	target:theControNode selector:@selector(startMoving)];
     
     CCMenu * menu = [CCMenu menuWithItems:item, nil];
-    menu.position = ccp(300, 250);
+    menu.position = ccp(520, 40);
     [self addChild:menu];
 }
 
@@ -140,12 +141,12 @@
 
 #pragma mark - testMethod
 //测试地图
-- (void)draw
-{
-    ccPointSize(175); //设置方块的大小
-    ccDrawColor4B(0,0,255,128);
-    ccDrawPoint(ccp(262.5, 112.5));//位置
-}
+//- (void)draw
+//{
+//    ccPointSize(175); //设置方块的大小
+//    ccDrawColor4B(0,0,255,128);
+//    ccDrawPoint(ccp(262.5, 112.5));//位置
+//}
 
 
 @end

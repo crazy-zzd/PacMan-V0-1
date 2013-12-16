@@ -29,24 +29,6 @@
 #define SCREEN_WIDTH 568
 #define SCREEN_HEIGHT 320
 
-enum gameState {
-    gameStart = 1,
-    gamePause = 2
-    };
-
-enum direction {
-    upDirection = 1,
-    downDirection,
-    leftDirection,
-    rightDirection,
-    noDirection
-};
-
-enum manState {
-    moving = 1,
-    standing = 2
-    };
-
 //图标的图片文件名
 #pragma mark - 图标
 #define PNG_BACKGROUND @"background1@2x.png"
@@ -67,7 +49,10 @@ enum manState {
 #define MONSTER_POINTPOSITION1 CGPointMake(26, 9)
 #define MONSTER_DIRECTION1 upDirection
 #define MONSTER_POINTPOSITION2 CGPointMake(29, 9)
-#define MONSTER_DIRECTION2 leftDirection
+#define MONSTER_DIRECTION2 upDirection
+
+#define MONSTER_CHANGEDIRECTION_LEASTTIME 0.3
+#define MONSTER_CHANGEDIRECTION_MOSTTIME 1.8
 
 //PacMan初始位置、方向
 #define PLAYER_POINTPOSITION CGPointMake(0, 0)
@@ -75,11 +60,31 @@ enum manState {
 
 //分数显示牌的位置
 #define SCORE_INIT_STRING @"0"
-#define SCORE_POSITION CGPointMake(284, 160)
+#define SCORE_POSITION CGPointMake(484, 310)
 #define SCORE_FONTNAME nil
 #define SCORE_FONTSIZE 20
 
 //beans分数
 #define BEAN_SCORE 10
+
+
+enum gameState {
+    gameStart = 1,
+    gamePause = 2
+};
+
+enum direction {
+    upDirection = 1,
+    downDirection,
+    leftDirection,
+    rightDirection,
+    noDirection
+};
+
+enum manState {
+    moving = 1,
+    standing = 2
+};
+
 
 #endif

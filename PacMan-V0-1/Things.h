@@ -13,8 +13,10 @@
 @class Maps;
 
 @interface Things : CCNode {
-    CGPoint pointPosition;
+//    CGPoint pointPosition;
     CCSprite * sprite;
+    
+    int length;
     
     Maps * theMap;
 }
@@ -24,8 +26,7 @@
 -(CGPoint)mapPosition;
 
 //设置地图点坐标，获取地图点坐标
--(void)setPointPosition:(CGPoint) thePointPosition;
--(CGPoint)pointPosition;
+-(void)setPointPosition:(CGPoint) thePointPosition withLength:(int)theLength;
 
 //获得精灵
 -(CCSprite *)sprite;

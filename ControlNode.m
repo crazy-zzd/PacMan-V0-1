@@ -51,11 +51,11 @@
 - (void)initMonsters
 {
     MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:MONSTER_DIRECTION1];
-//    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
+    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];
-//    [monsters addObject:secondMonster];
+    [monsters addObject:secondMonster];
     
 }
 
@@ -73,10 +73,6 @@
             }
         }
     }
-//    Beans * firstBeans = [[Beans alloc] initWithPosition:CGPointMake(3, 3) withScore:1];
-//    
-//    beans = [[NSMutableArray alloc] init];
-//    [beans addObject:firstBeans];
 }
 
 - (void)initMaps

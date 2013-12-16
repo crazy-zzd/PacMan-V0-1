@@ -18,8 +18,6 @@
     int direction;
     
     int state;
-
-//    Maps * theMap;
     
 }
 
