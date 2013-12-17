@@ -12,18 +12,21 @@
 
 #import "TouchLayerDelegate.h"
 
+#define MOVE_LIMITED 25
+
 @class GameLayer;
 
-enum tagsOfSpr {
-    tagUp = 1,
-    tagDown,
-    tagLeft,
-    tagRight
-};
+//enum tagsOfSpr {
+//    tagUp = 1,
+//    tagDown,
+//    tagLeft,
+//    tagRight
+//};
 
 
 @interface TouchLayer : CCLayer {
-    CGRect upRect,downRect,leftRect,rightRect;    
+//    CGRect upRect,downRect,leftRect,rightRect;
+    CGPoint nowPosition;
 }
 
 @property id<TouchLayerDelegate> delegate;
