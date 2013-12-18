@@ -14,15 +14,15 @@
 #define TAG_GAMELAYER 102
 
 //游戏界面的左下角坐标
-#define PLAYVIEW_X 0
-#define PLAYVIEW_Y 80
+#define PLAYVIEW_X 4
+#define PLAYVIEW_Y 59
 
 
 //游戏界面的最小单位格的大小
 #define POINT_LENGTH 10
 
 //地图的长宽格子数
-#define MAP_WIDTH_POINT 57
+#define MAP_WIDTH_POINT 56
 #define MAP_HEIGTH_POINT 22
 
 //屏幕大小
@@ -31,7 +31,7 @@
 
 //图标的图片文件名
 #pragma mark - 图标
-#define PNG_BACKGROUND @"background1@2x.png"
+#define PNG_BACKGROUND @"background3.png"
 #define PNG_PACMAN @"pacman@2x.png"
 #define PNG_MONSTER @"monster@2x.png"
 #define PNG_BEAN @"bean@2x.png"
