@@ -31,7 +31,7 @@
 
 //图标的图片文件名
 #pragma mark - 图标
-#define PNG_BACKGROUND @"background3.png"
+#define PNG_BACKGROUND @"background.png"
 #define PNG_PACMAN @"pacman@2x.png"
 #define PNG_MONSTER @"monster@2x.png"
 #define PNG_BEAN @"bean@2x.png"

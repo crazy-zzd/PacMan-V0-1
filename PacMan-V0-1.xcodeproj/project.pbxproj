@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		620062B81855B702004DE077 /* map_old.txt in Resources */ = {isa = PBXBuildFile; fileRef = 620062B71855B702004DE077 /* map_old.txt */; };
-		6214B5DB1861456300E1764D /* background3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6214B5DA1861456300E1764D /* background3-hd.png */; };
+		620062B81855B702004DE077 /* map_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 620062B71855B702004DE077 /* map_1.txt */; };
+		6214B5DB1861456300E1764D /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6214B5DA1861456300E1764D /* background-hd.png */; };
 		6214B5DD186145DE00E1764D /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6214B5DC186145DE00E1764D /* map.txt */; };
 		621CF0401851F64B006F5E2F /* V0-1-1.psd in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0361851F64B006F5E2F /* V0-1-1.psd */; };
 		621CF0411851F64B006F5E2F /* HP.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0381851F64B006F5E2F /* HP.png */; };
@@ -19,13 +19,16 @@
 		621CF0461851F64B006F5E2F /* bean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03D1851F64B006F5E2F /* bean@2x.png */; };
 		621CF0471851F64B006F5E2F /* monster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF03E1851F64B006F5E2F /* monster@2x.png */; };
 		621CF0491852090F006F5E2F /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621CF0481852090F006F5E2F /* background@2x.png */; };
-		621EEBBA18540BE60002E719 /* background1@2x-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 621EEBB918540BE60002E719 /* background1@2x-hd.png */; };
-		621EEBBC18546C930002E719 /* background2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621EEBBB18546C930002E719 /* background2@2x.png */; };
+		621EEBBA18540BE60002E719 /* background1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 621EEBB918540BE60002E719 /* background1-hd.png */; };
+		621EEBBC18546C930002E719 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = 621EEBBB18546C930002E719 /* background2.png */; };
 		62266156185EB21D00D81719 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266154185EB21D00D81719 /* Icon.png */; };
 		62266157185EB21D00D81719 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266155185EB21D00D81719 /* Icon@2x.png */; };
 		62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266158185EB22A00D81719 /* Default-568h@2x.png */; };
 		622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF571182F19AD0038BF0D /* TouchLayer.m */; };
 		622FF57B182F1B800038BF0D /* ControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF57A182F1B800038BF0D /* ControlNode.m */; };
+		627A73881861C68400E1F48A /* pac-man-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 627A73851861C68400E1F48A /* pac-man-2.png */; };
+		627A73891861C68400E1F48A /* pac-man-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 627A73861861C68400E1F48A /* pac-man-1.png */; };
+		627A738A1861C68400E1F48A /* pac-man-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 627A73871861C68400E1F48A /* pac-man-3.png */; };
 		6287118E1836584A00A66DA7 /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = 6287118D1836584A00A66DA7 /* Maps.m */; };
 		62C03B97182F7F6B00CCA525 /* MonsterMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C03B96182F7F6B00CCA525 /* MonsterMan.m */; };
 		62C03B9A182F7FA900CCA525 /* PlayerMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C03B99182F7FA900CCA525 /* PlayerMan.m */; };
@@ -194,8 +197,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		620062B71855B702004DE077 /* map_old.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map_old.txt; sourceTree = "<group>"; };
-		6214B5DA1861456300E1764D /* background3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background3-hd.png"; sourceTree = "<group>"; };
+		620062B71855B702004DE077 /* map_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map_1.txt; sourceTree = "<group>"; };
+		6214B5DA1861456300E1764D /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-hd.png"; sourceTree = "<group>"; };
 		6214B5DC186145DE00E1764D /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		621CF0361851F64B006F5E2F /* V0-1-1.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "V0-1-1.psd"; sourceTree = "<group>"; };
 		621CF0381851F64B006F5E2F /* HP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HP.png; sourceTree = "<group>"; };
@@ -206,8 +209,8 @@
 		621CF03D1851F64B006F5E2F /* bean@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bean@2x.png"; sourceTree = "<group>"; };
 		621CF03E1851F64B006F5E2F /* monster@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster@2x.png"; sourceTree = "<group>"; };
 		621CF0481852090F006F5E2F /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
-		621EEBB918540BE60002E719 /* background1@2x-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1@2x-hd.png"; sourceTree = "<group>"; };
-		621EEBBB18546C930002E719 /* background2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background2@2x.png"; sourceTree = "<group>"; };
+		621EEBB918540BE60002E719 /* background1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1-hd.png"; sourceTree = "<group>"; };
+		621EEBBB18546C930002E719 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
 		62266154185EB21D00D81719 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		62266155185EB21D00D81719 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		62266158185EB22A00D81719 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -215,6 +218,9 @@
 		622FF571182F19AD0038BF0D /* TouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayer.m; sourceTree = "<group>"; };
 		622FF579182F1B800038BF0D /* ControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlNode.h; path = ../ControlNode.h; sourceTree = "<group>"; };
 		622FF57A182F1B800038BF0D /* ControlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlNode.m; path = ../ControlNode.m; sourceTree = "<group>"; };
+		627A73851861C68400E1F48A /* pac-man-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-2.png"; sourceTree = "<group>"; };
+		627A73861861C68400E1F48A /* pac-man-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-1.png"; sourceTree = "<group>"; };
+		627A73871861C68400E1F48A /* pac-man-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-3.png"; sourceTree = "<group>"; };
 		6287118C1836584A00A66DA7 /* Maps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Maps.h; path = ../Maps.h; sourceTree = "<group>"; };
 		6287118D1836584A00A66DA7 /* Maps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Maps.m; path = ../Maps.m; sourceTree = "<group>"; };
 		62C03B95182F7F6B00CCA525 /* MonsterMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterMan.h; sourceTree = "<group>"; };
@@ -586,12 +592,12 @@
 		621CF0341851F64B006F5E2F /* V0-1-1-map */ = {
 			isa = PBXGroup;
 			children = (
-				620062B71855B702004DE077 /* map_old.txt */,
+				620062B71855B702004DE077 /* map_1.txt */,
 				6214B5DC186145DE00E1764D /* map.txt */,
 				621CF0481852090F006F5E2F /* background@2x.png */,
-				621EEBB918540BE60002E719 /* background1@2x-hd.png */,
-				621EEBBB18546C930002E719 /* background2@2x.png */,
-				6214B5DA1861456300E1764D /* background3-hd.png */,
+				621EEBB918540BE60002E719 /* background1-hd.png */,
+				621EEBBB18546C930002E719 /* background2.png */,
+				6214B5DA1861456300E1764D /* background-hd.png */,
 				621CF0361851F64B006F5E2F /* V0-1-1.psd */,
 			);
 			path = "V0-1-1-map";
@@ -607,6 +613,9 @@
 				621CF03C1851F64B006F5E2F /* 物件大小.txt */,
 				621CF03D1851F64B006F5E2F /* bean@2x.png */,
 				621CF03E1851F64B006F5E2F /* monster@2x.png */,
+				627A73851861C68400E1F48A /* pac-man-2.png */,
+				627A73861861C68400E1F48A /* pac-man-1.png */,
+				627A73871861C68400E1F48A /* pac-man-3.png */,
 			);
 			path = "V0-1-1-things";
 			sourceTree = "<group>";
@@ -1214,25 +1223,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				621EEBBC18546C930002E719 /* background2@2x.png in Resources */,
+				621EEBBC18546C930002E719 /* background2.png in Resources */,
 				6214B5DD186145DE00E1764D /* map.txt in Resources */,
 				621CF0471851F64B006F5E2F /* monster@2x.png in Resources */,
 				62F966CD182CE1DF00152AE2 /* Blue.png in Resources */,
 				62F96085182CDE6800152AE2 /* cocos_icon.png in Resources */,
 				62F96077182CDE6800152AE2 /* cocos_Default@2x.png in Resources */,
 				62F966C7182CE1D600152AE2 /* Browser.png in Resources */,
-				620062B81855B702004DE077 /* map_old.txt in Resources */,
+				620062B81855B702004DE077 /* map_1.txt in Resources */,
 				621CF0421851F64B006F5E2F /* pac-man-open.png in Resources */,
 				621CF0441851F64B006F5E2F /* pause@2x.png in Resources */,
 				62266156185EB21D00D81719 /* Icon.png in Resources */,
 				62F966C5182CE1D600152AE2 /* Thunder.png in Resources */,
-				6214B5DB1861456300E1764D /* background3-hd.png in Resources */,
+				6214B5DB1861456300E1764D /* background-hd.png in Resources */,
 				62F96081182CDE6800152AE2 /* Icon-Small.png in Resources */,
 				62F9607D182CDE6800152AE2 /* Icon-72.png in Resources */,
 				62F96075182CDE6800152AE2 /* cocos_Default.png in Resources */,
 				621CF0461851F64B006F5E2F /* bean@2x.png in Resources */,
 				62F966D1182CE1DF00152AE2 /* Orange.png in Resources */,
 				621CF0431851F64B006F5E2F /* pacman@2x-hd.png in Resources */,
+				627A738A1861C68400E1F48A /* pac-man-3.png in Resources */,
 				62F966C4182CE1D600152AE2 /* Play.png in Resources */,
 				62F966D0182CE1DF00152AE2 /* Green.png in Resources */,
 				621CF0451851F64B006F5E2F /* 物件大小.txt in Resources */,
@@ -1240,9 +1250,11 @@
 				62F9607F182CDE6800152AE2 /* Icon-Small-50.png in Resources */,
 				62F966CF182CE1DF00152AE2 /* Gray.png in Resources */,
 				621CF0491852090F006F5E2F /* background@2x.png in Resources */,
-				621EEBBA18540BE60002E719 /* background1@2x-hd.png in Resources */,
+				621EEBBA18540BE60002E719 /* background1-hd.png in Resources */,
+				627A73891861C68400E1F48A /* pac-man-1.png in Resources */,
 				62F966C6182CE1D600152AE2 /* Safari.png in Resources */,
 				62F9608A182CDE6800152AE2 /* iTunesArtwork in Resources */,
+				627A73881861C68400E1F48A /* pac-man-2.png in Resources */,
 				62F966CE182CE1DF00152AE2 /* Carbon.png in Resources */,
 				621CF0411851F64B006F5E2F /* HP.png in Resources */,
 				621CF0401851F64B006F5E2F /* V0-1-1.psd in Resources */,

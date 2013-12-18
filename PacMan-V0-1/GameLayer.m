@@ -71,6 +71,7 @@
     
     
     //测试
+//    [self testAnimation];
 //    [self draw];
     
 }
@@ -148,5 +149,28 @@
 //    ccDrawPoint(ccp(262.5, 112.5));//位置
 //}
 
+//测试动画
+//- (void)testAnimation
+//{
+//    CCSprite * theTestSprite = [[CCSprite alloc] initWithFile:@"pacman@2x.png"];
+//    NSMutableArray * theTestFrames = [NSMutableArray arrayWithCapacity:3];
+//    for (int i = 1; i <= 3; i ++) {
+//        NSString * fileName = [NSString stringWithFormat:@"pac-man-%d.png",i];
+//        CCTexture2D * texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
+//        CGSize texSize = texture.contentSize;
+//        CGRect texRect = CGRectMake(0, 0, texSize.width, texSize.height);
+//        
+//        CCSpriteFrame * frame = [CCSpriteFrame frameWithTexture:texture rect:texRect];
+//        [theTestFrames addObject:frame];
+//    }
+//    CCAnimation * anim = [CCAnimation animationWithSpriteFrames:theTestFrames delay:0.08f];
+//    
+//    CCAnimate * animate = [CCAnimate actionWithAnimation:anim];
+//    CCRepeatForever * repeat = [CCRepeatForever actionWithAction:animate];
+//    [theTestSprite runAction:repeat];
+//    [self addChild:theTestSprite];
+//    theTestSprite.position = CGPointMake(100, 100);
+//    theTestSprite.rotation = 90;
+//}
 
 @end
