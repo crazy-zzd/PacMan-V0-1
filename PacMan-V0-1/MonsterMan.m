@@ -18,7 +18,7 @@
         
         sprite = [[CCSprite alloc] initWithFile:PNG_MONSTER];
         
-        [self setPointPosition:thePointPosition withLength:2];
+        [self setPointPosition:thePointPosition withLength:3];
     }
     return self;
 }

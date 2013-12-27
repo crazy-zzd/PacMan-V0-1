@@ -10,6 +10,8 @@
 
 #import "AppDelegate.h"
 #import "GameLayer.h"
+#import "StartLayer.h"
+#import "IntroLayer.h"
 
 @implementation MyNavigationController
 
@@ -50,7 +52,7 @@
 	if(director.runningScene == nil) {
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-		[director runWithScene: [GameLayer Scene]];
+		[director runWithScene: [IntroLayer scene]];
 	}
 }
 @end

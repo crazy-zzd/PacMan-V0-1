@@ -15,7 +15,7 @@
 
 //游戏界面的左下角坐标
 #define PLAYVIEW_X 4
-#define PLAYVIEW_Y 59
+#define PLAYVIEW_Y 50
 
 
 //游戏界面的最小单位格的大小
@@ -23,7 +23,7 @@
 
 //地图的长宽格子数
 #define MAP_WIDTH_POINT 56
-#define MAP_HEIGTH_POINT 22
+#define MAP_HEIGTH_POINT 23
 
 //屏幕大小
 #define SCREEN_WIDTH 568
@@ -32,13 +32,13 @@
 //图标的图片文件名
 #pragma mark - 图标
 #define PNG_BACKGROUND @"background.png"
-#define PNG_PACMAN @"pacman@2x.png"
-#define PNG_MONSTER @"monster@2x.png"
-#define PNG_BEAN @"bean@2x.png"
-#define PNG_PAUSE @"pause@2x.png"
+#define PNG_PACMAN @"pacman.png"
+#define PNG_MONSTER @"monster.png"
+#define PNG_BEAN @"bean.png"
+#define PNG_PAUSE @"pause.png"
 
 //Man.m 移动
-#define MOVEMENT 1
+#define MOVEMENT 2
 #define UP_MOVEMENT CGPointMake(0 ,MOVEMENT)
 #define DOWN_MOVEMENT CGPointMake(0 ,-MOVEMENT)
 #define LEFT_MOVEMENT CGPointMake(-MOVEMENT ,0)
@@ -52,7 +52,7 @@
 //Monster初始位置、方向
 #define MONSTER_POINTPOSITION1 CGPointMake(26, 9)
 #define MONSTER_DIRECTION1 upDirection
-#define MONSTER_POINTPOSITION2 CGPointMake(29, 9)
+#define MONSTER_POINTPOSITION2 CGPointMake(26, 9)
 #define MONSTER_DIRECTION2 upDirection
 
 #define MONSTER_CHANGEDIRECTION_LEASTTIME 0.3
