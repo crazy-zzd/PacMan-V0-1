@@ -9,14 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "MyHeader.h"
+#import "PauseLayerDelegate.h"
 
 @class Man;
 @class PlayerMan;
 @class MonsterMan;
 @class Beans;
 @class Maps;
+@class PauseLayer;
+@class GameLayer;
+@class StartLayer;
 
-@interface ControlNode : CCNode {
+@interface ControlNode : CCNode<PauseLayerDelegate> {
     PlayerMan * player;
     NSMutableArray * monsters;
     NSMutableArray * beans;

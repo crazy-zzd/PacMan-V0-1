@@ -9,6 +9,7 @@
 #import "GameLayer.h"
 #import "TouchLayer.h"
 #import "ControlNode.h"
+#import "PauseLayer.h"
 #import "MyHeader.h"
 
 #import "PlayerMan.h"
@@ -19,7 +20,7 @@
 
 @synthesize theTouchLayer;
 @synthesize theControNode;
-
+//@synthesize thePauseLayer;
 
 #pragma mark - 创建场景
 + (CCScene *)Scene
@@ -30,15 +31,18 @@
     GameLayer * gameLayer = [GameLayer node];
     TouchLayer * touchLayer = [TouchLayer node];
     ControlNode * controlNode = [ControlNode node];
+//    PauseLayer * pauseLayer = [PauseLayer node];
     
     //把触摸层和控制层归到游戏层下
     gameLayer.theTouchLayer = touchLayer;
     gameLayer.theControNode = controlNode;
+//    gameLayer.thePauseLayer = pauseLayer;
     
     //把三个层添加到场景里
     [scene addChild:gameLayer z:0 tag:TAG_GAMELAYER];
     [scene addChild:touchLayer z:1 tag:TAG_TOUCHLAYER];
     [scene addChild:controlNode z:0 tag:TAG_CONTROLNODE];
+//    [scene addChild:pauseLayer z:0 tag:111];
     
     //三个层的初始化
     [gameLayer viewDidLoad];
@@ -148,7 +152,7 @@
 //    ccDrawColor4B(0,0,255,128);
 //    ccDrawPoint(ccp(262.5, 112.5));//位置
 //}
-
+//
 //测试动画
 //- (void)testAnimation
 //{

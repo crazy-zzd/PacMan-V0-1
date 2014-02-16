@@ -64,9 +64,6 @@
     
     nowPosition = touchedPosition;
     
-    
-    
-    
 //    CCSprite * touchedSpr;
 //    
 //    //当点击上箭头的时候触发
@@ -129,9 +126,6 @@
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    
-    
-    
 //    CCSprite * touchedSpr;
 //    for (int i = tagUp; i <= tagRight; i++) {
 //        touchedSpr = (CCSprite *)[self getChildByTag:i];

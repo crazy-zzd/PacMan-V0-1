@@ -8,12 +8,15 @@
 
 #import "ControlNode.h"
 
+#import "GameLayer.h"
+#import "StartLayer.h"
 
 #import "Man.h"
 #import "PlayerMan.h"
 #import "MonsterMan.h"
 #import "Beans.h"
 #import "Maps.h"
+#import "PauseLayer.h"
 
 @implementation ControlNode
 
@@ -100,25 +103,53 @@
 - (void)startMoving
 {
     if (stateNow == gameStart) {
-        stateNow = gamePause;
-        [self unschedule:@selector(updatePlayer:)];
-        [self unschedule:@selector(updateMonsters:)];
+        [self gamePause];
     }
-    else
-    {
-        stateNow = gameStart;
-        [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
-        [self schedule:@selector(updateMonsters:) interval:1.0/MONSTERS_SPEED];
+    else{
+        [self gameStart];
     }
+}
+
+
+
+#pragma mark - 私有方法
+#pragma mark - 游戏状态
+//暂停有两种方法
+//第一种是使用Scene，push和pop，有一个地方不方便就是Scene会把当前的所有画面都遮住（可以把当前的画面截图发送过去），另一个无法解决的地方就是暂停的时候无法播放动画
+//第二种是使用Layer，一个比较麻烦的地方是需要设置delegate并且需要自己写暂停的函数来控制游戏暂停，但是可以控制部分暂停，并且控制动画可以继续播放
+//现在使用第二种
+- (void)gamePause
+{
+    stateNow = gamePause;
+    [self unschedule:@selector(updatePlayer:)];
+    [self unschedule:@selector(updateMonsters:)];
+    
+    PauseLayer * thePauseLayer = [PauseLayer node];
+    thePauseLayer.delegate = self;
+    [self addChild:thePauseLayer z:1 tag:TAG_PAUSELAYER];
+
+}
+
+- (void)gameStart
+{
+    stateNow = gameStart;
+    PauseLayer * thePauseLayer = (PauseLayer *)[self getChildByTag:TAG_PAUSELAYER];
+    if (thePauseLayer != Nil) {
+        [self removeChild:thePauseLayer];
+    }
+    
+    [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
+    [self schedule:@selector(updateMonsters:) interval:1.0/MONSTERS_SPEED];
 }
 
 - (void)gameOver
 {
-    exit(0);
+//    CCScene * scene = [StartLayer Scene];
+//    [[CCDirector sharedDirector] replaceScene:scene];
+    CCScene * scene = [GameLayer Scene];
+    [[CCDirector sharedDirector] replaceScene:scene];
+//    exit(0);
 }
-
-
-#pragma mark - 私有方法
 
 #pragma mark - 玩家移动
 
@@ -131,13 +162,19 @@
 
 - (void)crashMonsters
 {
-    MonsterMan * theMonster;
-    for (int i = 0; i < [monsters count]; i ++) {
-        theMonster = [monsters objectAtIndex:i];
+    for (MonsterMan * theMonster in monsters) {
         if ([player isCrashedWithRect:[theMonster spriteRect]]) {
             [self gameOver];
         }
     }
+    
+//    MonsterMan * theMonster;
+//    for (int i = 0; i < [monsters count]; i ++) {
+//        theMonster = [monsters objectAtIndex:i];
+//        if ([player isCrashedWithRect:[theMonster spriteRect]]) {
+//            [self gameOver];
+//        }
+//    }
 }
 
 - (void)eatBeans
@@ -157,13 +194,24 @@
 
 - (void)updateMonsters:(ccTime)delta
 {
-    MonsterMan * theMonster;
-    for (int i = 0; i < [monsters count]; i ++) {
-        theMonster = [monsters objectAtIndex:i];
+    for (MonsterMan * theMonster in monsters) {
         [theMonster move];
     }
+    
+//    MonsterMan * theMonster;
+//    for (int i = 0; i < [monsters count]; i ++) {
+//        theMonster = [monsters objectAtIndex:i];
+//        [theMonster move];
+//    }
 }
 
+
+#pragma mark - pauseLayer delegate
+
+- (void)resumeGame
+{
+    [self gameStart];
+}
 
 
 @end

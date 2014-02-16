@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
 #import "TouchLayerDelegate.h"
 
 
+@class PauseLayer;
 @class TouchLayer;
 @class ControlNode;
 @class PlayerMan;
@@ -21,10 +21,12 @@
 @interface GameLayer : CCLayer<TouchLayerDelegate> {
     TouchLayer * theTouchLayer;
     ControlNode * theControNode;
+//    PauseLayer * thePauseLayer;
 }
 
 @property TouchLayer * theTouchLayer;
 @property ControlNode * theControNode;
+//@property PauseLayer * thePauseLayer;
 
 +(CCScene *)Scene;
 

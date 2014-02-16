@@ -119,7 +119,7 @@
         for (int i = 0; i < 20; i ++) {
             NSString * fileName = [NSString stringWithFormat:@"ghost-%d.png",i % 6 + 1];
             tempMonster = [[CCSprite alloc] initWithFile:fileName];
-            tempMonster.position = CGPointMake(22 + i * 28, -12);
+            tempMonster.position = CGPointMake(22 + i * 28, 18);
             [self addChild:tempMonster z:3];
             [monsters addObject:tempMonster];
         }
@@ -150,8 +150,8 @@
 
 - (void)jumpMonsters:(ccTime)delta
 {
-    CCMoveBy * moveUp = [CCMoveBy actionWithDuration:0.5 position:CGPointMake(0, 40)];
-    CCMoveBy * moveDown = [CCMoveBy actionWithDuration:0.5 position:CGPointMake(0, -40)];
+    CCMoveBy * moveUp = [CCMoveBy actionWithDuration:0.5 position:CGPointMake(0, 30)];
+    CCMoveBy * moveDown = [CCMoveBy actionWithDuration:0.5 position:CGPointMake(0, -30)];
     CCSequence * move = [CCSequence actions:moveUp,moveDown, nil];
     CCSprite * theMonster = [monsters objectAtIndex:theJumpMonster];
     [theMonster runAction:move];
