@@ -45,20 +45,17 @@
 		626997E8186C693800E48552 /* 说明.txt in Resources */ = {isa = PBXBuildFile; fileRef = 626997D3186C693800E48552 /* 说明.txt */; };
 		626997EB186C69E200E48552 /* StartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 626997EA186C69E200E48552 /* StartLayer.m */; };
 		6287118E1836584A00A66DA7 /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = 6287118D1836584A00A66DA7 /* Maps.m */; };
-		62949E9C1862E9A4008380CD /* pacman-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E8E1862E9A4008380CD /* pacman-hd.png */; };
-		62949E9D1862E9A4008380CD /* pac-man-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E8F1862E9A4008380CD /* pac-man-1-hd.png */; };
-		62949E9E1862E9A4008380CD /* pac-man-2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E901862E9A4008380CD /* pac-man-2-hd.png */; };
-		62949E9F1862E9A4008380CD /* pac-man-3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E911862E9A4008380CD /* pac-man-3-hd.png */; };
-		62949EA11862E9A4008380CD /* background-example.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E931862E9A4008380CD /* background-example.png */; };
-		62949EA21862E9A4008380CD /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E941862E9A4008380CD /* background-hd.png */; };
-		62949EA31862E9A4008380CD /* pause-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E951862E9A4008380CD /* pause-hd.png */; };
-		62949EA41862E9A4008380CD /* 未标题-1.psd in Resources */ = {isa = PBXBuildFile; fileRef = 62949E961862E9A4008380CD /* 未标题-1.psd */; };
-		62949EA51862E9A4008380CD /* 物件大小.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62949E971862E9A4008380CD /* 物件大小.txt */; };
-		62949EA71862E9A4008380CD /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E991862E9A4008380CD /* monster-hd.png */; };
-		62949EA81862E9A4008380CD /* monster-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E9A1862E9A4008380CD /* monster-1-hd.png */; };
-		62949EA91862E9A4008380CD /* monster-2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949E9B1862E9A4008380CD /* monster-2-hd.png */; };
-		62949EAB1862EA6A008380CD /* bean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62949EAA1862EA6A008380CD /* bean-hd.png */; };
-		62949EAD1862EBA1008380CD /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62949EAC1862EBA1008380CD /* map.txt */; };
+		62A81D9B18B08C64006ACE85 /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D8D18B08C64006ACE85 /* background-hd.png */; };
+		62A81D9C18B08C64006ACE85 /* bean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D8E18B08C64006ACE85 /* bean-hd.png */; };
+		62A81D9D18B08C64006ACE85 /* HP.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D8F18B08C64006ACE85 /* HP.png */; };
+		62A81D9E18B08C64006ACE85 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9018B08C64006ACE85 /* map.txt */; };
+		62A81D9F18B08C64006ACE85 /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9118B08C64006ACE85 /* monster-hd.png */; };
+		62A81DA018B08C64006ACE85 /* pac-man-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9218B08C64006ACE85 /* pac-man-1-hd.png */; };
+		62A81DA118B08C64006ACE85 /* pac-man-2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9318B08C64006ACE85 /* pac-man-2-hd.png */; };
+		62A81DA218B08C64006ACE85 /* pac-man-3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9418B08C64006ACE85 /* pac-man-3-hd.png */; };
+		62A81DA618B08C64006ACE85 /* pacman@2x-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */; };
+		62A81DA718B08C64006ACE85 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9918B08C64006ACE85 /* pause@2x.png */; };
+		62A81DA818B08C64006ACE85 /* 物件大小.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9A18B08C64006ACE85 /* 物件大小.txt */; };
 		62C03B97182F7F6B00CCA525 /* MonsterMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C03B96182F7F6B00CCA525 /* MonsterMan.m */; };
 		62C03B9A182F7FA900CCA525 /* PlayerMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C03B99182F7FA900CCA525 /* PlayerMan.m */; };
 		62C03B9D182FA2EE00CCA525 /* Things.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C03B9C182FA2EE00CCA525 /* Things.m */; };
@@ -261,20 +258,17 @@
 		626997EA186C69E200E48552 /* StartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartLayer.m; sourceTree = "<group>"; };
 		6287118C1836584A00A66DA7 /* Maps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Maps.h; path = ../Maps.h; sourceTree = "<group>"; };
 		6287118D1836584A00A66DA7 /* Maps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Maps.m; path = ../Maps.m; sourceTree = "<group>"; };
-		62949E8E1862E9A4008380CD /* pacman-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pacman-hd.png"; sourceTree = "<group>"; };
-		62949E8F1862E9A4008380CD /* pac-man-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-1-hd.png"; sourceTree = "<group>"; };
-		62949E901862E9A4008380CD /* pac-man-2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-2-hd.png"; sourceTree = "<group>"; };
-		62949E911862E9A4008380CD /* pac-man-3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-3-hd.png"; sourceTree = "<group>"; };
-		62949E931862E9A4008380CD /* background-example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-example.png"; sourceTree = "<group>"; };
-		62949E941862E9A4008380CD /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-hd.png"; sourceTree = "<group>"; };
-		62949E951862E9A4008380CD /* pause-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-hd.png"; sourceTree = "<group>"; };
-		62949E961862E9A4008380CD /* 未标题-1.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "未标题-1.psd"; sourceTree = "<group>"; };
-		62949E971862E9A4008380CD /* 物件大小.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "物件大小.txt"; sourceTree = "<group>"; };
-		62949E991862E9A4008380CD /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
-		62949E9A1862E9A4008380CD /* monster-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-1-hd.png"; sourceTree = "<group>"; };
-		62949E9B1862E9A4008380CD /* monster-2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-2-hd.png"; sourceTree = "<group>"; };
-		62949EAA1862EA6A008380CD /* bean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bean-hd.png"; sourceTree = "<group>"; };
-		62949EAC1862EBA1008380CD /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		62A81D8D18B08C64006ACE85 /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-hd.png"; sourceTree = "<group>"; };
+		62A81D8E18B08C64006ACE85 /* bean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bean-hd.png"; sourceTree = "<group>"; };
+		62A81D8F18B08C64006ACE85 /* HP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HP.png; sourceTree = "<group>"; };
+		62A81D9018B08C64006ACE85 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		62A81D9118B08C64006ACE85 /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
+		62A81D9218B08C64006ACE85 /* pac-man-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-1-hd.png"; sourceTree = "<group>"; };
+		62A81D9318B08C64006ACE85 /* pac-man-2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-2-hd.png"; sourceTree = "<group>"; };
+		62A81D9418B08C64006ACE85 /* pac-man-3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-3-hd.png"; sourceTree = "<group>"; };
+		62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pacman@2x-hd.png"; sourceTree = "<group>"; };
+		62A81D9918B08C64006ACE85 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		62A81D9A18B08C64006ACE85 /* 物件大小.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "物件大小.txt"; sourceTree = "<group>"; };
 		62C03B95182F7F6B00CCA525 /* MonsterMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterMan.h; sourceTree = "<group>"; };
 		62C03B96182F7F6B00CCA525 /* MonsterMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterMan.m; sourceTree = "<group>"; };
 		62C03B98182F7FA900CCA525 /* PlayerMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerMan.h; path = ../PlayerMan.h; sourceTree = "<group>"; };
@@ -609,9 +603,9 @@
 		621CF0331851F63F006F5E2F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				62A81D8C18B08C64006ACE85 /* V0-1-1-map */,
 				622180F8186D911E00030541 /* V0-1-1-pause */,
 				626997BB186C693800E48552 /* V0-1-1-start */,
-				62949E8D1862E9A4008380CD /* V0-1-3-MAP */,
 				62266153185EB20900D81719 /* V0-1-1-login */,
 				62266152185EB1F700D81719 /* V0-1-1-icon */,
 			);
@@ -703,25 +697,22 @@
 			path = start_button;
 			sourceTree = "<group>";
 		};
-		62949E8D1862E9A4008380CD /* V0-1-3-MAP */ = {
+		62A81D8C18B08C64006ACE85 /* V0-1-1-map */ = {
 			isa = PBXGroup;
 			children = (
-				62949EAC1862EBA1008380CD /* map.txt */,
-				62949EAA1862EA6A008380CD /* bean-hd.png */,
-				62949E8E1862E9A4008380CD /* pacman-hd.png */,
-				62949E8F1862E9A4008380CD /* pac-man-1-hd.png */,
-				62949E901862E9A4008380CD /* pac-man-2-hd.png */,
-				62949E911862E9A4008380CD /* pac-man-3-hd.png */,
-				62949E931862E9A4008380CD /* background-example.png */,
-				62949E941862E9A4008380CD /* background-hd.png */,
-				62949E951862E9A4008380CD /* pause-hd.png */,
-				62949E961862E9A4008380CD /* 未标题-1.psd */,
-				62949E971862E9A4008380CD /* 物件大小.txt */,
-				62949E991862E9A4008380CD /* monster-hd.png */,
-				62949E9A1862E9A4008380CD /* monster-1-hd.png */,
-				62949E9B1862E9A4008380CD /* monster-2-hd.png */,
+				62A81D8D18B08C64006ACE85 /* background-hd.png */,
+				62A81D8E18B08C64006ACE85 /* bean-hd.png */,
+				62A81D8F18B08C64006ACE85 /* HP.png */,
+				62A81D9018B08C64006ACE85 /* map.txt */,
+				62A81D9118B08C64006ACE85 /* monster-hd.png */,
+				62A81D9218B08C64006ACE85 /* pac-man-1-hd.png */,
+				62A81D9318B08C64006ACE85 /* pac-man-2-hd.png */,
+				62A81D9418B08C64006ACE85 /* pac-man-3-hd.png */,
+				62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */,
+				62A81D9918B08C64006ACE85 /* pause@2x.png */,
+				62A81D9A18B08C64006ACE85 /* 物件大小.txt */,
 			);
-			path = "V0-1-3-MAP";
+			path = "V0-1-1-map";
 			sourceTree = "<group>";
 		};
 		62F96052182CDE6800152AE2 = {
@@ -1301,57 +1292,54 @@
 				62F96085182CDE6800152AE2 /* cocos_icon.png in Resources */,
 				62F96077182CDE6800152AE2 /* cocos_Default@2x.png in Resources */,
 				626997DC186C693800E48552 /* ghost-2.png in Resources */,
-				62949EA31862E9A4008380CD /* pause-hd.png in Resources */,
-				62949EA41862E9A4008380CD /* 未标题-1.psd in Resources */,
+				62A81DA818B08C64006ACE85 /* 物件大小.txt in Resources */,
+				62A81D9D18B08C64006ACE85 /* HP.png in Resources */,
 				626997D5186C693800E48552 /* cloud-1.png in Resources */,
 				62218104186D911E00030541 /* pause-next-touched.png in Resources */,
 				62266156185EB21D00D81719 /* Icon.png in Resources */,
 				626997DF186C693800E48552 /* ghost-5.png in Resources */,
+				62A81D9B18B08C64006ACE85 /* background-hd.png in Resources */,
 				626997D6186C693800E48552 /* cloud-2.png in Resources */,
 				626997E4186C693800E48552 /* press-start-1.png in Resources */,
-				62949EAB1862EA6A008380CD /* bean-hd.png in Resources */,
-				62949EAD1862EBA1008380CD /* map.txt in Resources */,
 				62F96081182CDE6800152AE2 /* Icon-Small.png in Resources */,
 				626997BA186C5F9200E48552 /* PacManSettings.plist in Resources */,
 				62218100186D911E00030541 /* pause-background.png in Resources */,
 				626997DB186C693800E48552 /* ghost-1.png in Resources */,
 				626997E5186C693800E48552 /* sun.png in Resources */,
 				626997E7186C693800E48552 /* topic.png in Resources */,
-				62949E9D1862E9A4008380CD /* pac-man-1-hd.png in Resources */,
+				62A81D9C18B08C64006ACE85 /* bean-hd.png in Resources */,
 				62F9607D182CDE6800152AE2 /* Icon-72.png in Resources */,
-				62949E9E1862E9A4008380CD /* pac-man-2-hd.png in Resources */,
 				62218101186D911E00030541 /* pause-menu-still.png in Resources */,
+				62A81DA718B08C64006ACE85 /* pause@2x.png in Resources */,
 				626997D7186C693800E48552 /* cloud-3.png in Resources */,
 				62F96075182CDE6800152AE2 /* cocos_Default.png in Resources */,
-				62949EA11862E9A4008380CD /* background-example.png in Resources */,
-				62949EA71862E9A4008380CD /* monster-hd.png in Resources */,
-				62949EA21862E9A4008380CD /* background-hd.png in Resources */,
+				62A81DA018B08C64006ACE85 /* pac-man-1-hd.png in Resources */,
 				62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */,
 				621EB9B3186E798A009E0E73 /* pause-menu-touched.png in Resources */,
 				62218106186D911E00030541 /* pause-replay-touched.png in Resources */,
 				626997E6186C693800E48552 /* sunny.png in Resources */,
+				62A81DA618B08C64006ACE85 /* pacman@2x-hd.png in Resources */,
 				62218103186D911E00030541 /* pause-next-still.png in Resources */,
 				62F9607F182CDE6800152AE2 /* Icon-Small-50.png in Resources */,
+				62A81DA218B08C64006ACE85 /* pac-man-3-hd.png in Resources */,
 				626997E0186C693800E48552 /* ghost-6.png in Resources */,
 				626997D4186C693800E48552 /* blue-sky.png in Resources */,
 				626997E3186C693800E48552 /* press-start-2.png in Resources */,
+				62A81D9E18B08C64006ACE85 /* map.txt in Resources */,
 				626997D8186C693800E48552 /* cloud-4.png in Resources */,
-				62949EA81862E9A4008380CD /* monster-1-hd.png in Resources */,
-				62949E9C1862E9A4008380CD /* pacman-hd.png in Resources */,
-				62949EA91862E9A4008380CD /* monster-2-hd.png in Resources */,
 				626997E1186C693800E48552 /* mountains.png in Resources */,
 				626997DA186C693800E48552 /* cloud-6.png in Resources */,
 				62F9608A182CDE6800152AE2 /* iTunesArtwork in Resources */,
-				62949E9F1862E9A4008380CD /* pac-man-3-hd.png in Resources */,
 				62F96083182CDE6800152AE2 /* Icon-Small@2x.png in Resources */,
 				626997E8186C693800E48552 /* 说明.txt in Resources */,
+				62A81D9F18B08C64006ACE85 /* monster-hd.png in Resources */,
 				62266157185EB21D00D81719 /* Icon@2x.png in Resources */,
 				62F9607B182CDE6800152AE2 /* Default-Landscape~ipad.png in Resources */,
 				62218105186D911E00030541 /* pause-replay-still.png in Resources */,
-				62949EA51862E9A4008380CD /* 物件大小.txt in Resources */,
 				62F96079182CDE6800152AE2 /* cocos_Default-568h@2x.png in Resources */,
 				626997E2186C693800E48552 /* example.psd in Resources */,
 				626997DD186C693800E48552 /* ghost-3.png in Resources */,
+				62A81DA118B08C64006ACE85 /* pac-man-2-hd.png in Resources */,
 				626997D9186C693800E48552 /* cloud-5.png in Resources */,
 				626997DE186C693800E48552 /* ghost-4.png in Resources */,
 				62F96087182CDE6800152AE2 /* cocos_icon@2x.png in Resources */,
