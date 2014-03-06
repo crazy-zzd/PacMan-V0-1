@@ -16,16 +16,7 @@
 
 @class GameLayer;
 
-//enum tagsOfSpr {
-//    tagUp = 1,
-//    tagDown,
-//    tagLeft,
-//    tagRight
-//};
-
-
 @interface TouchLayer : CCLayer {
-//    CGRect upRect,downRect,leftRect,rightRect;
     CGPoint nowPosition;
 }
 

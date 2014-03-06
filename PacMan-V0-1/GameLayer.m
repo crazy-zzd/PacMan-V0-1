@@ -20,7 +20,6 @@
 
 @synthesize theTouchLayer;
 @synthesize theControNode;
-//@synthesize thePauseLayer;
 
 #pragma mark - 创建场景
 + (CCScene *)Scene
@@ -31,18 +30,15 @@
     GameLayer * gameLayer = [GameLayer node];
     TouchLayer * touchLayer = [TouchLayer node];
     ControlNode * controlNode = [ControlNode node];
-//    PauseLayer * pauseLayer = [PauseLayer node];
     
     //把触摸层和控制层归到游戏层下
     gameLayer.theTouchLayer = touchLayer;
     gameLayer.theControNode = controlNode;
-//    gameLayer.thePauseLayer = pauseLayer;
     
     //把三个层添加到场景里
     [scene addChild:gameLayer z:0 tag:TAG_GAMELAYER];
     [scene addChild:touchLayer z:1 tag:TAG_TOUCHLAYER];
     [scene addChild:controlNode z:0 tag:TAG_CONTROLNODE];
-//    [scene addChild:pauseLayer z:0 tag:111];
     
     //三个层的初始化
     [gameLayer viewDidLoad];
@@ -153,28 +149,6 @@
 //    ccDrawPoint(ccp(262.5, 112.5));//位置
 //}
 //
-//测试动画
-//- (void)testAnimation
-//{
-//    CCSprite * theTestSprite = [[CCSprite alloc] initWithFile:@"pacman@2x.png"];
-//    NSMutableArray * theTestFrames = [NSMutableArray arrayWithCapacity:3];
-//    for (int i = 1; i <= 3; i ++) {
-//        NSString * fileName = [NSString stringWithFormat:@"pac-man-%d.png",i];
-//        CCTexture2D * texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
-//        CGSize texSize = texture.contentSize;
-//        CGRect texRect = CGRectMake(0, 0, texSize.width, texSize.height);
-//        
-//        CCSpriteFrame * frame = [CCSpriteFrame frameWithTexture:texture rect:texRect];
-//        [theTestFrames addObject:frame];
-//    }
-//    CCAnimation * anim = [CCAnimation animationWithSpriteFrames:theTestFrames delay:0.08f];
-//    
-//    CCAnimate * animate = [CCAnimate actionWithAnimation:anim];
-//    CCRepeatForever * repeat = [CCRepeatForever actionWithAction:animate];
-//    [theTestSprite runAction:repeat];
-//    [self addChild:theTestSprite];
-//    theTestSprite.position = CGPointMake(100, 100);
-//    theTestSprite.rotation = 90;
-//}
+
 
 @end

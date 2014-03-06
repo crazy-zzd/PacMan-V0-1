@@ -63,8 +63,6 @@
 - (IBAction)onPressNext:(id)sender
 {
     [self.delegate resumeGame];
-//    [self removeFromParentAndCleanup:YES];
-//    [[CCDirector sharedDirector] popScene];
 }
 
 @end

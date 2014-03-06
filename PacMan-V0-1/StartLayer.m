@@ -40,58 +40,31 @@
         
         //云
         clounds = [[NSMutableArray alloc] initWithCapacity:6];
+        CGPoint cloudsPosition[6];
+        cloudsPosition[0] = CGPointMake(67.5, 33);
+        cloudsPosition[1] = CGPointMake(258, 198);
+        cloudsPosition[2] = CGPointMake(550, 28);
+        cloudsPosition[3] = CGPointMake(800, 131);
+        cloudsPosition[4] = CGPointMake(1015, 183);
+        cloudsPosition[5] = CGPointMake(1038, 65);
+        
+        GLfloat cloudsTime[6] = { 1.3, 1.7, 1.0, 1.2, 0.8, 1.4};
+        
+        CCMoveBy * cloudMove;
+        CCRepeatForever * repeatCloud;
+        
         CCSprite * tempCloud;
         for (int i = 0; i < 6; i ++) {
             NSString * fileName = [NSString stringWithFormat:@"cloud-%d.png",i + 1];
             tempCloud = [[CCSprite alloc] initWithFile:fileName];
+            tempCloud.position = cloudsPosition[i];
+            tempCloud.position = CGPointMake(tempCloud.position.x / 2,SCREEN_HEIGHT - tempCloud.position.y / 2);
+            cloudMove = [CCMoveBy actionWithDuration:cloudsTime[i] position:CGPointMake(30, 0)];
+            repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
+            [tempCloud runAction:repeatCloud];
+            
             [self addChild:tempCloud z:2];
             [clounds addObject:tempCloud];
-        }
-
-        CCMoveBy * cloudMove;
-        CCRepeatForever * repeatCloud;
-        
-        tempCloud = [clounds objectAtIndex:0];
-        tempCloud.position = CGPointMake(67.5, 33);
-        cloudMove = [CCMoveBy actionWithDuration:1.3 position:CGPointMake(30, 0)];
-        repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
-        [tempCloud runAction:repeatCloud];
-        
-        tempCloud = [clounds objectAtIndex:1];
-        tempCloud.position = CGPointMake(258, 198);
-        tempCloud.zOrder = 0;
-        cloudMove = [CCMoveBy actionWithDuration:1.7 position:CGPointMake(30, 0)];
-        repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
-        [tempCloud runAction:repeatCloud];
-        
-        
-        tempCloud = [clounds objectAtIndex:2];
-        tempCloud.position = CGPointMake(550, 28);
-        cloudMove = [CCMoveBy actionWithDuration:1.0 position:CGPointMake(30, 0)];
-        repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
-        [tempCloud runAction:repeatCloud];
-        
-        tempCloud = [clounds objectAtIndex:3];
-        tempCloud.position = CGPointMake(800, 131);
-        cloudMove = [CCMoveBy actionWithDuration:1.2 position:CGPointMake(30, 0)];
-        repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
-        [tempCloud runAction:repeatCloud];
-        
-        tempCloud = [clounds objectAtIndex:4];
-        tempCloud.position = CGPointMake(1015, 183);
-        cloudMove = [CCMoveBy actionWithDuration:0.8 position:CGPointMake(30, 0)];
-        repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
-        [tempCloud runAction:repeatCloud];
-        
-        tempCloud = [clounds objectAtIndex:5];
-        tempCloud.position = CGPointMake(1038, 65);
-        cloudMove = [CCMoveBy actionWithDuration:1.4 position:CGPointMake(30, 0)];
-        repeatCloud = [CCRepeatForever actionWithAction:cloudMove];
-        [tempCloud runAction:repeatCloud];
-        
-        for (int i = 0; i < 6; i ++) {
-            tempCloud = [clounds objectAtIndex:i];
-            tempCloud.position = CGPointMake(tempCloud.position.x / 2,SCREEN_HEIGHT - tempCloud.position.y / 2);
         }
         
         //标题

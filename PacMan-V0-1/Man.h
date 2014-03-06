@@ -25,11 +25,7 @@
     
 }
 
-//@property int nowDirection;
-
 -(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;
-
--(void)move;
 
 -(void)startMove;
 

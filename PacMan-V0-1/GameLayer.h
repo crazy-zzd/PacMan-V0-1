@@ -21,12 +21,10 @@
 @interface GameLayer : CCLayer<TouchLayerDelegate> {
     TouchLayer * theTouchLayer;
     ControlNode * theControNode;
-//    PauseLayer * thePauseLayer;
 }
 
 @property TouchLayer * theTouchLayer;
 @property ControlNode * theControNode;
-//@property PauseLayer * thePauseLayer;
 
 +(CCScene *)Scene;
 

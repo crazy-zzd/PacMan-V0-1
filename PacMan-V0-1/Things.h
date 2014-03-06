@@ -13,7 +13,6 @@
 @class Maps;
 
 @interface Things : CCNode {
-//    CGPoint pointPosition;
     CCSprite * sprite;
     
     int length;

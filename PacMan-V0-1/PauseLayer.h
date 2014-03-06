@@ -18,7 +18,6 @@
 
 @property id<PauseLayerDelegate> delegate;
 
-//- (void)resumeGame;
 
 + (CCScene * )Scene;
 

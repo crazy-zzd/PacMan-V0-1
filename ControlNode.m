@@ -67,7 +67,7 @@
     beans = [[NSMutableArray alloc] init];
     for (int x = 0; x < MAP_WIDTH_POINT - 1; x ++) {
         for (int y = 0; y < MAP_HEIGTH_POINT - 1; y ++) {
-            if (!([theMap isWallWithPointPosition:CGPointMake(x, y)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y) ]||[theMap isWallWithPointPosition:CGPointMake(x, y +1)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y + 1)])) {
+            if (!([theMap isWallWithPointPosition:CGPointMake(x, y)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y) ]||[theMap isWallWithPointPosition:CGPointMake(x, y + 1)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y + 1)])) {
                 GLfloat theX = 0, theY = 0;
                 theX = PLAYVIEW_X + POINT_LENGTH * (x + 1);
                 theY = PLAYVIEW_Y + POINT_LENGTH * (y + 1);
@@ -94,7 +94,6 @@
 
 - (void)moveWithDirection:(int)theDirection
 {
-//    player.nowDirection = theDirection;
     [player setDirectionAndMove:theDirection];
 }
 
@@ -122,7 +121,6 @@
 {
     stateNow = gamePause;
     [self unschedule:@selector(updatePlayer:)];
-    [self unschedule:@selector(updateMonsters:)];
     
     PauseLayer * thePauseLayer = [PauseLayer node];
     thePauseLayer.delegate = self;
@@ -144,24 +142,19 @@
     }
     
     [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
-    [self schedule:@selector(updateMonsters:) interval:1.0/MONSTERS_SPEED];
 
 }
 
 - (void)gameOver
 {
-//    CCScene * scene = [StartLayer Scene];
-//    [[CCDirector sharedDirector] replaceScene:scene];
     CCScene * scene = [GameLayer Scene];
     [[CCDirector sharedDirector] replaceScene:scene];
-//    exit(0);
 }
 
 #pragma mark - 玩家移动
 
 - (void)updatePlayer:(ccTime)delta
 {
-//    [player move];
     [self crashMonsters];
     [self eatBeans];
 }
@@ -173,14 +166,6 @@
             [self gameOver];
         }
     }
-    
-//    MonsterMan * theMonster;
-//    for (int i = 0; i < [monsters count]; i ++) {
-//        theMonster = [monsters objectAtIndex:i];
-//        if ([player isCrashedWithRect:[theMonster spriteRect]]) {
-//            [self gameOver];
-//        }
-//    }
 }
 
 - (void)eatBeans
@@ -198,18 +183,6 @@
     }
 }
 
-- (void)updateMonsters:(ccTime)delta
-{
-    for (MonsterMan * theMonster in monsters) {
-//        [theMonster move];
-    }
-    
-//    MonsterMan * theMonster;
-//    for (int i = 0; i < [monsters count]; i ++) {
-//        theMonster = [monsters objectAtIndex:i];
-//        [theMonster move];
-//    }
-}
 
 
 #pragma mark - pauseLayer delegate

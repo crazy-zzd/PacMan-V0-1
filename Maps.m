@@ -55,38 +55,6 @@ static Maps * sharedMap = nil;
     return theCentrePosition;
 }
 
-
-//给出中心点的图坐标跟长度，还有移动的方向，算出是否碰撞到墙壁
-- (BOOL)isCrashedWallWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withDirection:(int)theDirection
-{
-
-    CGRect theMainRect;
-    theMainRect = CGRectMake(thePosition.x - length * POINT_LENGTH * 0.5, thePosition.y - length * POINT_LENGTH * 0.5, length * POINT_LENGTH, length * POINT_LENGTH);
-    
-    //先判断有没有走出边界
-    if ([self isCrashedBoundaryWithRect:theMainRect]) {
-        return YES;
-    }
-    
-    //然后找出所有的边界的格子，看看是否是墙，然后会不会跟角色重合
-    CGPoint beginPointPositon = [self getPointPositionFromCentrePosition:theMainRect.origin];
-    
-    for (int i = beginPointPositon.x; i <= beginPointPositon.x + length; i ++ ) {
-        for (int j = beginPointPositon.y; j <= beginPointPositon.y + length; j ++) {
-            if (pointMap[i][j] == 1) {
-                CGRect theRect = [self getRectFromPointPosition:CGPointMake(i, j)];
-                if (CGRectIntersectsRect(theMainRect, theRect)) {
-                    return YES;
-                }
-            }
-        }
-    }
-    
-    return NO;
-    
-
-}
-
 //给出中心图坐标，长度，第一方向，第二方向，返回一个数据包，分别是两个CGPoint，两个目的地
 - (NSArray * )moveWithCentrePosition:(CGPoint)theCentrePosition withLengthPoint:(int)length withFirstDirection:(int)theFirstDirection withSecondDirection:(int)theSecondDirection
 {
@@ -138,12 +106,6 @@ static Maps * sharedMap = nil;
             return [NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSValue valueWithCGPoint:first], [NSValue valueWithCGPoint:second], nil];
         }
     }
-    
-    
-//    NSValue * firstPosition = [NSValue valueWithCGPoint:first];
-//    NSValue * secondPosition = [NSValue valueWithCGPoint:second];
-//    NSArray * result = [NSArray arrayWithObjects:firstPosition, secondPosition, nil];
-//    return result;
 }
 
 #pragma mark - 私有方法
@@ -151,22 +113,17 @@ static Maps * sharedMap = nil;
 #pragma mark - make maps
 - (void)handleMap
 {
-
     NSError *error;
     NSString * textFileContents = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"map" ofType:@"txt"] encoding:NSUTF8StringEncoding error:& error]; 
     
     if (textFileContents == nil) {
-        
-        // an error occurred
         
         NSLog(@"Error reading text file. %@", [error localizedFailureReason]);
         
     }
     
     NSArray *lines = [textFileContents componentsSeparatedByString:@"\n"];
-    
-//    NSLog(@"Number of lines in the file:%d", [lines count] );
-//    NSLog(@"%@",[lines objectAtIndex:0]);
+
     NSString * theLine;
     char theChar;
     for (int i = 0; i < MAP_HEIGTH_POINT; i ++) {
@@ -224,15 +181,6 @@ static Maps * sharedMap = nil;
     }
     return theRightUpPointPosition;
 }
-
-//通过一个点坐标得到矩形
-- (CGRect)getRectFromPointPosition:(CGPoint) thePointPosition
-{
-    CGPoint theCentrePosition = [self getCentrePositionFromPointPosition:thePointPosition withLengthPoint:1];
-    CGRect theResultRect = CGRectMake(theCentrePosition.x - 0.5 * POINT_LENGTH, theCentrePosition.y - 0.5 * POINT_LENGTH, POINT_LENGTH, POINT_LENGTH);
-    return theResultRect;
-}
-
 
 
 #pragma mark - move
@@ -358,15 +306,6 @@ static Maps * sharedMap = nil;
         return NO;
     }
     return YES;
-}
-//判断矩形是不是到达地图边界了
-- (BOOL)isCrashedBoundaryWithRect:(CGRect)theRect
-{
-    BOOL leftBoundary = theRect.origin.x < PLAYVIEW_X;
-    BOOL downBoundary = theRect.origin.y < PLAYVIEW_Y;
-    BOOL rightBoundary = theRect.origin.x + theRect.size.width > PLAYVIEW_X + MAP_WIDTH_POINT * POINT_LENGTH;
-    BOOL upBoundary = theRect.origin.y + theRect.size.height > PLAYVIEW_Y + MAP_HEIGTH_POINT * POINT_LENGTH;
-    return leftBoundary || downBoundary || rightBoundary || upBoundary;
 }
 
 

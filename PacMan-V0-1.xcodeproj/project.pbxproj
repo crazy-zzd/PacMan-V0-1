@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6219FDF218C867DA008020B0 /* pac-man-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6219FDEE18C867DA008020B0 /* pac-man-1-hd.png */; };
+		6219FDF318C867DA008020B0 /* pac-man-2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6219FDEF18C867DA008020B0 /* pac-man-2-hd.png */; };
+		6219FDF418C867DA008020B0 /* pac-man-3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6219FDF018C867DA008020B0 /* pac-man-3-hd.png */; };
+		6219FDF518C867DA008020B0 /* pac-man-4-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6219FDF118C867DA008020B0 /* pac-man-4-hd.png */; };
 		621EB9B3186E798A009E0E73 /* pause-menu-touched.png in Resources */ = {isa = PBXBuildFile; fileRef = 621EB9B2186E798A009E0E73 /* pause-menu-touched.png */; };
 		622180F4186D24CA00030541 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622180F3186D24CA00030541 /* IntroLayer.m */; };
 		622180F7186D90C500030541 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622180F6186D90C500030541 /* PauseLayer.m */; };
@@ -48,9 +52,6 @@
 		62A81D9D18B08C64006ACE85 /* HP.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D8F18B08C64006ACE85 /* HP.png */; };
 		62A81D9E18B08C64006ACE85 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9018B08C64006ACE85 /* map.txt */; };
 		62A81D9F18B08C64006ACE85 /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9118B08C64006ACE85 /* monster-hd.png */; };
-		62A81DA018B08C64006ACE85 /* pac-man-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9218B08C64006ACE85 /* pac-man-1-hd.png */; };
-		62A81DA118B08C64006ACE85 /* pac-man-2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9318B08C64006ACE85 /* pac-man-2-hd.png */; };
-		62A81DA218B08C64006ACE85 /* pac-man-3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9418B08C64006ACE85 /* pac-man-3-hd.png */; };
 		62A81DA618B08C64006ACE85 /* pacman@2x-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */; };
 		62A81DA718B08C64006ACE85 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9918B08C64006ACE85 /* pause@2x.png */; };
 		62A81DA818B08C64006ACE85 /* 物件大小.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62A81D9A18B08C64006ACE85 /* 物件大小.txt */; };
@@ -214,6 +215,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6219FDEE18C867DA008020B0 /* pac-man-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-1-hd.png"; sourceTree = "<group>"; };
+		6219FDEF18C867DA008020B0 /* pac-man-2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-2-hd.png"; sourceTree = "<group>"; };
+		6219FDF018C867DA008020B0 /* pac-man-3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-3-hd.png"; sourceTree = "<group>"; };
+		6219FDF118C867DA008020B0 /* pac-man-4-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-4-hd.png"; sourceTree = "<group>"; };
 		621EB9B2186E798A009E0E73 /* pause-menu-touched.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-menu-touched.png"; sourceTree = "<group>"; };
 		621EB9B5186E9F09009E0E73 /* PauseLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayerDelegate.h; path = ../PauseLayerDelegate.h; sourceTree = "<group>"; };
 		622180F2186D24CA00030541 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroLayer.h; path = ../IntroLayer.h; sourceTree = "<group>"; };
@@ -262,9 +267,6 @@
 		62A81D8F18B08C64006ACE85 /* HP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HP.png; sourceTree = "<group>"; };
 		62A81D9018B08C64006ACE85 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		62A81D9118B08C64006ACE85 /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
-		62A81D9218B08C64006ACE85 /* pac-man-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-1-hd.png"; sourceTree = "<group>"; };
-		62A81D9318B08C64006ACE85 /* pac-man-2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-2-hd.png"; sourceTree = "<group>"; };
-		62A81D9418B08C64006ACE85 /* pac-man-3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac-man-3-hd.png"; sourceTree = "<group>"; };
 		62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pacman@2x-hd.png"; sourceTree = "<group>"; };
 		62A81D9918B08C64006ACE85 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
 		62A81D9A18B08C64006ACE85 /* 物件大小.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "物件大小.txt"; sourceTree = "<group>"; };
@@ -602,6 +604,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6219FDED18C867DA008020B0 /* PACKMAN */ = {
+			isa = PBXGroup;
+			children = (
+				6219FDEE18C867DA008020B0 /* pac-man-1-hd.png */,
+				6219FDEF18C867DA008020B0 /* pac-man-2-hd.png */,
+				6219FDF018C867DA008020B0 /* pac-man-3-hd.png */,
+				6219FDF118C867DA008020B0 /* pac-man-4-hd.png */,
+			);
+			path = PACKMAN;
+			sourceTree = "<group>";
+		};
 		621CF0331851F63F006F5E2F /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,14 +715,12 @@
 		62A81D8C18B08C64006ACE85 /* V0-1-1-map */ = {
 			isa = PBXGroup;
 			children = (
+				6219FDED18C867DA008020B0 /* PACKMAN */,
 				62A81D8D18B08C64006ACE85 /* background-hd1.png */,
 				62A81D8E18B08C64006ACE85 /* bean-hd.png */,
 				62A81D8F18B08C64006ACE85 /* HP.png */,
 				62A81D9018B08C64006ACE85 /* map.txt */,
 				62A81D9118B08C64006ACE85 /* monster-hd.png */,
-				62A81D9218B08C64006ACE85 /* pac-man-1-hd.png */,
-				62A81D9318B08C64006ACE85 /* pac-man-2-hd.png */,
-				62A81D9418B08C64006ACE85 /* pac-man-3-hd.png */,
 				62AB808118BA09B60025EA9F /* background-hd.png */,
 				62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */,
 				62A81D9918B08C64006ACE85 /* pause@2x.png */,
@@ -1315,16 +1326,18 @@
 				62A81DA718B08C64006ACE85 /* pause@2x.png in Resources */,
 				626997D7186C693800E48552 /* cloud-3.png in Resources */,
 				62F96075182CDE6800152AE2 /* cocos_Default.png in Resources */,
-				62A81DA018B08C64006ACE85 /* pac-man-1-hd.png in Resources */,
 				62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */,
 				621EB9B3186E798A009E0E73 /* pause-menu-touched.png in Resources */,
 				62218106186D911E00030541 /* pause-replay-touched.png in Resources */,
 				626997E6186C693800E48552 /* sunny.png in Resources */,
+				6219FDF218C867DA008020B0 /* pac-man-1-hd.png in Resources */,
 				62A81DA618B08C64006ACE85 /* pacman@2x-hd.png in Resources */,
 				62AB808218BA09B60025EA9F /* background-hd.png in Resources */,
+				6219FDF318C867DA008020B0 /* pac-man-2-hd.png in Resources */,
+				6219FDF518C867DA008020B0 /* pac-man-4-hd.png in Resources */,
 				62218103186D911E00030541 /* pause-next-still.png in Resources */,
 				62F9607F182CDE6800152AE2 /* Icon-Small-50.png in Resources */,
-				62A81DA218B08C64006ACE85 /* pac-man-3-hd.png in Resources */,
+				6219FDF418C867DA008020B0 /* pac-man-3-hd.png in Resources */,
 				626997E0186C693800E48552 /* ghost-6.png in Resources */,
 				626997D4186C693800E48552 /* blue-sky.png in Resources */,
 				626997E3186C693800E48552 /* press-start-2.png in Resources */,
@@ -1343,7 +1356,6 @@
 				62F96079182CDE6800152AE2 /* cocos_Default-568h@2x.png in Resources */,
 				626997E2186C693800E48552 /* example.psd in Resources */,
 				626997DD186C693800E48552 /* ghost-3.png in Resources */,
-				62A81DA118B08C64006ACE85 /* pac-man-2-hd.png in Resources */,
 				626997D9186C693800E48552 /* cloud-5.png in Resources */,
 				626997DE186C693800E48552 /* ghost-4.png in Resources */,
 				62F96087182CDE6800152AE2 /* cocos_icon@2x.png in Resources */,

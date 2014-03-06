@@ -28,7 +28,6 @@
 
 - (void)setDirectionAndMove:(int)theDirection
 {
-//    nextDirection = theDirection;
     NSArray * directions = [theMap moveWithCentrePosition:[self mapPosition] withLengthPoint:length withFirstDirection:nowDirection withSecondDirection:theDirection];
     int numOfDirection = [(NSNumber *)[directions objectAtIndex:0] intValue];
     if (numOfDirection == 0) {
@@ -61,64 +60,12 @@
     
 }
 
-- (void)move
-{
-    if (nowDirection != nextDirection) {
-        if ([self moveWithDirection:nextDirection]) {
-            [self changeSpriteDirection];
-            nowDirection = nextDirection;
-            return;
-        }
-    }
-    
-    [self moveWithDirection:nowDirection];
-    
-}
-
 - (void)startMove
 {
     [self setDirectionAndMove:nowDirection];
 }
 
 #pragma mark - 私有方法
-
-- (BOOL)moveWithDirection:(int)theDirection
-{
-    
-    CGPoint movement;
-    switch (theDirection) {
-        case upDirection:
-            movement = UP_MOVEMENT;
-            break;
-        case downDirection:
-            movement = DOWN_MOVEMENT;
-            break;
-        case leftDirection:
-            movement = LEFT_MOVEMENT;
-            break;
-        case rightDirection:
-            movement = RIGHT_MOVEMENT;
-            break;
-        default:
-            break;
-    }
-    CGPoint oldPosition = [self mapPosition];
-    CGPoint newPosition = ccpAdd([self mapPosition], movement);
-    [self setPosition:newPosition];
-    
-    if ([theMap isCrashedWallWithCentrePosition:[self mapPosition] withLengthPoint:length withDirection:theDirection]) {
-        state = standing;
-        [self setPosition:oldPosition];
-        return NO;
-    }
-    else{
-        state = moving;
-        return YES;
-    }
-    
-    
-    return NO;
-}
 
 - (void)changeSpriteDirection
 {
@@ -128,23 +75,6 @@
     }
     sprite.rotation = [sprite rotation] + theRotation;
 }
-
-//- (void)handleWithPosition
-//{
-//    int theX = [self changeFloat:[self mapPosition].x];
-//    int theY = [self changeFloat:[self mapPosition].y];
-//    [self setPosition:CGPointMake(theX, theY)];
-//}
-
-//- (int)changeFloat:(CGFloat)theNum
-//{
-//    if (theNum - (int)theNum > 0.5) {
-//        return (int)theNum + 1;
-//    }
-//    return (int)theNum;
-//}
-
-
 
 //通过两个图坐标，得出CCAction用来移动
 - (CCMoveBy *)movebyWith:(CGPoint)theFirstPosition and:(CGPoint)theSecondPosition
