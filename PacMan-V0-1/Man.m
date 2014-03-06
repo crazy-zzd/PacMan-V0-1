@@ -26,9 +26,39 @@
     return self;
 }
 
-- (void)setDirection:(int)theDirection
+- (void)setDirectionAndMove:(int)theDirection
 {
-    nextDirection = theDirection;
+//    nextDirection = theDirection;
+    NSArray * directions = [theMap moveWithCentrePosition:[self mapPosition] withLengthPoint:length withFirstDirection:nowDirection withSecondDirection:theDirection];
+    int numOfDirection = [(NSNumber *)[directions objectAtIndex:0] intValue];
+    if (numOfDirection == 0) {
+        state = standing;
+        return;
+    }
+    state = moving;
+    
+    if (numOfDirection == 1) {
+        firstPosition = [(NSValue *)[directions objectAtIndex:1] CGPointValue];
+        CCSequence * sequence = [CCSequence actions:[self movebyWith:[self mapPosition] and:firstPosition], nil];
+        [[self sprite] stopAction:[[self sprite] getActionByTag:TAG_SEQUENCE]];
+        [[self sprite] runAction:sequence];
+        [sequence setTag:TAG_SEQUENCE];
+        return;
+    }
+    
+    if (numOfDirection == 2) {
+        firstPosition = [(NSValue *)[directions objectAtIndex:1] CGPointValue];
+        secondPosition = [(NSValue *)[directions objectAtIndex:2] CGPointValue];
+        CCCallFunc * theSecondeMove = [CCCallFunc actionWithTarget:self selector:@selector(secondMove)];
+        CCSequence * sequence = [CCSequence actions:[self movebyWith:[self mapPosition] and:firstPosition], theSecondeMove, nil];
+        [[self sprite] stopAction:[[self sprite] getActionByTag:TAG_SEQUENCE]];
+        [[self sprite] runAction:sequence];
+        [sequence setTag:TAG_SEQUENCE];
+        return;
+    }
+    
+    return;
+    
 }
 
 - (void)move
@@ -45,10 +75,16 @@
     
 }
 
+- (void)startMove
+{
+    [self setDirectionAndMove:nowDirection];
+}
+
 #pragma mark - 私有方法
 
 - (BOOL)moveWithDirection:(int)theDirection
 {
+    
     CGPoint movement;
     switch (theDirection) {
         case upDirection:
@@ -79,6 +115,8 @@
         state = moving;
         return YES;
     }
+    
+    
     return NO;
 }
 
@@ -105,6 +143,50 @@
 //    }
 //    return (int)theNum;
 //}
+
+
+
+//通过两个图坐标，得出CCAction用来移动
+- (CCMoveBy *)movebyWith:(CGPoint)theFirstPosition and:(CGPoint)theSecondPosition
+{
+    CGPoint thePosition = ccpSub(theSecondPosition, theFirstPosition);
+    float distence;
+    
+    if (thePosition.x < 0) {
+        distence = - thePosition.x;
+        nextDirection = leftDirection;
+    }
+    if (thePosition.x > 0) {
+        distence = thePosition.x;
+        nextDirection = rightDirection;
+    }
+    if (thePosition.y < 0) {
+        distence = - thePosition.y;
+        nextDirection = downDirection;
+    }
+    if (thePosition.y > 0) {
+        distence = thePosition.y;
+        nextDirection = upDirection;
+    }
+    
+    [self changeSpriteDirection];
+    nowDirection = nextDirection;
+    
+    CCMoveBy * move = [CCMoveBy actionWithDuration:distence/MOVING_SPEED position:thePosition];
+    return move;
+}
+
+//第二次移动，需要修改方向、修改图标方向、增加动作
+- (void)secondMove
+{
+    [self changeSpriteDirection];
+    CCSequence * sequence = [CCSequence actions:[self movebyWith:firstPosition and:secondPosition], nil];
+    [[self sprite] runAction:sequence];
+    [[self sprite] stopAction:[[self sprite] getActionByTag:TAG_SEQUENCE]];
+//    [[self sprite] runAction:sequence];
+    [sequence setTag:TAG_SEQUENCE];
+    return;
+}
 
 
 @end

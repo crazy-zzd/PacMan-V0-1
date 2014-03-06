@@ -15,7 +15,7 @@
 #define TAG_PAUSELAYER 103
 
 //游戏界面的左下角坐标
-#define PLAYVIEW_X 3.5
+#define PLAYVIEW_X 5
 #define PLAYVIEW_Y 60
 
 
@@ -39,16 +39,21 @@
 #define PNG_PAUSE @"pause.png"
 
 //Man.m 移动
-#define MOVEMENT 2
+#define MOVEMENT 1
 #define UP_MOVEMENT CGPointMake(0 ,MOVEMENT)
 #define DOWN_MOVEMENT CGPointMake(0 ,-MOVEMENT)
 #define LEFT_MOVEMENT CGPointMake(-MOVEMENT ,0)
 #define RIGHT_MOVEMENT CGPointMake(+MOVEMENT ,0)
 
+//Man.m 动作序列
+#define TAG_SEQUENCE 21
+#define TAG_SEQUENCE1 22
 
 //移动速度
 #define MONSTERS_SPEED 100
 #define PLAYER_SPEED 100
+
+#define MOVING_SPEED 100
 
 //Monster初始位置、方向
 #define MONSTER_POINTPOSITION1 CGPointMake(26, 9)
@@ -83,8 +88,8 @@ enum direction {
     upDirection = 1,
     rightDirection,
     downDirection,
-    leftDirection,
-    noDirection
+    leftDirection
+//    noDirection
 };
 
 enum manState {

@@ -18,6 +18,9 @@
     int nowDirection;
     int nextDirection;
     
+    CGPoint firstPosition;
+    CGPoint secondPosition;
+    
     int state;
     
 }
@@ -28,7 +31,9 @@
 
 -(void)move;
 
--(void)setDirection:(int)theDirection;
+-(void)startMove;
+
+-(void)setDirectionAndMove:(int)theDirection;
 
 
 @end

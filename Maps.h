@@ -26,7 +26,11 @@
 -(BOOL)isWallWithPointPosition:(CGPoint)thePointPosition;
 
 -(CGPoint)getCentrePositionFromPointPosition:(CGPoint)thePointPosition withLengthPoint:(int)length;
+//-(CGPoint)getLeftDownPointPositionFromCentrePosition:(CGPoint)theCentrePosition withLengthPoint:(int)length;
 
--(BOOL)isCrashedWallWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withDirection:(int)theDirection;
+-(BOOL)isCrashedWallWithCentrePosition:(CGPoint)theCentrePosition withLengthPoint:(int)length withDirection:(int)theDirection;
+
+-(NSArray *)moveWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withFirstDirection:(int)theFirstDirection withSecondDirection:(int)theSecondDirection;
+
 
 @end

@@ -18,7 +18,7 @@
         
         sprite = [[CCSprite alloc] initWithFile:PNG_MONSTER];
         
-        [self setPointPosition:thePointPosition withLength:3];
+        [self setPointPosition:thePointPosition withLength:2];
     }
     return self;
 }
@@ -35,7 +35,21 @@
     }
 }
 
+- (void)setDirectionAndMove:(int)theDirection
+{
+    [super setDirectionAndMove:theDirection];
+    if (state == standing) {
+        [self changeDirection];
+    }
+    if (state == moving) {
+        
+    }
+}
 
+- (void)startMove
+{
+    [self changeDirection];
+}
 
 #pragma mark - 私有方法
 
@@ -43,7 +57,7 @@
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(changeDirection) object:self];
 //    nowDirection = CCRANDOM_0_1() * 4 + 1;
-    [self setDirection:CCRANDOM_0_1() * 4 + 1];
+    [self setDirectionAndMove:CCRANDOM_0_1() * 4 + 1];
     GLfloat theTime;
     theTime = CCRANDOM_0_1() * (MONSTER_CHANGEDIRECTION_MOSTTIME - MONSTER_CHANGEDIRECTION_LEASTTIME) + MONSTER_CHANGEDIRECTION_LEASTTIME;
 //    CCLOG(@"%f,%d",theTime,direction);

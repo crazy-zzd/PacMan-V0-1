@@ -46,7 +46,7 @@ static Maps * sharedMap = nil;
     return pointMap[x][y];
 }
 
-//通过一个左下角点坐标和长度找出这个点的中心坐标
+//通过一个左下角点坐标和长度，找出这个点的中心坐标
 - (CGPoint)getCentrePositionFromPointPosition:(CGPoint)thePointPosition withLengthPoint:(int)length
 {
     CGPoint theCentrePosition;
@@ -56,7 +56,7 @@ static Maps * sharedMap = nil;
 }
 
 
-//给出中心点的图坐标跟大小，还有移动的方向，算出是否碰撞到墙壁
+//给出中心点的图坐标跟长度，还有移动的方向，算出是否碰撞到墙壁
 - (BOOL)isCrashedWallWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withDirection:(int)theDirection
 {
 
@@ -87,8 +87,68 @@ static Maps * sharedMap = nil;
 
 }
 
+//给出中心图坐标，长度，第一方向，第二方向，返回一个数据包，分别是两个CGPoint，两个目的地
+- (NSArray * )moveWithCentrePosition:(CGPoint)theCentrePosition withLengthPoint:(int)length withFirstDirection:(int)theFirstDirection withSecondDirection:(int)theSecondDirection
+{
+    int numOfDestination = 0;
+    CGPoint first = CGPointMake(0, 0);
+    CGPoint second = CGPointMake(0, 0);
+    
+    //首先处理方向问题
+    //方向相同时
+    if (theFirstDirection == theSecondDirection) {
+        numOfDestination = 1;
+    }
+    //方向相反时
+    if ((theFirstDirection - theSecondDirection == 2)||(theFirstDirection - theSecondDirection == -2)) {
+        numOfDestination = 1;
+        theFirstDirection = theSecondDirection;
+    }
+    //其它情况
+    if (theFirstDirection != theSecondDirection) {
+        numOfDestination = 2;
+    }
+    
+    //然后获得目的地坐标，当方向个数不同时分情况讨论
+    if (numOfDestination == 1) {
+        second = first = [self getDestinationCentrePositionWith:theCentrePosition with:theFirstDirection with:length];
+    }
+    else{
+        NSArray * positions = [self getDestinationCentrePositionsWith:theCentrePosition with:theFirstDirection with:theSecondDirection with:length];
+        NSValue * position = (NSValue * )[positions objectAtIndex:0];
+        first = [position CGPointValue];
+        position = (NSValue * )[positions objectAtIndex:1];
+        second = [position CGPointValue];
+    }
+    
+    
+    if (CGPointEqualToPoint(theCentrePosition, first)) {
+        if (CGPointEqualToPoint(first, second)) {
+            return [NSArray arrayWithObjects:[NSNumber numberWithInt:0], nil];
+        }
+        else{
+            return [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSValue valueWithCGPoint:second], nil];
+        }
+    }
+    else{
+        if (CGPointEqualToPoint(first, second)) {
+            return [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSValue valueWithCGPoint:first], nil];
+        }
+        else{
+            return [NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSValue valueWithCGPoint:first], [NSValue valueWithCGPoint:second], nil];
+        }
+    }
+    
+    
+//    NSValue * firstPosition = [NSValue valueWithCGPoint:first];
+//    NSValue * secondPosition = [NSValue valueWithCGPoint:second];
+//    NSArray * result = [NSArray arrayWithObjects:firstPosition, secondPosition, nil];
+//    return result;
+}
+
 #pragma mark - 私有方法
 
+#pragma mark - make maps
 - (void)handleMap
 {
 
@@ -124,14 +184,45 @@ static Maps * sharedMap = nil;
     
 }
 
-//判断矩形是不是到达地图边界了
-- (BOOL)isCrashedBoundaryWithRect:(CGRect)theRect
+#pragma mark - Position <-> PointPosition
+
+//通过一个中心点图坐标找到相应的点坐标
+- (CGPoint)getPointPositionFromCentrePosition:(CGPoint)theCentrePosition
 {
-    BOOL leftBoundary = theRect.origin.x < PLAYVIEW_X;
-    BOOL downBoundary = theRect.origin.y < PLAYVIEW_Y;
-    BOOL rightBoundary = theRect.origin.x + theRect.size.width > PLAYVIEW_X + MAP_WIDTH_POINT * POINT_LENGTH;
-    BOOL upBoundary = theRect.origin.y + theRect.size.height > PLAYVIEW_Y + MAP_HEIGTH_POINT * POINT_LENGTH;
-    return leftBoundary || downBoundary || rightBoundary || upBoundary;
+    CGPoint thePointPosition;
+    thePointPosition.x = (int)((theCentrePosition.x - PLAYVIEW_X) / POINT_LENGTH);
+    thePointPosition.y = (int)((theCentrePosition.y - PLAYVIEW_Y) / POINT_LENGTH);
+    return thePointPosition;
+}
+
+//通过中心图坐标和长度，找出左下角点坐标
+- (CGPoint)getLeftDownPointPositionFromCentrePosition:(CGPoint)theCentrePosition withLengthPoint:(int)length
+{
+    CGPoint thePointPosition;
+    thePointPosition = [self getPointPositionFromCentrePosition:theCentrePosition];
+    thePointPosition.x = (int)(thePointPosition.x - length / 2);
+    thePointPosition.y = (int)(thePointPosition.y - length / 2);
+
+    return thePointPosition;
+}
+
+//通过中心图坐标，左下角点坐标，长度，找出右上角点坐标
+- (CGPoint)getRightUpPointPositionFromCentrePosition:(CGPoint)theCentrePosition withLeftDownPointPosition:(CGPoint)theLeftDownPointPosition withLengthPoint:(int)length
+{
+    CGPoint theRightUpPointPosition;
+    if ([self isOnLineWithNumber:theCentrePosition.x withLine:PLAYVIEW_X]) {
+        theRightUpPointPosition.x = theLeftDownPointPosition.x + length - 1;
+    }
+    else{
+        theRightUpPointPosition.x = theLeftDownPointPosition.x + length;
+    }
+    if ([self isOnLineWithNumber:theCentrePosition.y withLine:PLAYVIEW_Y]) {
+        theRightUpPointPosition.y = theLeftDownPointPosition.y + length - 1;
+    }
+    else{
+        theRightUpPointPosition.y = theLeftDownPointPosition.y + length;
+    }
+    return theRightUpPointPosition;
 }
 
 //通过一个点坐标得到矩形
@@ -142,13 +233,141 @@ static Maps * sharedMap = nil;
     return theResultRect;
 }
 
-//通过一个中心点图坐标找到相应的点坐标
-- (CGPoint)getPointPositionFromCentrePosition:(CGPoint)theCentrePosition
+
+
+#pragma mark - move
+
+//one step
+//当只有一个方向时，通过中心点图坐标、方向、长度，获得移动的最终图坐标
+- (CGPoint)getDestinationCentrePositionWith:(CGPoint)theCentrePosition with:(int)theDirection with:(int)length
 {
-    CGPoint thePointPosition;
-    thePointPosition.x = (int)((theCentrePosition.x - PLAYVIEW_X) / POINT_LENGTH);
-    thePointPosition.y = (int)((theCentrePosition.y - PLAYVIEW_Y) / POINT_LENGTH);
-    return thePointPosition;
+    CGPoint nextStep = [self move1StepWith:theCentrePosition with:theDirection with:length];
+    if (![self isBlockedWith:nextStep with:length]) {
+        theCentrePosition = nextStep;
+        return [self getDestinationCentrePositionWith:theCentrePosition with:theDirection with:length];
+    }
+    else{
+        return theCentrePosition;
+    }
+    
 }
+
+//two steps
+//当有两个方向时，通过中心点图坐标、第一方向、第二方向、长度，获得两个移动最终图坐标
+- (NSArray *)getDestinationCentrePositionsWith:(CGPoint)theCentrePosition with:(int)theFirstDireciton with:(int)theSecondDirection with:(int)length
+{
+    CGPoint nextStep = [self move1StepWith:theCentrePosition with:theSecondDirection with:length];
+    if (![self isBlockedWith:nextStep with:length]) {
+        CGPoint theFirstPosition = theCentrePosition;
+        CGPoint theSecondPosition = [self getDestinationCentrePositionWith:theCentrePosition with:theSecondDirection with:length];
+        return [NSArray arrayWithObjects:[NSValue valueWithCGPoint:theFirstPosition], [NSValue valueWithCGPoint:theSecondPosition], nil];
+    }
+    else{
+        nextStep = [self move1StepWith:theCentrePosition with:theFirstDireciton with:length];
+        if (![self isBlockedWith:nextStep with:length]) {
+            return [self getDestinationCentrePositionsWith:nextStep with:theFirstDireciton with:theSecondDirection with:length];
+        }
+        else{
+            return [NSArray arrayWithObjects:[NSValue valueWithCGPoint:theCentrePosition], [NSValue valueWithCGPoint:theCentrePosition], nil];
+        }
+    }
+}
+
+//通过中心图坐标、方向、长度，算出下一步走到的中心图坐标
+- (CGPoint)move1StepWith:(CGPoint)theCentrePosition with:(int)theDirection with:(int)length
+{
+    //首先判断是不是不在线上
+    if (![self isOnLineWithNumber:theCentrePosition.x withLine:PLAYVIEW_X]) {
+        if (theDirection == rightDirection) {
+            theCentrePosition.x = ((int)((theCentrePosition.x - PLAYVIEW_X)/POINT_LENGTH)) * POINT_LENGTH + POINT_LENGTH + PLAYVIEW_X;
+            return theCentrePosition;
+        }
+        if (theDirection == leftDirection) {
+            theCentrePosition.x = ((int)((theCentrePosition.x - PLAYVIEW_X)/POINT_LENGTH)) * POINT_LENGTH + PLAYVIEW_X;
+            return theCentrePosition;
+        }
+    }
+    if (![self isOnLineWithNumber:theCentrePosition.y withLine:PLAYVIEW_Y]) {
+        if (theDirection == upDirection) {
+            theCentrePosition.y = ((int)((theCentrePosition.y - PLAYVIEW_Y)/POINT_LENGTH)) * POINT_LENGTH + POINT_LENGTH + PLAYVIEW_Y;
+            return theCentrePosition;
+        }
+        if (theDirection == downDirection) {
+            theCentrePosition.y = ((int)((theCentrePosition.y - PLAYVIEW_Y)/POINT_LENGTH)) * POINT_LENGTH + PLAYVIEW_Y;
+            return theCentrePosition;
+        }
+    }
+    
+    //算出Movement
+    CGPoint movement;
+    switch (theDirection) {
+        case upDirection:
+            movement = UP_MOVEMENT;
+            break;
+        case downDirection:
+            movement = DOWN_MOVEMENT;
+            break;
+        case leftDirection:
+            movement = LEFT_MOVEMENT;
+            break;
+        case rightDirection:
+            movement = RIGHT_MOVEMENT;
+            break;
+        default:
+            break;
+    }
+    movement =  ccpMult(movement, POINT_LENGTH);
+    
+    return ccpAdd(theCentrePosition, movement);
+}
+
+#pragma mark - check
+
+//通过中心点图坐标、长度，检查吃豆人所在位置是否能通过
+- (BOOL)isBlockedWith:(CGPoint)theCentrePosition with:(int)length
+{
+    //通过中心点坐标和长度，算出左下角的点坐标和右上角的点坐标
+    CGPoint leftDownPointPosition = [self getLeftDownPointPositionFromCentrePosition:theCentrePosition withLengthPoint:length];
+    CGPoint rightUpPointPosition = [self getRightUpPointPositionFromCentrePosition:theCentrePosition withLeftDownPointPosition:leftDownPointPosition withLengthPoint:length];
+    
+    //判断是不是到达地图边界
+    if ((rightUpPointPosition.x >= MAP_WIDTH_POINT) || (rightUpPointPosition.y >= MAP_HEIGTH_POINT) || (leftDownPointPosition.x < 0) || (leftDownPointPosition.y < 0)) {
+        return YES;
+    }
+    
+    //判断是不是有障碍物
+    for (int x = leftDownPointPosition.x; x <= rightUpPointPosition.x; x ++) {
+        for (int y = leftDownPointPosition.y; y <= rightUpPointPosition.y; y ++) {
+            if (pointMap[x][y]) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
+//判断一个横座标（或者纵座标）是不是在线上
+- (BOOL)isOnLineWithNumber:(int)theNumber withLine:(int)theLine
+{
+    int temp;
+    theNumber = theNumber - theLine;
+    temp = theNumber / POINT_LENGTH;
+    theNumber = theNumber - temp * POINT_LENGTH;
+    if (theNumber > 0) {
+        return NO;
+    }
+    return YES;
+}
+//判断矩形是不是到达地图边界了
+- (BOOL)isCrashedBoundaryWithRect:(CGRect)theRect
+{
+    BOOL leftBoundary = theRect.origin.x < PLAYVIEW_X;
+    BOOL downBoundary = theRect.origin.y < PLAYVIEW_Y;
+    BOOL rightBoundary = theRect.origin.x + theRect.size.width > PLAYVIEW_X + MAP_WIDTH_POINT * POINT_LENGTH;
+    BOOL upBoundary = theRect.origin.y + theRect.size.height > PLAYVIEW_Y + MAP_HEIGTH_POINT * POINT_LENGTH;
+    return leftBoundary || downBoundary || rightBoundary || upBoundary;
+}
+
 
 @end

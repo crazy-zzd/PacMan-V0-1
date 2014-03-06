@@ -95,7 +95,7 @@
 - (void)moveWithDirection:(int)theDirection
 {
 //    player.nowDirection = theDirection;
-    [player setDirection:theDirection];
+    [player setDirectionAndMove:theDirection];
 }
 
 #pragma mark - 玩家开始移动或者暂停移动
@@ -138,8 +138,14 @@
         [self removeChild:thePauseLayer];
     }
     
+    [player startMove];
+    for (MonsterMan * monster in monsters) {
+        [monster startMove];
+    }
+    
     [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
     [self schedule:@selector(updateMonsters:) interval:1.0/MONSTERS_SPEED];
+
 }
 
 - (void)gameOver
@@ -155,7 +161,7 @@
 
 - (void)updatePlayer:(ccTime)delta
 {
-    [player move];
+//    [player move];
     [self crashMonsters];
     [self eatBeans];
 }
@@ -195,7 +201,7 @@
 - (void)updateMonsters:(ccTime)delta
 {
     for (MonsterMan * theMonster in monsters) {
-        [theMonster move];
+//        [theMonster move];
     }
     
 //    MonsterMan * theMonster;
