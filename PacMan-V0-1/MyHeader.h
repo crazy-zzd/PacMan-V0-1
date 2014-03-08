@@ -47,7 +47,7 @@
 
 //Man.m 动作序列
 #define TAG_SEQUENCE 21
-#define TAG_SEQUENCE1 22
+#define TAG_MOVETO 22
 
 //移动速度
 #define MONSTERS_SPEED 100
@@ -67,7 +67,7 @@
 
 //PacMan初始位置、方向
 #define PLAYER_POINTPOSITION CGPointMake(0, 0)
-#define PLAYER_DIRECTION leftDirection
+#define PLAYER_DIRECTION rightDirection
 
 //分数显示牌的位置
 #define SCORE_INIT_STRING @"0"
@@ -80,8 +80,9 @@
 
 
 enum gameState {
-    gameStart = 1,
-    gamePause = 2
+    gameBefore = 1,
+    gameStart,
+    gamePause
 };
 
 enum direction {

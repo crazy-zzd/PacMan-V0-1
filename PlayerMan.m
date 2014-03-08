@@ -61,7 +61,7 @@
 - (void)testAnimation
 {
     NSMutableArray * theTestFrames = [NSMutableArray arrayWithCapacity:4];
-    for (int i = 1; i <= 4; i ++) {
+    for (int i = 1; i <= 1; i ++) {
         NSString * fileName = [NSString stringWithFormat:@"pac-man-%d.png",i];
         CCTexture2D * texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
         CGSize texSize = texture.contentSize;

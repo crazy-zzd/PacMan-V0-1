@@ -80,6 +80,7 @@
 - (void)loadPlayer
 {
     [self addChild:[theControNode.player sprite]];
+    [self addChild:theControNode.player];
 }
 
 //添加怪兽
@@ -90,6 +91,7 @@
     for (int i = 0; i < monsters.count; i ++) {
         aMonster = (MonsterMan *)[monsters objectAtIndex:i];
         [self addChild:[aMonster sprite]];
+        [self addChild:aMonster];
     }
 }
 
@@ -137,6 +139,7 @@
 - (void)moveWithDirection:(int)theDirection
 {
     [theControNode moveWithDirection:theDirection];
+//    NSLog(@"change direction");
 }
 
 

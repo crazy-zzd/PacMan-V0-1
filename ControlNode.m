@@ -41,7 +41,7 @@
         
         [self initScore];
         
-        stateNow = gamePause;
+        stateNow = gameBefore;
     }
     return self;
 }
@@ -94,18 +94,23 @@
 
 - (void)moveWithDirection:(int)theDirection
 {
-    [player setDirectionAndMove:theDirection];
+    [player setDirection:theDirection];
 }
 
 #pragma mark - 玩家开始移动或者暂停移动
 
 - (void)startMoving
 {
+    if (stateNow == gameBefore) {
+        [self gameStart];
+        return;
+    }
     if (stateNow == gameStart) {
         [self gamePause];
+        return;
     }
-    else{
-        [self gameStart];
+    if (stateNow == gamePause) {
+        [self gameResume];
     }
 }
 
@@ -117,32 +122,54 @@
 //第一种是使用Scene，push和pop，有一个地方不方便就是Scene会把当前的所有画面都遮住（可以把当前的画面截图发送过去），另一个无法解决的地方就是暂停的时候无法播放动画
 //第二种是使用Layer，一个比较麻烦的地方是需要设置delegate并且需要自己写暂停的函数来控制游戏暂停，但是可以控制部分暂停，并且控制动画可以继续播放
 //现在使用第二种
+
+- (void)gameStart
+{
+    stateNow = gameStart;
+    [[self player] startMove];
+    for (MonsterMan * theMonster in monsters) {
+        [theMonster startMove];
+    }
+    [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
+//    [self schedule:@selector(updateMonsters:) interval:1.0/PLAYER_SPEED];
+}
+
 - (void)gamePause
 {
     stateNow = gamePause;
+    //player
     [self unschedule:@selector(updatePlayer:)];
+    [player pauseMove];
+    //monster
+    for (MonsterMan * theMonster in monsters) {
+        [theMonster pauseMove];
+    }
+//    [self unschedule:@selector(updateMonsters:)];
     
+    //pauseLayer
     PauseLayer * thePauseLayer = [PauseLayer node];
     thePauseLayer.delegate = self;
     [self addChild:thePauseLayer z:1 tag:TAG_PAUSELAYER];
 
 }
 
-- (void)gameStart
+- (void)gameResume
 {
     stateNow = gameStart;
+    //player
+    [player resumeMove];
+    [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
+    //monster
+    for (MonsterMan * monster in monsters) {
+        [monster resumeMove];
+    }
+    //    [self schedule:@selector(updateMonsters:) interval:1.0/PLAYER_SPEED];
+    
+    //pauseLayer
     PauseLayer * thePauseLayer = (PauseLayer *)[self getChildByTag:TAG_PAUSELAYER];
     if (thePauseLayer != Nil) {
         [self removeChild:thePauseLayer];
     }
-    
-    [player startMove];
-    for (MonsterMan * monster in monsters) {
-        [monster startMove];
-    }
-    
-    [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
-
 }
 
 - (void)gameOver
@@ -183,13 +210,22 @@
     }
 }
 
+#pragma mark - monster changeDirection and move
 
+//- (void)updateMonsters:(ccTime)delta
+//{
+//    for (MonsterMan * theMonster in monsters) {
+//        if ([[theMonster sprite] numberOfRunningActions] == 0) {
+//            [theMonster startMove];
+//        }
+//    }
+//}
 
 #pragma mark - pauseLayer delegate
 
 - (void)resumeGame
 {
-    [self gameStart];
+    [self gameResume];
 }
 
 
