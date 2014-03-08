@@ -16,31 +16,20 @@
 
 @interface Man : Things {
     int nowDirection;
-//    int nextDirection;
+    int nextDirection;
     
     CGPoint firstPosition;
     CGPoint secondPosition;
     
     int state;
     
-    CCRepeatForever * moveUp;
-    CCRepeatForever * moveDown;
-    CCRepeatForever * moveLeft;
-    CCRepeatForever * moveRight;
 }
 
-//初始化Man
 -(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;
 
-//开始移动
 -(void)startMove;
-//暂停移动
--(void)pauseMove;
-//继续移动
--(void)resumeMove;
 
-//设置移动方向
--(void)setDirection:(int)theDirection;
+-(void)setDirectionAndMove:(int)theDirection;
 
 
 @end
