@@ -47,8 +47,7 @@
     CCLabelTTF * theScoreLabel = [[CCLabelTTF alloc] initWithString:score fontName:SCORE_FONTNAME fontSize:72];
     theScoreLabel.position = CGPointMake(SCREEN_WIDTH / 2, 175);
     [self addChild:theScoreLabel];
-//    score = [[CCLabelTTF alloc] initWithString:SCORE_INIT_STRING fontName:SCORE_FONTNAME fontSize:SCORE_FONTSIZE];
-//    score.position = SCORE_POSITION;
+
 
     //重新开始
     CCMenuItemImage * restartItem = [CCMenuItemImage itemWithNormalImage:@"end-replay-still.png" selectedImage:@"end-replay-touched.png" target:self selector:@selector(onPressRestart:)];

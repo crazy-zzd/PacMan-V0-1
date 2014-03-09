@@ -53,7 +53,7 @@
 #define TAG_ANIMATION_REPEAT 55
 
 //移动速度
-#define MONSTERS_SPEED 100
+#define MONSTERS_SPEED 70
 #define PLAYER_SPEED 100
 
 #define MOVING_SPEED 80

@@ -21,6 +21,8 @@
         //setPointPosition必须在sprite设置过以后才能正常工作
         [self setPointPosition:thePointPosition withLength:2];
         
+        moveSpeed = PLAYER_SPEED;
+        
         //测试动画
         [self testAnimation];
         

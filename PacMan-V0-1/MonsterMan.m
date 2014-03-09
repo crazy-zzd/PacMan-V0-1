@@ -20,6 +20,8 @@
         
         indexOfMonster = index;
         
+        moveSpeed = MONSTERS_SPEED;
+        
         sprite = [[CCSprite alloc] initWithFile:fileName];
         
         [self setPointPosition:thePointPosition withLength:2];

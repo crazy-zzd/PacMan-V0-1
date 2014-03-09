@@ -23,6 +23,8 @@
     
     int state;
     
+    float moveSpeed;
+    
 }
 
 -(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;

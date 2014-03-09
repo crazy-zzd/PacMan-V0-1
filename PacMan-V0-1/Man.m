@@ -106,7 +106,9 @@
     [self changeSpriteDirection];
     nowDirection = nextDirection;
     
-    CCMoveTo * move = [CCMoveTo actionWithDuration:distence/MOVING_SPEED position:theSecondPosition];
+    
+    
+    CCMoveTo * move = [CCMoveTo actionWithDuration:distence/moveSpeed position:theSecondPosition];
     return move;
 }
 
