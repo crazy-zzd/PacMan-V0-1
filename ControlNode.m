@@ -56,11 +56,12 @@
 {
     MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:MONSTER_DIRECTION1 withIndex:1];
     MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2 withIndex:2];
+    MonsterMan * thirdMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION3 withDirection:MONSTER_DIRECTION3 withIndex:3];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];
     [monsters addObject:secondMonster];
-    
+    [monsters addObject:thirdMonster];
 }
 
 - (void)initBeans
@@ -74,6 +75,17 @@
                 theY = PLAYVIEW_Y + POINT_LENGTH * (y + 1);
                 Beans * theBean = [[Beans alloc] initWithPosition:CGPointMake(theX, theY) withScore:BEAN_SCORE];
                 [beans addObject:theBean];
+            }
+        }
+    }
+    
+    for (int i = 0; i < [beans count]; i++) {
+        Beans * theBean = [beans objectAtIndex:i];
+        CGPoint thePosition = [theBean sprite].position;
+        if ((thePosition.x > 237.5)&&(thePosition.x < 335)) {
+            if ((thePosition.y > 140)&& (thePosition.y < 202)) {
+                [beans removeObject:theBean];
+                i --;
             }
         }
     }
