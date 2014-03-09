@@ -49,13 +49,13 @@
 #define TAG_SEQUENCE 21
 
 //MonsterMan.m 动画
-#define TAG_REPEAT
+#define TAG_ANIMATION_REPEAT 55
 
 //移动速度
 #define MONSTERS_SPEED 100
 #define PLAYER_SPEED 100
 
-#define MOVING_SPEED 100
+#define MOVING_SPEED 80
 
 //Monster初始位置、方向
 #define MONSTER_POINTPOSITION1 CGPointMake(26, 9)

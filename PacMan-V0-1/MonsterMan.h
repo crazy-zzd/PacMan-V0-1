@@ -14,6 +14,11 @@
 @class Maps;
 
 @interface MonsterMan : Man {
+    int indexOfMonster;
+    
+    NSMutableArray * animationArray;
 }
+
+-(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection withIndex:(int)index;
 
 @end

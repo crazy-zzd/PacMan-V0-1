@@ -12,16 +12,22 @@
 
 @implementation MonsterMan
 
-- (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
+- (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection withIndex:(int)index
 {
     if (self = [super initWithPointPosition:thePointPosition withDirection:theDrection]) {
         
-        sprite = [[CCSprite alloc] initWithFile:PNG_MONSTER];
+        NSString * fileName = [NSString stringWithFormat:@"monster-%d-right-1.png",index];
+        
+        indexOfMonster = index;
+        
+        sprite = [[CCSprite alloc] initWithFile:fileName];
         
         [self setPointPosition:thePointPosition withLength:2];
         
-        //测试动画
-        [self testAnimation];
+        [self initAnimations];
+        
+        [self runAnimationWith:nowDirection];
+
     }
     return self;
 }
@@ -33,7 +39,33 @@
 }
 
 #pragma mark - 私有方法
-//未使用
+
+- (void)initAnimations
+{
+    animationArray = [[NSMutableArray alloc] init];
+    NSArray * directionArray = [NSArray arrayWithObjects:@"up", @"right", @"down", @"left", nil];
+    
+    for (int i = upDirection; i <= leftDirection; i ++) {
+        NSMutableArray * theTestFrames = [NSMutableArray arrayWithCapacity:2];
+        for (int j = 1; j <= 2; j ++) {
+            NSString * fileName = [NSString stringWithFormat:@"monster-%d-%@-%d-hd.png", indexOfMonster, [directionArray objectAtIndex:i - 1], j];
+            
+            CCTexture2D * texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
+            CGSize texSize = texture.contentSize;
+            CGRect texRect = CGRectMake(0, 0, texSize.width, texSize.height);
+            
+            CCSpriteFrame * frame = [CCSpriteFrame frameWithTexture:texture rect:texRect];
+            [theTestFrames addObject:frame];
+        }
+        
+        CCAnimation * anim = [CCAnimation animationWithSpriteFrames:theTestFrames delay:0.2f];
+        
+        CCAnimate * animate = [CCAnimate actionWithAnimation:anim];
+        CCRepeatForever * repeat = [CCRepeatForever actionWithAction:animate];
+        [animationArray addObject:repeat];
+    }
+}
+
 - (void)changeDirection
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(changeDirection) object:self];
@@ -55,7 +87,7 @@
 {
     NSMutableArray * theTestFrames = [NSMutableArray arrayWithCapacity:2];
     for (int i = 1; i <= 2; i ++) {
-        NSString * fileName = [NSString stringWithFormat:@"monster-1-down-%d-hd.png",i];
+        NSString * fileName = [NSString stringWithFormat:@"monster-%d-down-%d-hd.png", indexOfMonster,i];
         
         CCTexture2D * texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
         CGSize texSize = texture.contentSize;
@@ -64,7 +96,7 @@
         CCSpriteFrame * frame = [CCSpriteFrame frameWithTexture:texture rect:texRect];
         [theTestFrames addObject:frame];
     }
-    CCAnimation * anim = [CCAnimation animationWithSpriteFrames:theTestFrames delay:0.1f];
+    CCAnimation * anim = [CCAnimation animationWithSpriteFrames:theTestFrames delay:0.3f];
     
     CCAnimate * animate = [CCAnimate actionWithAnimation:anim];
     CCRepeatForever * repeat = [CCRepeatForever actionWithAction:animate];
@@ -75,7 +107,15 @@
 
 - (void)runAnimationWith:(int)theDirection
 {
-    
+    [[self sprite] stopActionByTag:TAG_ANIMATION_REPEAT];
+    CCRepeatForever * animation = (CCRepeatForever *)[animationArray objectAtIndex:theDirection - 1];
+    animation.tag = TAG_ANIMATION_REPEAT;
+    [[self sprite] runAction:animation];
+}
+
+- (void)changeSpriteDirection
+{
+    [self runAnimationWith:nextDirection];
 }
 
 @end
