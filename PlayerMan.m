@@ -18,6 +18,9 @@
         
         sprite = [[CCSprite alloc] initWithFile:PNG_PACMAN];
         
+        sprite.flipY = NO;
+        sprite.flipX = YES;
+        
         //setPointPosition必须在sprite设置过以后才能正常工作
         [self setPointPosition:thePointPosition withLength:2];
         
@@ -93,10 +96,10 @@
     }
     sprite.rotation = [sprite rotation] + theRotation;
     if (nextDirection == rightDirection) {
-        sprite.flipY = YES;
+        sprite.flipY = NO;
     }
     else{
-        sprite.flipY = NO;
+        sprite.flipY = YES;
     }
 }
 

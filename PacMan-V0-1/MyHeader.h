@@ -72,7 +72,7 @@
 
 //PacMan初始位置、方向
 #define PLAYER_POINTPOSITION CGPointMake(0, 0)
-#define PLAYER_DIRECTION leftDirection
+#define PLAYER_DIRECTION rightDirection
 
 //分数显示牌的位置
 #define SCORE_INIT_STRING @"0"
