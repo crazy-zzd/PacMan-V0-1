@@ -56,13 +56,17 @@
 - (IBAction)onPressRestart:(id)sender
 {
     CCScene * scene = [GameLayer Scene];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    CCTransitionFadeBL * tran = [CCTransitionFadeBL
+                                    transitionWithDuration:0.7 scene:scene];
+    [[CCDirector sharedDirector] replaceScene:tran];
 }
 
 - (IBAction)onPressMenu:(id)sender
 {
     CCScene * scene = [StartLayer Scene];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    CCTransitionSlideInL * tran = [CCTransitionMoveInL
+                                    transitionWithDuration:0.7 scene:scene];
+    [[CCDirector sharedDirector] replaceScene:tran];
 }
 
 - (IBAction)onPressNext:(id)sender
