@@ -7,7 +7,7 @@
 //
 
 #import "StartLayer.h"
-
+#import "SimpleAudioEngine.h"
 
 @implementation StartLayer
 
@@ -28,6 +28,7 @@
     self = [super init];
     if (self) {
         
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"music-background.mp3" loop:YES];
         //天空
         CCSprite * background = [[CCSprite alloc] initWithFile:@"blue-sky.png"];
         background.position = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);

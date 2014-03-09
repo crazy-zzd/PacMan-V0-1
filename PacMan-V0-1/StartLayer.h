@@ -11,6 +11,7 @@
 #import "MyHeader.h"
 #import "GameLayer.h"
 
+
 @interface StartLayer : CCLayer {
     NSMutableArray * clounds;
     

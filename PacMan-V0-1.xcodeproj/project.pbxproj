@@ -32,6 +32,7 @@
 		622713CE18CC12B200DB68B2 /* end-replay-still-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622713C618CC12B200DB68B2 /* end-replay-still-hd.png */; };
 		622713CF18CC12B200DB68B2 /* end-replay-touched-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622713C718CC12B200DB68B2 /* end-replay-touched-hd.png */; };
 		622713D018CC12B200DB68B2 /* end-yourscore-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622713C818CC12B200DB68B2 /* end-yourscore-hd.png */; };
+		622713D218CC531000DB68B2 /* music-background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 622713D118CC531000DB68B2 /* music-background.mp3 */; };
 		622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF571182F19AD0038BF0D /* TouchLayer.m */; };
 		622FF57B182F1B800038BF0D /* ControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF57A182F1B800038BF0D /* ControlNode.m */; };
 		62364AA318CB5199001E0AEC /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA218CB5199001E0AEC /* background-hd.png */; };
@@ -288,6 +289,7 @@
 		622713C618CC12B200DB68B2 /* end-replay-still-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-replay-still-hd.png"; sourceTree = "<group>"; };
 		622713C718CC12B200DB68B2 /* end-replay-touched-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-replay-touched-hd.png"; sourceTree = "<group>"; };
 		622713C818CC12B200DB68B2 /* end-yourscore-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-yourscore-hd.png"; sourceTree = "<group>"; };
+		622713D118CC531000DB68B2 /* music-background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-background.mp3"; sourceTree = "<group>"; };
 		622FF570182F19AD0038BF0D /* TouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLayer.h; sourceTree = "<group>"; };
 		622FF571182F19AD0038BF0D /* TouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayer.m; sourceTree = "<group>"; };
 		622FF579182F1B800038BF0D /* ControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlNode.h; path = ../ControlNode.h; sourceTree = "<group>"; };
@@ -707,6 +709,7 @@
 		621CF0331851F63F006F5E2F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				622713D318CC531400DB68B2 /* sounds */,
 				622713C018CC12B200DB68B2 /* V0-1-1-end */,
 				62A81D8C18B08C64006ACE85 /* V0-1-1-map */,
 				622180F8186D911E00030541 /* V0-1-1-pause */,
@@ -763,6 +766,14 @@
 			);
 			name = "V0-1-1-end";
 			path = "新建文件夹";
+			sourceTree = "<group>";
+		};
+		622713D318CC531400DB68B2 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				622713D118CC531000DB68B2 /* music-background.mp3 */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 		62364AA418CB5BB3001E0AEC /* 橙色 */ = {
@@ -1525,6 +1536,7 @@
 				62A81D9C18B08C64006ACE85 /* bean-hd.png in Resources */,
 				62364AAE18CB5BB3001E0AEC /* monster-4-up-2-hd.png in Resources */,
 				622713CC18CC12B200DB68B2 /* end-background-hd.png in Resources */,
+				622713D218CC531000DB68B2 /* music-background.mp3 in Resources */,
 				62F9607D182CDE6800152AE2 /* Icon-72.png in Resources */,
 				62218101186D911E00030541 /* pause-menu-still-hd.png in Resources */,
 				62A81DA718B08C64006ACE85 /* pause@2x.png in Resources */,

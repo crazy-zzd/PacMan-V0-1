@@ -232,6 +232,10 @@
             i --;
         }
     }
+    
+    if ([beans count] == 0) {
+        [self gameOver];
+    }
 }
 
 #pragma mark - pauseLayer delegate
