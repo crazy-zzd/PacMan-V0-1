@@ -41,7 +41,7 @@
         
         [self initScore];
         
-        stateNow = gamePause;
+        stateNow = gameBefore;
     }
     return self;
 }
@@ -94,6 +94,9 @@
 
 - (void)moveWithDirection:(int)theDirection
 {
+    if (stateNow == gameBefore) {
+        return;
+    }
     [player setDirectionAndMove:theDirection];
 }
 
@@ -101,11 +104,18 @@
 
 - (void)startMoving
 {
+    if (stateNow == gameBefore) {
+        [self gameStart];
+        return;
+    }
+    
     if (stateNow == gameStart) {
         [self gamePause];
+        return;
     }
-    else{
-        [self gameStart];
+
+    if (stateNow == gamePause) {
+        [self gameResume];
     }
 }
 
@@ -113,36 +123,52 @@
 
 #pragma mark - 私有方法
 #pragma mark - 游戏状态
-//暂停有两种方法
-//第一种是使用Scene，push和pop，有一个地方不方便就是Scene会把当前的所有画面都遮住（可以把当前的画面截图发送过去），另一个无法解决的地方就是暂停的时候无法播放动画
-//第二种是使用Layer，一个比较麻烦的地方是需要设置delegate并且需要自己写暂停的函数来控制游戏暂停，但是可以控制部分暂停，并且控制动画可以继续播放
-//现在使用第二种
-- (void)gamePause
-{
-    stateNow = gamePause;
-    [self unschedule:@selector(updatePlayer:)];
-    
-    PauseLayer * thePauseLayer = [PauseLayer node];
-    thePauseLayer.delegate = self;
-    [self addChild:thePauseLayer z:1 tag:TAG_PAUSELAYER];
-
-}
 
 - (void)gameStart
 {
     stateNow = gameStart;
+    //player
+    [player startMove];
+    [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
+    //monster
+    for (MonsterMan * monster in monsters) {
+        [monster startMove];
+    }
+}
+
+- (void)gamePause
+{
+    stateNow = gamePause;
+    //pause Layer
+    PauseLayer * thePauseLayer = [PauseLayer node];
+    thePauseLayer.delegate = self;
+    [self addChild:thePauseLayer z:1 tag:TAG_PAUSELAYER];
+    
+    //player
+    [player pauseMove];
+    [self unschedule:@selector(updatePlayer:)];
+    
+    //monster
+    for (MonsterMan * monster in monsters) {
+        [monster pauseMove];
+    }
+}
+
+- (void)gameResume
+{
+    stateNow = gameStart;
+    //Pause Layer
     PauseLayer * thePauseLayer = (PauseLayer *)[self getChildByTag:TAG_PAUSELAYER];
     if (thePauseLayer != Nil) {
         [self removeChild:thePauseLayer];
     }
-    
-    [player startMove];
-    for (MonsterMan * monster in monsters) {
-        [monster startMove];
-    }
-    
+    //player
+    [player resumeMove];
     [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
-
+    //monster
+    for (MonsterMan * monster in monsters) {
+        [monster resumeMove];
+    }
 }
 
 - (void)gameOver
@@ -151,7 +177,7 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-#pragma mark - 玩家移动
+#pragma mark - 玩家移动时的动作
 
 - (void)updatePlayer:(ccTime)delta
 {
@@ -183,13 +209,11 @@
     }
 }
 
-
-
 #pragma mark - pauseLayer delegate
 
 - (void)resumeGame
 {
-    [self gameStart];
+    [self gameResume];
 }
 
 

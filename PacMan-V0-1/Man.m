@@ -12,8 +12,6 @@
 
 @implementation Man
 
-//@synthesize nowDirection;
-
 - (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
 {
     if (self = [super init]) {
@@ -26,22 +24,37 @@
     return self;
 }
 
+- (void)startMove
+{
+    [self setDirectionAndMove:nowDirection];
+}
+
+- (void)pauseMove
+{
+    [[self sprite] pauseSchedulerAndActions];
+}
+
+- (void)resumeMove
+{
+    [[self sprite] resumeSchedulerAndActions];
+}
+
 - (void)setDirectionAndMove:(int)theDirection
 {
     NSArray * directions = [theMap moveWithCentrePosition:[self mapPosition] withLengthPoint:length withFirstDirection:nowDirection withSecondDirection:theDirection];
     int numOfDirection = [(NSNumber *)[directions objectAtIndex:0] intValue];
+    
     if (numOfDirection == 0) {
         state = standing;
         return;
     }
     state = moving;
-    
+
     if (numOfDirection == 1) {
         firstPosition = [(NSValue *)[directions objectAtIndex:1] CGPointValue];
-        CCSequence * sequence = [CCSequence actions:[self movebyWith:[self mapPosition] and:firstPosition], nil];
-        [[self sprite] stopAction:[[self sprite] getActionByTag:TAG_SEQUENCE]];
-        [[self sprite] runAction:sequence];
-        [sequence setTag:TAG_SEQUENCE];
+        CCCallFunc * standFunc = [CCCallFunc actionWithTarget:self selector:@selector(standFunc)];
+        CCSequence * sequence = [CCSequence actions:[self movebyWith:[self mapPosition] and:firstPosition], standFunc, nil];
+        [self runSequence:sequence];
         return;
     }
     
@@ -50,9 +63,7 @@
         secondPosition = [(NSValue *)[directions objectAtIndex:2] CGPointValue];
         CCCallFunc * theSecondeMove = [CCCallFunc actionWithTarget:self selector:@selector(secondMove)];
         CCSequence * sequence = [CCSequence actions:[self movebyWith:[self mapPosition] and:firstPosition], theSecondeMove, nil];
-        [[self sprite] stopAction:[[self sprite] getActionByTag:TAG_SEQUENCE]];
-        [[self sprite] runAction:sequence];
-        [sequence setTag:TAG_SEQUENCE];
+        [self runSequence:sequence];
         return;
     }
     
@@ -60,24 +71,17 @@
     
 }
 
-- (void)startMove
-{
-    [self setDirectionAndMove:nowDirection];
-}
+
 
 #pragma mark - 私有方法
 
 - (void)changeSpriteDirection
 {
-    int theRotation = (nextDirection - nowDirection) * 90;
-    if (theRotation < 0) {
-        theRotation = theRotation + 360;
-    }
-    sprite.rotation = [sprite rotation] + theRotation;
+
 }
 
 //通过两个图坐标，得出CCAction用来移动
-- (CCMoveBy *)movebyWith:(CGPoint)theFirstPosition and:(CGPoint)theSecondPosition
+- (CCMoveTo *)movebyWith:(CGPoint)theFirstPosition and:(CGPoint)theSecondPosition
 {
     CGPoint thePosition = ccpSub(theSecondPosition, theFirstPosition);
     float distence;
@@ -102,7 +106,7 @@
     [self changeSpriteDirection];
     nowDirection = nextDirection;
     
-    CCMoveBy * move = [CCMoveBy actionWithDuration:distence/MOVING_SPEED position:thePosition];
+    CCMoveTo * move = [CCMoveTo actionWithDuration:distence/MOVING_SPEED position:theSecondPosition];
     return move;
 }
 
@@ -110,13 +114,24 @@
 - (void)secondMove
 {
     [self changeSpriteDirection];
-    CCSequence * sequence = [CCSequence actions:[self movebyWith:firstPosition and:secondPosition], nil];
-    [[self sprite] runAction:sequence];
-    [[self sprite] stopAction:[[self sprite] getActionByTag:TAG_SEQUENCE]];
-//    [[self sprite] runAction:sequence];
-    [sequence setTag:TAG_SEQUENCE];
+    CCCallFunc * standFunc = [CCCallFunc actionWithTarget:self selector:@selector(standFunc)];
+    CCSequence * sequence = [CCSequence actions:[self movebyWith:firstPosition and:secondPosition], standFunc,nil];
+    [self runSequence:sequence];
+
     return;
 }
 
+- (void)standFunc
+{
+    state = standing;
+}
+
+//运行动作序列
+- (void)runSequence:(CCSequence *)theSequence
+{
+    [[self sprite] runAction:theSequence];
+    [[self sprite] stopActionByTag:TAG_SEQUENCE];
+    [theSequence setTag:TAG_SEQUENCE];
+}
 
 @end

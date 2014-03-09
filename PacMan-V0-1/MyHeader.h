@@ -47,7 +47,9 @@
 
 //Man.m 动作序列
 #define TAG_SEQUENCE 21
-#define TAG_SEQUENCE1 22
+
+//MonsterMan.m 动画
+#define TAG_REPEAT
 
 //移动速度
 #define MONSTERS_SPEED 100
@@ -80,8 +82,9 @@
 
 
 enum gameState {
-    gameStart = 1,
-    gamePause = 2
+    gameBefore = 1,
+    gameStart,
+    gamePause
 };
 
 enum direction {

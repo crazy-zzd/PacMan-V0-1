@@ -79,7 +79,20 @@
     
 }
 
-
+- (void)changeSpriteDirection
+{
+    int theRotation = (nextDirection - nowDirection) * 90;
+    if (theRotation < 0) {
+        theRotation = theRotation + 360;
+    }
+    sprite.rotation = [sprite rotation] + theRotation;
+    if (nextDirection == rightDirection) {
+        sprite.flipY = YES;
+    }
+    else{
+        sprite.flipY = NO;
+    }
+}
 
 
 @end

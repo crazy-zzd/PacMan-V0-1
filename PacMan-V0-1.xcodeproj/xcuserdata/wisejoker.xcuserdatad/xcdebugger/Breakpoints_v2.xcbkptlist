@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PacMan-V0-1/Man.m"
-            timestampString = "415788062.002329"
+            timestampString = "415979342.332507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-secondMove"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-standFunc"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PacMan-V0-1/MonsterMan.m"
+            timestampString = "415981309.295809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-updateCheckAndMove:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

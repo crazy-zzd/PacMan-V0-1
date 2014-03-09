@@ -27,8 +27,16 @@
 
 -(id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection;
 
+//开始移动
 -(void)startMove;
 
+//暂停移动
+-(void)pauseMove;
+
+//恢复移动
+-(void)resumeMove;
+
+//改变方向
 -(void)setDirectionAndMove:(int)theDirection;
 
 
