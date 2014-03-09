@@ -17,6 +17,7 @@
 #import "Beans.h"
 #import "Maps.h"
 #import "PauseLayer.h"
+#import "EndLayer.h"
 
 @implementation ControlNode
 
@@ -173,8 +174,20 @@
 
 - (void)gameOver
 {
-    CCScene * scene = [GameLayer Scene];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    EndLayer * theEndLayer = [[EndLayer alloc] initWithScore:score.string];;
+    theEndLayer.delegate = self;
+    [self addChild:theEndLayer z:1 tag:TAG_ENDLAYER];
+    
+    //player
+    [player pauseMove];
+    [self unschedule:@selector(updatePlayer:)];
+    
+    //monster
+    for (MonsterMan * monster in monsters) {
+        [monster pauseMove];
+    }
+    //    CCScene * scene = [GameLayer Scene];
+//    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 #pragma mark - 玩家移动时的动作

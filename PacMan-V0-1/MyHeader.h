@@ -13,6 +13,7 @@
 #define TAG_CONTROLNODE 101
 #define TAG_GAMELAYER 102
 #define TAG_PAUSELAYER 103
+#define TAG_ENDLAYER 104
 
 //游戏界面的左下角坐标
 #define PLAYVIEW_X 5
