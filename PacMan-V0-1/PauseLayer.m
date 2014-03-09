@@ -29,6 +29,8 @@
     if (self) {
 
         [self viewDidLoad];
+        
+        [self fallDownAnimation];
     }
     return self;
 }
@@ -51,6 +53,20 @@
     CCMenu * menu = [CCMenu menuWithItems:restartItem, menuItem, nextItem, nil];
     menu.position = CGPointMake(0, 0);
     [self addChild:menu];
+}
+
+- (void)fallDownAnimation
+{
+    self.position = CGPointMake(0, SCREEN_HEIGHT);
+    CCMoveBy * fallDown = [CCMoveBy actionWithDuration:0.4 position:CGPointMake(0, - SCREEN_HEIGHT)];
+    CCEaseIn * ease1 = [CCEaseIn actionWithAction:fallDown rate:2];
+    CCMoveBy * bounceUp = [CCMoveBy actionWithDuration:0.13 position:CGPointMake(0, SCREEN_HEIGHT / 6)];
+    CCEaseOut * ease2 = [CCEaseOut actionWithAction:bounceUp rate:3];
+    CCMoveBy * nextFallDown = [CCMoveBy actionWithDuration:0.17 position:CGPointMake(0, - SCREEN_HEIGHT / 6)];
+    CCEaseIn * ease3 = [CCEaseIn actionWithAction:nextFallDown rate:3];
+    CCSequence * sequence = [CCSequence actions:ease1, ease2, ease3, nil];
+    [self runAction:sequence];
+//    [self runAction:ease1];
 }
 
 - (IBAction)onPressRestart:(id)sender

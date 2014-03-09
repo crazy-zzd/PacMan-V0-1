@@ -45,7 +45,11 @@
 - (BOOL)isCrashedWithRect:(CGRect)theRect
 {
     if (CGRectIntersectsRect(theRect, sprite.boundingBox)) {
-        return YES;
+        float distanceX = ABS(theRect.origin.x - sprite.boundingBox.origin.x);
+        float distanceY = ABS(theRect.origin.y - sprite.boundingBox.origin.y);
+        if ((distanceX < 1.4 * POINT_LENGTH) && (distanceY < 1.5 * POINT_LENGTH)) {
+            return YES;
+        }
     }
     return NO;
 }
