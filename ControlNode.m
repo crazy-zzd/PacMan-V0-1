@@ -129,6 +129,11 @@
 
     if (stateNow == gamePause) {
         [self gameResume];
+        return;
+    }
+    
+    if (stateNow == gameOver) {
+        return;
     }
 }
 
@@ -153,7 +158,7 @@
 {
     stateNow = gamePause;
     //pause Layer
-    PauseLayer * thePauseLayer = [PauseLayer node];
+    thePauseLayer = [PauseLayer node];
     thePauseLayer.delegate = self;
     [self addChild:thePauseLayer z:1 tag:TAG_PAUSELAYER];
     
@@ -171,9 +176,10 @@
 {
     stateNow = gameStart;
     //Pause Layer
-    PauseLayer * thePauseLayer = (PauseLayer *)[self getChildByTag:TAG_PAUSELAYER];
-    if (thePauseLayer != Nil) {
+//    thePauseLayer = (PauseLayer *)[self getChildByTag:TAG_PAUSELAYER];
+    if (thePauseLayer != nil) {
         [self removeChild:thePauseLayer];
+        thePauseLayer = nil;
     }
     //player
     [player resumeMove];
@@ -186,9 +192,11 @@
 
 - (void)gameOver
 {
-    EndLayer * theEndLayer = [[EndLayer alloc] initWithScore:score.string];;
-    theEndLayer.delegate = self;
-    [self addChild:theEndLayer z:1 tag:TAG_ENDLAYER];
+    stateNow = gameOver;
+    
+    thePauseLayer = [[EndLayer alloc] initWithScore:score.string];;
+    thePauseLayer.delegate = self;
+    [self addChild:thePauseLayer z:1 tag:TAG_ENDLAYER];
     
     //player
     [player pauseMove];

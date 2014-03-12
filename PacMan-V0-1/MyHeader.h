@@ -87,7 +87,8 @@
 enum gameState {
     gameBefore = 1,
     gameStart,
-    gamePause
+    gamePause,
+    gameOver
 };
 
 enum direction {

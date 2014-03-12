@@ -31,6 +31,7 @@
     
     enum gameState stateNow;
     
+    PauseLayer * thePauseLayer;
 }
 
 @property PlayerMan * player;
