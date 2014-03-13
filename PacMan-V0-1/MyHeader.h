@@ -76,8 +76,8 @@
 
 //分数显示牌的位置
 #define SCORE_INIT_STRING @"0"
-#define SCORE_POSITION CGPointMake(484, 310)
-#define SCORE_FONTNAME nil
+#define SCORE_POSITION CGPointMake(424, 310)
+#define SCORE_FONTNAME @"Arial"
 #define SCORE_FONTSIZE 20
 
 //beans分数

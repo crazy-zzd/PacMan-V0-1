@@ -176,7 +176,6 @@
 {
     stateNow = gameStart;
     //Pause Layer
-//    thePauseLayer = (PauseLayer *)[self getChildByTag:TAG_PAUSELAYER];
     if (thePauseLayer != nil) {
         [self removeChild:thePauseLayer];
         thePauseLayer = nil;
@@ -206,8 +205,7 @@
     for (MonsterMan * monster in monsters) {
         [monster pauseMove];
     }
-    //    CCScene * scene = [GameLayer Scene];
-//    [[CCDirector sharedDirector] replaceScene:scene];
+
 }
 
 #pragma mark - 玩家移动时的动作

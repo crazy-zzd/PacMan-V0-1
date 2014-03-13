@@ -91,8 +91,10 @@
 	
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
 	
-	director_.wantsFullScreenLayout = YES;
-	
+//	director_.wantsFullScreenLayout = YES;
+//	[director_ setWantsFullScreenLayout:YES];
+//    director_ 
+    
 	// Display FSP and SPF
 	[director_ setDisplayStats:NO];
 	
