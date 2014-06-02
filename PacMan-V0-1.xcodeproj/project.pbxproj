@@ -935,6 +935,33 @@
 			path = "V0-1-1-map";
 			sourceTree = "<group>";
 		};
+		62E2BDEC193C8A1400CEDDD1 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				622FF57A182F1B800038BF0D /* ControlNode.m */,
+				622180F3186D24CA00030541 /* IntroLayer.m */,
+				626997EA186C69E200E48552 /* StartLayer.m */,
+				622180F6186D90C500030541 /* PauseLayer.m */,
+				622713BE18CC0E2E00DB68B2 /* EndLayer.m */,
+				62CA9A781835CD56009A584C /* GameLayer.m */,
+				622FF571182F19AD0038BF0D /* TouchLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		62E2BDED193C8A2800CEDDD1 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				62C03B9C182FA2EE00CCA525 /* Things.m */,
+				62C03B9F182FA46D00CCA525 /* Beans.m */,
+				62F8B8D8182F499100858391 /* Man.m */,
+				62C03B96182F7F6B00CCA525 /* MonsterMan.m */,
+				62C03B99182F7FA900CCA525 /* PlayerMan.m */,
+				6287118D1836584A00A66DA7 /* Maps.m */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
 		62F96052182CDE6800152AE2 = {
 			isa = PBXGroup;
 			children = (
@@ -978,23 +1005,12 @@
 		62F96072182CDE6800152AE2 /* PacMan-V0-1 */ = {
 			isa = PBXGroup;
 			children = (
+				62E2BDEC193C8A1400CEDDD1 /* Layers */,
+				62E2BDED193C8A2800CEDDD1 /* classes */,
 				62F966B2182CDF6700152AE2 /* headers */,
 				626997B9186C5F9200E48552 /* PacManSettings.plist */,
 				62F8B8D6182F42A700858391 /* MyHeader.h */,
 				62F96204182CDE6A00152AE2 /* AppDelegate.m */,
-				622180F3186D24CA00030541 /* IntroLayer.m */,
-				626997EA186C69E200E48552 /* StartLayer.m */,
-				622180F6186D90C500030541 /* PauseLayer.m */,
-				622713BE18CC0E2E00DB68B2 /* EndLayer.m */,
-				62CA9A781835CD56009A584C /* GameLayer.m */,
-				622FF571182F19AD0038BF0D /* TouchLayer.m */,
-				622FF57A182F1B800038BF0D /* ControlNode.m */,
-				62C03B9C182FA2EE00CCA525 /* Things.m */,
-				62C03B9F182FA46D00CCA525 /* Beans.m */,
-				62F8B8D8182F499100858391 /* Man.m */,
-				62C03B96182F7F6B00CCA525 /* MonsterMan.m */,
-				62C03B99182F7FA900CCA525 /* PlayerMan.m */,
-				6287118D1836584A00A66DA7 /* Maps.m */,
 				62F96073182CDE6800152AE2 /* Resources */,
 				62F961FF182CDE6A00152AE2 /* Supporting Files */,
 			);
@@ -1828,7 +1844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1847,7 +1863,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1856,7 +1872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1875,7 +1891,7 @@
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = NO;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1884,7 +1900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1917,7 +1933,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "./**";
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1925,7 +1941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1954,7 +1970,7 @@
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "./**";
 				VALIDATE_PRODUCT = NO;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

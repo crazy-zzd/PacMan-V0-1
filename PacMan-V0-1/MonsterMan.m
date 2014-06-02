@@ -40,6 +40,18 @@
     [self schedule:@selector(updateCheckAndMove:)];
 }
 
+- (void)pauseMove
+{
+    [super pauseMove];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(changeDirection) object:self];
+}
+
+- (void)resumeMove
+{
+    [super resumeMove];
+    [self changeDirection];
+}
+
 #pragma mark - 私有方法
 
 - (void)initAnimations
@@ -75,7 +87,6 @@
     GLfloat theTime;
     theTime = CCRANDOM_0_1() * (MONSTER_CHANGEDIRECTION_MOSTTIME - MONSTER_CHANGEDIRECTION_LEASTTIME) + MONSTER_CHANGEDIRECTION_LEASTTIME;
     [self performSelector:@selector(changeDirection) withObject:self afterDelay:theTime];
-    
 }
 
 - (void)updateCheckAndMove:(ccTime)delta

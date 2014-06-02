@@ -32,11 +32,14 @@
 - (void)pauseMove
 {
     [[self sprite] pauseSchedulerAndActions];
+    NSLog(@"%d",[[self sprite] numberOfRunningActions]);
+    [self pauseSchedulerAndActions];
 }
 
 - (void)resumeMove
 {
     [[self sprite] resumeSchedulerAndActions];
+    [self resumeSchedulerAndActions];
 }
 
 - (void)setDirectionAndMove:(int)theDirection
