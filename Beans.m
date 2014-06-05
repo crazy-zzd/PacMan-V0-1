@@ -8,13 +8,14 @@
 
 #import "Beans.h"
 
+#import "GameData.h"
 
 @implementation Beans
 
 - (id)initWithPosition:(CGPoint)thePosition withScore:(int)theScore
 {
     if (self = [super init]) {
-        sprite = [[CCSprite alloc] initWithFile:PNG_BEAN];
+        sprite = [[CCSprite alloc] initWithFile:[GameData sharedData].beanPngFile];
         [self setPosition:thePosition];
 
         beanScore = theScore;

@@ -101,7 +101,7 @@
 //添加吃豆人
 - (void)loadPlayer
 {
-    [self addChild:[theControNode.player sprite]];
+    [self addChild:[theControNode.player sprite] z:1];
     [self addChild:theControNode.player];
 }
 
@@ -159,7 +159,7 @@
 - (void)loadCountDownLayer
 {
     theCountDownLayer = [[CountDownLayer alloc] init];
-    [self addChild:theCountDownLayer];
+    [self addChild:theCountDownLayer z:1];
     
 //    [self schedule:@selector(updateCountDown:) interval:1.0 repeat:YES delay:0.0];
     [self schedule:@selector(updateCountDown:) interval:1.0];

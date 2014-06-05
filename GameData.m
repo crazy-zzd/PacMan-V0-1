@@ -73,6 +73,8 @@ static GameData * sharedData = nil;
     [_monstersDirection addObject:@(leftDirection)];
     [_monstersDirection addObject:@(leftDirection)];
     
+    _beanPngFile = @"bean.png";
+    
     _pausePosition = CGPointMake(520, 40);
     _pausePngFile = @"pause.png";
     _pausePngHLFile = @"pause.png";
@@ -99,6 +101,8 @@ static GameData * sharedData = nil;
     [_monstersDirection addObject:@(upDirection)];
     [_monstersDirection addObject:@(upDirection)];
     [_monstersDirection addObject:@(upDirection)];
+    
+    _beanPngFile = @"IronGame_Bean.png";
     
     _pausePosition = CGPointMake(548, SCREEN_HEIGHT - 15);
     _pausePngFile = @"IronGame_Pause.png";
