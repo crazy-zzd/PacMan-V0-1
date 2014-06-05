@@ -87,7 +87,7 @@
     [self loadScore];
     
     //添加并初始化游戏界面元素
-    [self loadStartButton];
+    [self loadPauseButton];
     
     //添加倒数界面
     [self loadCountDownLayer];
@@ -136,15 +136,16 @@
     [self addChild:background z:0];
 }
 
-//添加并初始化开始按钮
-- (void)loadStartButton
+//添加并初始化暂停按钮
+- (void)loadPauseButton
 {
     CCMenuItemImage * pauseBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.pausePngFile selectedImage:mainGameData.pausePngHLFile disabledImage:nil target:theControNode selector:@selector(onPressPause)];
     pauseBtn.position = mainGameData.pausePosition;
     
     CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
     btnMenu.position = CGPointZero;
-    [self addChild:btnMenu];
+    btnMenu.enabled = NO;
+    [self addChild:btnMenu z:1 tag:TAG_PAUSEBTN];
 }
 
 
@@ -170,6 +171,8 @@
         [theCountDownLayer removeFromParentAndCleanup:YES];
         [theControNode gameStart];
         [self unschedule:@selector(updateCountDown:)];
+        CCMenu * pauseBtn = (CCMenu *)[self getChildByTag:TAG_PAUSEBTN];
+        pauseBtn.enabled = YES;
     }
 }
 

@@ -15,6 +15,8 @@
 #define TAG_PAUSELAYER 103
 #define TAG_ENDLAYER 104
 
+#define TAG_PAUSEBTN 111
+
 //游戏界面的左下角坐标
 #define PLAYVIEW_X 5
 #define PLAYVIEW_Y 60

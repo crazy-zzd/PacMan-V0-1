@@ -86,7 +86,7 @@ static GameData * sharedData = nil;
     _mapTextFile = @"IronMap";
     _mapWidthPoint = 56;
     _mapHeightPoint = 29;
-    _mapPosition = CGPointMake(5, 0);
+    _mapPosition = CGPointMake(4, 0);
     
     _playerPosition = CGPointMake(27, 12);
     _playerDirection = rightDirection;
