@@ -45,7 +45,7 @@
 @property CCLabelTTF * score;
 
 - (void)moveWithDirection:(int)theDirection;
-- (void)startMoving;
-
+- (void)onPressPause;
+- (void)gameStart;
 
 @end

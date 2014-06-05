@@ -127,6 +127,10 @@
 		62DFF3241940139600275DF2 /* IronGame_Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF31C1940139600275DF2 /* IronGame_Pause.png */; };
 		62DFF3251940139600275DF2 /* IronGame_Pause_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF31D1940139600275DF2 /* IronGame_Pause_HL.png */; };
 		62DFF327194017EC00275DF2 /* IronMap.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF326194017EC00275DF2 /* IronMap.txt */; };
+		62DFF32D194036B500275DF2 /* CountDown_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF32A194036B500275DF2 /* CountDown_1.png */; };
+		62DFF32E194036B500275DF2 /* CountDown_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF32B194036B500275DF2 /* CountDown_2.png */; };
+		62DFF32F194036B500275DF2 /* CountDown_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF32C194036B500275DF2 /* CountDown_3.png */; };
+		62DFF3321940375F00275DF2 /* CountDownLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DFF3311940375F00275DF2 /* CountDownLayer.m */; };
 		62F8B8D9182F499100858391 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F8B8D8182F499100858391 /* Man.m */; };
 		62F9605F182CDE6800152AE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F9605E182CDE6800152AE2 /* QuartzCore.framework */; };
 		62F96061182CDE6800152AE2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F96060182CDE6800152AE2 /* OpenGLES.framework */; };
@@ -414,6 +418,11 @@
 		62DFF31C1940139600275DF2 /* IronGame_Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IronGame_Pause.png; sourceTree = "<group>"; };
 		62DFF31D1940139600275DF2 /* IronGame_Pause_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IronGame_Pause_HL.png; sourceTree = "<group>"; };
 		62DFF326194017EC00275DF2 /* IronMap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IronMap.txt; sourceTree = "<group>"; };
+		62DFF32A194036B500275DF2 /* CountDown_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CountDown_1.png; sourceTree = "<group>"; };
+		62DFF32B194036B500275DF2 /* CountDown_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CountDown_2.png; sourceTree = "<group>"; };
+		62DFF32C194036B500275DF2 /* CountDown_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CountDown_3.png; sourceTree = "<group>"; };
+		62DFF3301940375F00275DF2 /* CountDownLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownLayer.h; sourceTree = "<group>"; };
+		62DFF3311940375F00275DF2 /* CountDownLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownLayer.m; sourceTree = "<group>"; };
 		62F8B8D6182F42A700858391 /* MyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeader.h; sourceTree = "<group>"; };
 		62F8B8D7182F499100858391 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		62F8B8D8182F499100858391 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
@@ -1066,6 +1075,25 @@
 			name = Iron_Pictures;
 			sourceTree = "<group>";
 		};
+		62DFF3281940367B00275DF2 /* Countdown_Layer */ = {
+			isa = PBXGroup;
+			children = (
+				62DFF3311940375F00275DF2 /* CountDownLayer.m */,
+				62DFF3291940369B00275DF2 /* General_Pictures */,
+			);
+			name = Countdown_Layer;
+			sourceTree = "<group>";
+		};
+		62DFF3291940369B00275DF2 /* General_Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				62DFF32A194036B500275DF2 /* CountDown_1.png */,
+				62DFF32B194036B500275DF2 /* CountDown_2.png */,
+				62DFF32C194036B500275DF2 /* CountDown_3.png */,
+			);
+			name = General_Pictures;
+			sourceTree = "<group>";
+		};
 		62E2BDEC193C8A1400CEDDD1 /* Touch_Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1157,7 @@
 				62DFF2FE193F5C4100275DF2 /* Intro_Layer */,
 				62DFF2FC193F5BDE00275DF2 /* Start_Layer */,
 				62DFF307193F648300275DF2 /* Game_Layer */,
+				62DFF3281940367B00275DF2 /* Countdown_Layer */,
 				62DFF302193F63B000275DF2 /* Pause_Layer */,
 				62DFF304193F641C00275DF2 /* End_Layer */,
 				62E2BDEC193C8A1400CEDDD1 /* Touch_Control */,
@@ -1565,6 +1594,7 @@
 		62F966B2182CDF6700152AE2 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				62DFF3301940375F00275DF2 /* CountDownLayer.h */,
 				62DFF3121940098B00275DF2 /* GameData.h */,
 				622713BD18CC0E2E00DB68B2 /* EndLayer.h */,
 				621EB9B5186E9F09009E0E73 /* PauseLayerDelegate.h */,
@@ -1660,6 +1690,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DFF32F194036B500275DF2 /* CountDown_3.png in Resources */,
 				622713CB18CC12B200DB68B2 /* end-gameover-hd.png in Resources */,
 				62DFF3251940139600275DF2 /* IronGame_Pause_HL.png in Resources */,
 				62364AD418CB5BBB001E0AEC /* monster-1-up-1-hd.png in Resources */,
@@ -1702,6 +1733,7 @@
 				62A81DA718B08C64006ACE85 /* pause@2x.png in Resources */,
 				62364AE318CB5BBB001E0AEC /* monster-2-left-1-hd.png in Resources */,
 				62364AB218CB5BB3001E0AEC /* monster-4-right-2-hd.png in Resources */,
+				62DFF32E194036B500275DF2 /* CountDown_2.png in Resources */,
 				626997D7186C693800E48552 /* cloud-3.png in Resources */,
 				62DFF2F7193F5B3C00275DF2 /* IronStart_Setting.png in Resources */,
 				62F96075182CDE6800152AE2 /* cocos_Default.png in Resources */,
@@ -1729,6 +1761,7 @@
 				62364AEA18CB5BBB001E0AEC /* monster-3-right-2-hd.png in Resources */,
 				62364AEE18CB5BBB001E0AEC /* monster-scar-2-hd.png in Resources */,
 				62F9607F182CDE6800152AE2 /* Icon-Small-50.png in Resources */,
+				62DFF32D194036B500275DF2 /* CountDown_1.png in Resources */,
 				62364AAD18CB5BB3001E0AEC /* monster-4-up-1-hd.png in Resources */,
 				62364AE418CB5BBB001E0AEC /* monster-2-left-2-hd.png in Resources */,
 				62364ADC18CB5BBB001E0AEC /* monster-2-up-1-hd.png in Resources */,
@@ -1797,6 +1830,7 @@
 				62F96202182CDE6A00152AE2 /* main.m in Sources */,
 				62C03B97182F7F6B00CCA525 /* MonsterMan.m in Sources */,
 				626997EB186C69E200E48552 /* StartLayer.m in Sources */,
+				62DFF3321940375F00275DF2 /* CountDownLayer.m in Sources */,
 				62DFF3141940098B00275DF2 /* GameData.m in Sources */,
 				62C03BA0182FA46D00CCA525 /* Beans.m in Sources */,
 				622FF57B182F1B800038BF0D /* ControlNode.m in Sources */,

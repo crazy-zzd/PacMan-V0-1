@@ -119,12 +119,12 @@
 
 #pragma mark - 玩家开始移动或者暂停移动
 
-- (void)startMoving
+- (void)onPressPause
 {
-    if (stateNow == gameBefore) {
-        [self gameStart];
-        return;
-    }
+//    if (stateNow == gameBefore) {
+//        [self gameStart];
+//        return;
+//    }
     
     if (stateNow == gameStart) {
         [self gamePause];
@@ -140,8 +140,6 @@
         return;
     }
 }
-
-
 
 #pragma mark - 私有方法
 #pragma mark - 游戏状态
