@@ -26,6 +26,8 @@
 
 +(Maps *)sharedMap;
 
+-(void)handleMap;
+
 //-(void)setMap:(NSString *)fileName;
 
 -(BOOL)isWallWithPointPosition:(CGPoint)thePointPosition;

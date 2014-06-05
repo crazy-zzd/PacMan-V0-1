@@ -75,8 +75,9 @@ static GameData * sharedData = nil;
     
     _pausePosition = CGPointMake(520, 40);
     _pausePngFile = @"pause.png";
+    _pausePngHLFile = @"pause.png";
     
-
+    _scorePosition = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 15);
 }
 
 - (void)ironInit
@@ -87,7 +88,7 @@ static GameData * sharedData = nil;
     _mapHeightPoint = 29;
     _mapPosition = CGPointMake(5, 0);
     
-    _playerPosition = CGPointMake(0, 0);
+    _playerPosition = CGPointMake(27, 12);
     _playerDirection = rightDirection;
     
     _monstersPosition = [NSMutableArray array];
@@ -103,6 +104,7 @@ static GameData * sharedData = nil;
     _pausePngFile = @"IronGame_Pause.png";
     _pausePngHLFile = @"IronGame_Pause_HL.png";
 
+    _scorePosition = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 15);
 }
 
 @end

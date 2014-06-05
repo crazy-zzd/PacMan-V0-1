@@ -103,7 +103,7 @@
 - (void)initScore
 {
     score = [[CCLabelTTF alloc] initWithString:SCORE_INIT_STRING fontName:SCORE_FONTNAME fontSize:SCORE_FONTSIZE];
-    score.position = SCORE_POSITION;
+    score.position = mainGameData.scorePosition;
 }
 
 #pragma mark - 对外接口

@@ -17,6 +17,7 @@
 #import "Beans.h"
 
 #import "GameData.h"
+#import "Maps.h"
 
 @implementation GameLayer
 
@@ -28,8 +29,11 @@
 #pragma mark - 创建场景
 + (CCScene *)SceneWithStyle:(enum GameStyle)theStyle
 {
+    //初始化数据类
     GameData * sharedGameData = [GameData sharedData];
     [sharedGameData setStyle:theStyle];
+    Maps * sharedMap = [Maps sharedMap];
+    [sharedMap handleMap];
     
     CCScene * scene = [CCScene node];
     
@@ -137,13 +141,6 @@
     CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
     btnMenu.position = CGPointZero;
     [self addChild:btnMenu];
-//    [CCMenuItemFont setFontName:@"Helvetica-BoldOblique"];
-//    [CCMenuItemFont setFontSize:26];
-//    CCMenuItemFont * item = [CCMenuItemFont itemWithString:@"start"	target:theControNode selector:@selector(startMoving)];
-//    
-//    CCMenu * menu = [CCMenu menuWithItems:item, nil];
-//    menu.position = ccp(520, 40);
-//    [self addChild:menu];
 }
 
 
