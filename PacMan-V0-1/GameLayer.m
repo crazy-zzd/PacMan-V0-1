@@ -10,20 +10,27 @@
 #import "TouchLayer.h"
 #import "ControlNode.h"
 #import "PauseLayer.h"
-#import "MyHeader.h"
+//#import "MyHeader.h"
 
 #import "PlayerMan.h"
 #import "MonsterMan.h"
 #import "Beans.h"
+
+#import "GameData.h"
 
 @implementation GameLayer
 
 @synthesize theTouchLayer;
 @synthesize theControNode;
 
+@synthesize mainGameStyle;
+
 #pragma mark - 创建场景
-+ (CCScene *)Scene
++ (CCScene *)SceneWithStyle:(enum GameStyle)theStyle
 {
+    GameData * sharedGameData = [GameData sharedData];
+    [sharedGameData setStyle:theStyle];
+    
     CCScene * scene = [CCScene node];
     
     //创建三个层，分别初始化
@@ -34,6 +41,9 @@
     //把触摸层和控制层归到游戏层下
     gameLayer.theTouchLayer = touchLayer;
     gameLayer.theControNode = controlNode;
+    
+    //设置Style
+    gameLayer.mainGameStyle = theStyle;
     
     //把三个层添加到场景里
     [scene addChild:gameLayer z:0 tag:TAG_GAMELAYER];
@@ -53,6 +63,10 @@
     //设置触摸委托
     theTouchLayer.delegate = self;
 
+    //设置数据
+    mainGameData = [GameData sharedData];
+    [mainGameData setStyle:mainGameStyle];
+    
     //添加背景
     [self loadBackGround];
     
@@ -109,7 +123,7 @@
 //添加并初始化背景图片
 - (void)loadBackGround
 {
-    CCSprite * background = [[CCSprite alloc] initWithFile:PNG_BACKGROUND];
+    CCSprite * background = [[CCSprite alloc] initWithFile:mainGameData.mapPngFile];
     background.position = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
     [self addChild:background z:0];
 }
@@ -117,13 +131,19 @@
 //添加并初始化开始按钮
 - (void)loadStartButton
 {
-    [CCMenuItemFont setFontName:@"Helvetica-BoldOblique"];
-    [CCMenuItemFont setFontSize:26];
-    CCMenuItemFont * item = [CCMenuItemFont itemWithString:@"start"	target:theControNode selector:@selector(startMoving)];
+    CCMenuItemImage * pauseBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.pausePngFile selectedImage:mainGameData.pausePngHLFile disabledImage:nil target:theControNode selector:@selector(startMoving)];
+    pauseBtn.position = mainGameData.pausePosition;
     
-    CCMenu * menu = [CCMenu menuWithItems:item, nil];
-    menu.position = ccp(520, 40);
-    [self addChild:menu];
+    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
+    btnMenu.position = CGPointZero;
+    [self addChild:btnMenu];
+//    [CCMenuItemFont setFontName:@"Helvetica-BoldOblique"];
+//    [CCMenuItemFont setFontSize:26];
+//    CCMenuItemFont * item = [CCMenuItemFont itemWithString:@"start"	target:theControNode selector:@selector(startMoving)];
+//    
+//    CCMenu * menu = [CCMenu menuWithItems:item, nil];
+//    menu.position = ccp(520, 40);
+//    [self addChild:menu];
 }
 
 

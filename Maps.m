@@ -8,6 +8,7 @@
 
 #import "Maps.h"
 
+#import "GameData.h"
 
 @implementation Maps
 
@@ -28,6 +29,9 @@ static Maps * sharedMap = nil;
 {
     self = [super init];
     if (self) {
+        
+        //初始化数据文件
+        mainGameData = [GameData sharedData];
         
         //初始化地图，通过地图文本文件
         [self handleMap];
@@ -50,8 +54,8 @@ static Maps * sharedMap = nil;
 - (CGPoint)getCentrePositionFromPointPosition:(CGPoint)thePointPosition withLengthPoint:(int)length
 {
     CGPoint theCentrePosition;
-    theCentrePosition.x = PLAYVIEW_X + thePointPosition.x * POINT_LENGTH + 0.5 * length * POINT_LENGTH;
-    theCentrePosition.y = PLAYVIEW_Y + thePointPosition.y * POINT_LENGTH + 0.5 * length * POINT_LENGTH;
+    theCentrePosition.x = mainGameData.mapPosition.x + thePointPosition.x * POINT_LENGTH + 0.5 * length * POINT_LENGTH;
+    theCentrePosition.y = mainGameData.mapPosition.y + thePointPosition.y * POINT_LENGTH + 0.5 * length * POINT_LENGTH;
     return theCentrePosition;
 }
 
@@ -114,7 +118,7 @@ static Maps * sharedMap = nil;
 - (void)handleMap
 {
     NSError *error;
-    NSString * textFileContents = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"map" ofType:@"txt"] encoding:NSUTF8StringEncoding error:& error]; 
+    NSString * textFileContents = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:mainGameData.mapTextFile ofType:@"txt"] encoding:NSUTF8StringEncoding error:& error];
     
     if (textFileContents == nil) {
         
@@ -126,9 +130,9 @@ static Maps * sharedMap = nil;
 
     NSString * theLine;
     char theChar;
-    for (int i = 0; i < MAP_HEIGTH_POINT; i ++) {
-        theLine = [lines objectAtIndex:MAP_HEIGTH_POINT - 1 - i];
-        for (int j = 0; j < MAP_WIDTH_POINT; j++) {
+    for (int i = 0; i < mainGameData.mapHeightPoint; i ++) {
+        theLine = [lines objectAtIndex:mainGameData.mapHeightPoint - 1 - i];
+        for (int j = 0; j < mainGameData.mapWidthPoint; j++) {
             theChar = [theLine characterAtIndex:j];
             if (theChar == '0') {
                 pointMap[j][i] = 0;
@@ -147,8 +151,8 @@ static Maps * sharedMap = nil;
 - (CGPoint)getPointPositionFromCentrePosition:(CGPoint)theCentrePosition
 {
     CGPoint thePointPosition;
-    thePointPosition.x = (int)((theCentrePosition.x - PLAYVIEW_X) / POINT_LENGTH);
-    thePointPosition.y = (int)((theCentrePosition.y - PLAYVIEW_Y) / POINT_LENGTH);
+    thePointPosition.x = (int)((theCentrePosition.x - mainGameData.mapPosition.x) / POINT_LENGTH);
+    thePointPosition.y = (int)((theCentrePosition.y - mainGameData.mapPosition.y) / POINT_LENGTH);
     return thePointPosition;
 }
 
@@ -167,13 +171,13 @@ static Maps * sharedMap = nil;
 - (CGPoint)getRightUpPointPositionFromCentrePosition:(CGPoint)theCentrePosition withLeftDownPointPosition:(CGPoint)theLeftDownPointPosition withLengthPoint:(int)length
 {
     CGPoint theRightUpPointPosition;
-    if ([self isOnLineWithNumber:theCentrePosition.x withLine:PLAYVIEW_X]) {
+    if ([self isOnLineWithNumber:theCentrePosition.x withLine:mainGameData.mapPosition.x]) {
         theRightUpPointPosition.x = theLeftDownPointPosition.x + length - 1;
     }
     else{
         theRightUpPointPosition.x = theLeftDownPointPosition.x + length;
     }
-    if ([self isOnLineWithNumber:theCentrePosition.y withLine:PLAYVIEW_Y]) {
+    if ([self isOnLineWithNumber:theCentrePosition.y withLine:mainGameData.mapPosition.y]) {
         theRightUpPointPosition.y = theLeftDownPointPosition.y + length - 1;
     }
     else{
@@ -225,23 +229,23 @@ static Maps * sharedMap = nil;
 - (CGPoint)move1StepWith:(CGPoint)theCentrePosition with:(int)theDirection with:(int)length
 {
     //首先判断是不是不在线上
-    if (![self isOnLineWithNumber:theCentrePosition.x withLine:PLAYVIEW_X]) {
+    if (![self isOnLineWithNumber:theCentrePosition.x withLine:mainGameData.mapPosition.x]) {
         if (theDirection == rightDirection) {
-            theCentrePosition.x = ((int)((theCentrePosition.x - PLAYVIEW_X)/POINT_LENGTH)) * POINT_LENGTH + POINT_LENGTH + PLAYVIEW_X;
+            theCentrePosition.x = ((int)((theCentrePosition.x - mainGameData.mapPosition.x)/POINT_LENGTH)) * POINT_LENGTH + POINT_LENGTH + mainGameData.mapPosition.x;
             return theCentrePosition;
         }
         if (theDirection == leftDirection) {
-            theCentrePosition.x = ((int)((theCentrePosition.x - PLAYVIEW_X)/POINT_LENGTH)) * POINT_LENGTH + PLAYVIEW_X;
+            theCentrePosition.x = ((int)((theCentrePosition.x - mainGameData.mapPosition.x)/POINT_LENGTH)) * POINT_LENGTH + mainGameData.mapPosition.x;
             return theCentrePosition;
         }
     }
-    if (![self isOnLineWithNumber:theCentrePosition.y withLine:PLAYVIEW_Y]) {
+    if (![self isOnLineWithNumber:theCentrePosition.y withLine:mainGameData.mapPosition.y]) {
         if (theDirection == upDirection) {
-            theCentrePosition.y = ((int)((theCentrePosition.y - PLAYVIEW_Y)/POINT_LENGTH)) * POINT_LENGTH + POINT_LENGTH + PLAYVIEW_Y;
+            theCentrePosition.y = ((int)((theCentrePosition.y - mainGameData.mapPosition.y)/POINT_LENGTH)) * POINT_LENGTH + POINT_LENGTH + mainGameData.mapPosition.y;
             return theCentrePosition;
         }
         if (theDirection == downDirection) {
-            theCentrePosition.y = ((int)((theCentrePosition.y - PLAYVIEW_Y)/POINT_LENGTH)) * POINT_LENGTH + PLAYVIEW_Y;
+            theCentrePosition.y = ((int)((theCentrePosition.y - mainGameData.mapPosition.y)/POINT_LENGTH)) * POINT_LENGTH + mainGameData.mapPosition.y;
             return theCentrePosition;
         }
     }
@@ -279,7 +283,7 @@ static Maps * sharedMap = nil;
     CGPoint rightUpPointPosition = [self getRightUpPointPositionFromCentrePosition:theCentrePosition withLeftDownPointPosition:leftDownPointPosition withLengthPoint:length];
     
     //判断是不是到达地图边界
-    if ((rightUpPointPosition.x >= MAP_WIDTH_POINT) || (rightUpPointPosition.y >= MAP_HEIGTH_POINT) || (leftDownPointPosition.x < 0) || (leftDownPointPosition.y < 0)) {
+    if ((rightUpPointPosition.x >= mainGameData.mapWidthPoint) || (rightUpPointPosition.y >= mainGameData.mapHeightPoint) || (leftDownPointPosition.x < 0) || (leftDownPointPosition.y < 0)) {
         return YES;
     }
     

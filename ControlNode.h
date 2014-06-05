@@ -20,7 +20,12 @@
 @class GameLayer;
 @class StartLayer;
 
+@class GameData;
+
 @interface ControlNode : CCNode<PauseLayerDelegate> {
+    //游戏数据
+    GameData * mainGameData;
+    
     PlayerMan * player;
     NSMutableArray * monsters;
     NSMutableArray * beans;

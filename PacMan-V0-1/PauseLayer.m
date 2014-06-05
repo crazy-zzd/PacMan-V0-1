@@ -71,7 +71,7 @@
 
 - (IBAction)onPressRestart:(id)sender
 {
-    CCScene * scene = [GameLayer Scene];
+    CCScene * scene = [GameLayer SceneWithStyle:IronStyle];
     CCTransitionFadeBL * tran = [CCTransitionFadeBL
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];

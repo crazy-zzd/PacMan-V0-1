@@ -19,6 +19,8 @@
 #import "PauseLayer.h"
 #import "EndLayer.h"
 
+#import "GameData.h"
+
 @implementation ControlNode
 
 @synthesize player;
@@ -31,6 +33,8 @@
 - (id)init
 {
     if (self = [super init]) {
+        
+        mainGameData = [GameData sharedData];
         
         [self initMaps];
         
@@ -49,14 +53,14 @@
 
 - (void)initPlayer
 {
-    player = [[PlayerMan alloc] initWithPointPosition:PLAYER_POINTPOSITION withDirection:PLAYER_DIRECTION];
+    player = [[PlayerMan alloc] initWithPointPosition:mainGameData.playerPosition withDirection:mainGameData.playerDirection];
 }
 
 - (void)initMonsters
 {
-    MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:MONSTER_POINTPOSITION1 withDirection:MONSTER_DIRECTION1 withIndex:1];
-    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION2 withDirection:MONSTER_DIRECTION2 withIndex:2];
-    MonsterMan * thirdMonster = [[MonsterMan alloc]initWithPointPosition:MONSTER_POINTPOSITION3 withDirection:MONSTER_DIRECTION3 withIndex:3];
+    MonsterMan * firstMonster = [[MonsterMan alloc] initWithPointPosition:[mainGameData.monstersPosition[0] CGPointValue] withDirection:[mainGameData.monstersDirection[0] intValue] withIndex:1];
+    MonsterMan * secondMonster = [[MonsterMan alloc]initWithPointPosition:[mainGameData.monstersPosition[1] CGPointValue] withDirection:[mainGameData.monstersDirection[1] intValue] withIndex:2];
+    MonsterMan * thirdMonster = [[MonsterMan alloc]initWithPointPosition:[mainGameData.monstersPosition[2] CGPointValue] withDirection:[mainGameData.monstersDirection[2] intValue] withIndex:3];
     
     monsters = [[NSMutableArray alloc] init];
     [monsters addObject:firstMonster];
@@ -67,12 +71,12 @@
 - (void)initBeans
 {
     beans = [[NSMutableArray alloc] init];
-    for (int x = 0; x < MAP_WIDTH_POINT - 1; x ++) {
-        for (int y = 0; y < MAP_HEIGTH_POINT - 1; y ++) {
+    for (int x = 0; x < mainGameData.mapWidthPoint - 1; x ++) {
+        for (int y = 0; y < mainGameData.mapHeightPoint- 1; y ++) {
             if (!([theMap isWallWithPointPosition:CGPointMake(x, y)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y) ]||[theMap isWallWithPointPosition:CGPointMake(x, y + 1)]||[theMap isWallWithPointPosition:CGPointMake(x + 1, y + 1)])) {
                 GLfloat theX = 0, theY = 0;
-                theX = PLAYVIEW_X + POINT_LENGTH * (x + 1);
-                theY = PLAYVIEW_Y + POINT_LENGTH * (y + 1);
+                theX = mainGameData.mapPosition.x + POINT_LENGTH * (x + 1);
+                theY = mainGameData.mapPosition.y + POINT_LENGTH * (y + 1);
                 Beans * theBean = [[Beans alloc] initWithPosition:CGPointMake(theX, theY) withScore:BEAN_SCORE];
                 [beans addObject:theBean];
             }

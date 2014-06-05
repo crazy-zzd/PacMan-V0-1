@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "TouchLayerDelegate.h"
+#import "MyHeader.h"
+
 
 
 @class PauseLayer;
@@ -18,15 +20,23 @@
 @class MonsterMan;
 @class Beans;
 
+@class GameData;
+
 @interface GameLayer : CCLayer<TouchLayerDelegate> {
     TouchLayer * theTouchLayer;
     ControlNode * theControNode;
+    
+    GameData * mainGameData;
+    
+    enum GameStyle mainGameStyle;
 }
 
-@property TouchLayer * theTouchLayer;
-@property ControlNode * theControNode;
+@property (nonatomic, strong)TouchLayer * theTouchLayer;
+@property (nonatomic, strong)ControlNode * theControNode;
 
-+(CCScene *)Scene;
+@property (nonatomic, assign)enum GameStyle mainGameStyle;
+
++(CCScene *)SceneWithStyle:(enum GameStyle)theStyle;
 
 
 
