@@ -104,5 +104,9 @@ enum manState {
     standing = 2
 };
 
+enum GameStyle {
+    IronStyle = 100,
+    SummerStyle = 101
+};
 
 #endif

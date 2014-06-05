@@ -184,7 +184,7 @@
 
 - (void)onPressStartButton:(id)sender
 {
-    CCScene * scene = [GameLayer Scene];
+    CCScene * scene = [GameLayer SceneWithStyle:IronStyle];
     CCTransitionCrossFade * tran = [CCTransitionFadeBL
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];

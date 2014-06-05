@@ -10,7 +10,12 @@
 #import "cocos2d.h"
 #import "MyHeader.h"
 
+@class GameData;
+
 @interface Maps : CCNode {
+    
+    GameData * mainGameData;
+    
     CCSprite * theMap;
     BOOL pointMap [100][100];
     int width,heigth;
@@ -20,6 +25,8 @@
 
 
 +(Maps *)sharedMap;
+
+-(void)handleMap;
 
 //-(void)setMap:(NSString *)fileName;
 

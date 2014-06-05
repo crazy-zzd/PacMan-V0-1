@@ -11,6 +11,8 @@
 #import "GameLayer.h"
 #import "StartLayer.h"
 
+#import "GameData.h"
+
 @implementation PauseLayer
 
 @synthesize delegate;
@@ -71,7 +73,7 @@
 
 - (IBAction)onPressRestart:(id)sender
 {
-    CCScene * scene = [GameLayer Scene];
+    CCScene * scene = [GameLayer SceneWithStyle:[[GameData sharedData] nowStyle]];
     CCTransitionFadeBL * tran = [CCTransitionFadeBL
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];
