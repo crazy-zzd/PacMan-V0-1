@@ -12,6 +12,8 @@
 #import "PauseLayer.h"
 //#import "MyHeader.h"
 
+#import "CountDownLayer.h"
+
 #import "PlayerMan.h"
 #import "MonsterMan.h"
 #import "Beans.h"
@@ -87,6 +89,8 @@
     //添加并初始化游戏界面元素
     [self loadStartButton];
     
+    //添加倒数界面
+    [self loadCountDownLayer];
     
     //测试
 //    [self testAnimation];
@@ -135,7 +139,7 @@
 //添加并初始化开始按钮
 - (void)loadStartButton
 {
-    CCMenuItemImage * pauseBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.pausePngFile selectedImage:mainGameData.pausePngHLFile disabledImage:nil target:theControNode selector:@selector(startMoving)];
+    CCMenuItemImage * pauseBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.pausePngFile selectedImage:mainGameData.pausePngHLFile disabledImage:nil target:theControNode selector:@selector(onPressPause)];
     pauseBtn.position = mainGameData.pausePosition;
     
     CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
@@ -148,6 +152,25 @@
 - (void)loadScore
 {
     [self addChild:theControNode.score];
+}
+
+//添加倒数界面
+- (void)loadCountDownLayer
+{
+    theCountDownLayer = [[CountDownLayer alloc] init];
+    [self addChild:theCountDownLayer];
+    
+//    [self schedule:@selector(updateCountDown:) interval:1.0 repeat:YES delay:0.0];
+    [self schedule:@selector(updateCountDown:) interval:1.0];
+}
+
+- (void)updateCountDown:(ccTime)delta
+{
+    if ([theCountDownLayer countNumber]) {
+        [theCountDownLayer removeFromParentAndCleanup:YES];
+        [theControNode gameStart];
+        [self unschedule:@selector(updateCountDown:)];
+    }
 }
 
 

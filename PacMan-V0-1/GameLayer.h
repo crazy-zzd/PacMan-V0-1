@@ -15,6 +15,8 @@
 
 @class PauseLayer;
 @class TouchLayer;
+
+@class CountDownLayer;
 @class ControlNode;
 @class PlayerMan;
 @class MonsterMan;
@@ -25,6 +27,8 @@
 @interface GameLayer : CCLayer<TouchLayerDelegate> {
     TouchLayer * theTouchLayer;
     ControlNode * theControNode;
+    
+    CountDownLayer * theCountDownLayer;
     
     GameData * mainGameData;
     
