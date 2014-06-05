@@ -151,6 +151,7 @@
     [self addChild:startMenu z:3];
     
     
+    
     theJumpMonster = 0;
     [self schedule:@selector(jumpMonsters:) interval:0.5 repeat:kCCRepeatForever delay:0];
     
