@@ -13,6 +13,11 @@
 
 
 @interface StartLayer : CCLayer {
+    
+//Iron Style
+    
+    
+//Summer Style
     NSMutableArray * clounds;
     
     CCSprite * sunny;
