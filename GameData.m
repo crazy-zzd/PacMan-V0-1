@@ -79,7 +79,7 @@ static GameData * sharedData = nil;
     _beanPngFile = @"bean.png";
     
     _pausePosition = CGPointMake(1090 / 2, SCREEN_HEIGHT - 32 / 2);
-    _pausePngFile = @"pause.png";
+    _pausePngFile = @"Summer_Pause.png";
     _pausePngHLFile = @"pause_HL.png";
 //    _pausePngFile = @"IronGame_Pause.png";
 //    _pausePngHLFile = @"IronGame_Pause_HL.png";

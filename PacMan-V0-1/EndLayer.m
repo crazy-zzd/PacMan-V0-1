@@ -40,14 +40,19 @@
     
     //标题：你的分数
     CCSprite * yourscore = [[CCSprite alloc] initWithFile:@"end-yourscore.png"];
-    yourscore.position = CGPointMake(SCREEN_WIDTH / 2, 230);
+    yourscore.position = CGPointMake(SCREEN_WIDTH / 2, 240);
     [self addChild:yourscore];
 
     //分数
-    CCLabelTTF * theScoreLabel = [[CCLabelTTF alloc] initWithString:score fontName:[GameData sharedData].scoreName fontSize:72];
-    theScoreLabel.position = CGPointMake(SCREEN_WIDTH / 2, 175);
+    CCLabelTTF * theScoreLabel = [[CCLabelTTF alloc] initWithString:score fontName:[GameData sharedData].scoreName fontSize:64];
+    theScoreLabel.position = CGPointMake(SCREEN_WIDTH / 2, 185);
     [self addChild:theScoreLabel];
 
+    //最高分
+    NSString * highScoreStr = [NSString stringWithFormat:@"high score: %d", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] intValue]];
+    CCLabelTTF * theHightScore = [[CCLabelTTF alloc] initWithString:highScoreStr fontName:@"9PX2BUS" fontSize:18];
+    theHightScore.position = CGPointMake(SCREEN_WIDTH / 2, 147);
+    [self addChild:theHightScore];
 
     //重新开始
     CCMenuItemImage * restartItem = [CCMenuItemImage itemWithNormalImage:@"end-replay-still.png" selectedImage:@"end-replay-touched.png" target:self selector:@selector(onPressRestart:)];

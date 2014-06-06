@@ -12,6 +12,7 @@
 
 #import "GameLayer.h"
 #import "SettingLayer.h"
+#import "GameData.h"
 
 @implementation SelectLayer
 
@@ -35,6 +36,21 @@
         CCSprite * background = [[CCSprite alloc] initWithFile:@"Select_Background.png"];
         background.position = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
         [self addChild:background];
+        
+        NSString * highScore;
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"]) {
+            highScore = [NSString stringWithFormat:@"%d", [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] intValue]];
+        }
+        else{
+            [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:@"highScore"];
+            highScore = @"0";
+        }
+        
+        CCLabelTTF * score;
+        score = [[CCLabelTTF alloc] initWithString:highScore fontName:[GameData sharedData].scoreName fontSize:SCORE_FONTSIZE];
+//        [score setColor:[GameData sharedData].scoreColor];
+        score.position = CGPointMake(570 / 2, SCREEN_HEIGHT - 20);
+        [self addChild:score];
         
         
         CCMenuItemImage * ironBtn = [[CCMenuItemImage alloc] initWithNormalImage:@"Select_IronStyle.png" selectedImage:@"Select_IronStyle_HL.png" disabledImage:nil target:self selector:@selector(onPressIronBtn:)];

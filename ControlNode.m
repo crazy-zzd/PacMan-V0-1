@@ -215,9 +215,12 @@
 {
     stateNow = gameOver;
     
+    [self setHightScore:player.score];
+    
     thePauseLayer = [[EndLayer alloc] initWithScore:score.string];;
     thePauseLayer.delegate = self;
     [self addChild:thePauseLayer z:1 tag:TAG_ENDLAYER];
+    
     
     //player
     [player pauseMove];
@@ -228,6 +231,14 @@
         [monster pauseMove];
     }
 
+}
+
+- (void)setHightScore:(int)theScore
+{
+    int oldScore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"] intValue];
+    if (oldScore < theScore) {
+        [[NSUserDefaults standardUserDefaults] setObject:@(theScore) forKey:@"highScore"];
+    }
 }
 
 #pragma mark - 玩家移动时的动作
