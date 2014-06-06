@@ -20,6 +20,14 @@
 		62218104186D911E00030541 /* pause-next-touched-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622180FD186D911E00030541 /* pause-next-touched-hd.png */; };
 		62218105186D911E00030541 /* pause-replay-still-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622180FE186D911E00030541 /* pause-replay-still-hd.png */; };
 		62218106186D911E00030541 /* pause-replay-touched-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622180FF186D911E00030541 /* pause-replay-touched-hd.png */; };
+		6223042C1941AEE600D2E8FB /* Select_Friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304251941AEE600D2E8FB /* Select_Friends.png */; };
+		6223042D1941AEE600D2E8FB /* Select_Friends_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304261941AEE600D2E8FB /* Select_Friends_HL.png */; };
+		6223042E1941AEE600D2E8FB /* Select_SummerStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304271941AEE600D2E8FB /* Select_SummerStyle.png */; };
+		6223042F1941AEE600D2E8FB /* Select_SummerStyle_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304281941AEE600D2E8FB /* Select_SummerStyle_HL.png */; };
+		622304301941AEE600D2E8FB /* Select_IronStyle.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304291941AEE600D2E8FB /* Select_IronStyle.png */; };
+		622304311941AEE600D2E8FB /* Select_IronStyle_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 6223042A1941AEE600D2E8FB /* Select_IronStyle_HL.png */; };
+		622304351941AF6600D2E8FB /* SelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622304341941AF6600D2E8FB /* SelectLayer.m */; };
+		622304371941B3C800D2E8FB /* Select_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304361941B3C800D2E8FB /* Select_Background.png */; };
 		62266156185EB21D00D81719 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266154185EB21D00D81719 /* Icon.png */; };
 		62266157185EB21D00D81719 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266155185EB21D00D81719 /* Icon@2x.png */; };
 		62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266158185EB22A00D81719 /* Default-568h@2x.png */; };
@@ -300,6 +308,15 @@
 		622180FD186D911E00030541 /* pause-next-touched-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-next-touched-hd.png"; path = "../V0-1-1-Button/pause-next-touched-hd.png"; sourceTree = "<group>"; };
 		622180FE186D911E00030541 /* pause-replay-still-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-replay-still-hd.png"; path = "../V0-1-1-Button/pause-replay-still-hd.png"; sourceTree = "<group>"; };
 		622180FF186D911E00030541 /* pause-replay-touched-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-replay-touched-hd.png"; path = "../V0-1-1-Button/pause-replay-touched-hd.png"; sourceTree = "<group>"; };
+		622304251941AEE600D2E8FB /* Select_Friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_Friends.png; sourceTree = "<group>"; };
+		622304261941AEE600D2E8FB /* Select_Friends_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_Friends_HL.png; sourceTree = "<group>"; };
+		622304271941AEE600D2E8FB /* Select_SummerStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_SummerStyle.png; sourceTree = "<group>"; };
+		622304281941AEE600D2E8FB /* Select_SummerStyle_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_SummerStyle_HL.png; sourceTree = "<group>"; };
+		622304291941AEE600D2E8FB /* Select_IronStyle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_IronStyle.png; sourceTree = "<group>"; };
+		6223042A1941AEE600D2E8FB /* Select_IronStyle_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_IronStyle_HL.png; sourceTree = "<group>"; };
+		622304331941AF6600D2E8FB /* SelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLayer.h; sourceTree = "<group>"; };
+		622304341941AF6600D2E8FB /* SelectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLayer.m; sourceTree = "<group>"; };
+		622304361941B3C800D2E8FB /* Select_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_Background.png; sourceTree = "<group>"; };
 		62266154185EB21D00D81719 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		62266155185EB21D00D81719 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		62266158185EB22A00D81719 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -766,6 +783,29 @@
 			name = resources;
 			sourceTree = "<group>";
 		};
+		622304231941AEB300D2E8FB /* Select_Layer */ = {
+			isa = PBXGroup;
+			children = (
+				622304341941AF6600D2E8FB /* SelectLayer.m */,
+				622304241941AEC500D2E8FB /* pictures */,
+			);
+			name = Select_Layer;
+			sourceTree = "<group>";
+		};
+		622304241941AEC500D2E8FB /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+				622304251941AEE600D2E8FB /* Select_Friends.png */,
+				622304261941AEE600D2E8FB /* Select_Friends_HL.png */,
+				622304271941AEE600D2E8FB /* Select_SummerStyle.png */,
+				622304281941AEE600D2E8FB /* Select_SummerStyle_HL.png */,
+				622304291941AEE600D2E8FB /* Select_IronStyle.png */,
+				6223042A1941AEE600D2E8FB /* Select_IronStyle_HL.png */,
+				622304361941B3C800D2E8FB /* Select_Background.png */,
+			);
+			name = pictures;
+			sourceTree = "<group>";
+		};
 		62266152185EB1F700D81719 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1159,6 +1199,7 @@
 			children = (
 				62DFF2FE193F5C4100275DF2 /* Intro_Layer */,
 				62DFF2FC193F5BDE00275DF2 /* Start_Layer */,
+				622304231941AEB300D2E8FB /* Select_Layer */,
 				62DFF307193F648300275DF2 /* Game_Layer */,
 				62DFF3281940367B00275DF2 /* Countdown_Layer */,
 				62DFF302193F63B000275DF2 /* Pause_Layer */,
@@ -1597,6 +1638,7 @@
 		62F966B2182CDF6700152AE2 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				622304331941AF6600D2E8FB /* SelectLayer.h */,
 				62DFF3301940375F00275DF2 /* CountDownLayer.h */,
 				62DFF3121940098B00275DF2 /* GameData.h */,
 				622713BD18CC0E2E00DB68B2 /* EndLayer.h */,
@@ -1693,6 +1735,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622304371941B3C800D2E8FB /* Select_Background.png in Resources */,
 				62DFF32F194036B500275DF2 /* CountDown_3.png in Resources */,
 				622713CB18CC12B200DB68B2 /* end-gameover-hd.png in Resources */,
 				62DFF3251940139600275DF2 /* IronGame_Pause_HL.png in Resources */,
@@ -1726,6 +1769,7 @@
 				62AB807A18BA02390025EA9F /* press-start-1-hd.png in Resources */,
 				62218100186D911E00030541 /* pause-background-hd.png in Resources */,
 				626997DB186C693800E48552 /* ghost-1.png in Resources */,
+				622304301941AEE600D2E8FB /* Select_IronStyle.png in Resources */,
 				626997E5186C693800E48552 /* sun.png in Resources */,
 				62A81D9C18B08C64006ACE85 /* bean-hd.png in Resources */,
 				62364AAE18CB5BB3001E0AEC /* monster-4-up-2-hd.png in Resources */,
@@ -1746,6 +1790,7 @@
 				62DFF3231940139600275DF2 /* IronGame_Example.png in Resources */,
 				62DFF335194064D200275DF2 /* IronGame_Bean-hd.png in Resources */,
 				62DFF2F8193F5B3C00275DF2 /* IronStart_Setting_HL.png in Resources */,
+				6223042D1941AEE600D2E8FB /* Select_Friends_HL.png in Resources */,
 				62DFF3221940139600275DF2 /* IronGame_Life.png in Resources */,
 				622713CA18CC12B200DB68B2 /* end-menu-touched-hd.png in Resources */,
 				62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */,
@@ -1767,6 +1812,7 @@
 				62F9607F182CDE6800152AE2 /* Icon-Small-50.png in Resources */,
 				62DFF32D194036B500275DF2 /* CountDown_1.png in Resources */,
 				62364AAD18CB5BB3001E0AEC /* monster-4-up-1-hd.png in Resources */,
+				622304311941AEE600D2E8FB /* Select_IronStyle_HL.png in Resources */,
 				62364AE418CB5BBB001E0AEC /* monster-2-left-2-hd.png in Resources */,
 				62364ADC18CB5BBB001E0AEC /* monster-2-up-1-hd.png in Resources */,
 				6219FDF418C867DA008020B0 /* pac-man-3-hd.png in Resources */,
@@ -1792,6 +1838,7 @@
 				62F96083182CDE6800152AE2 /* Icon-Small@2x.png in Resources */,
 				626997E8186C693800E48552 /* 说明.txt in Resources */,
 				62A81D9F18B08C64006ACE85 /* monster-hd.png in Resources */,
+				6223042E1941AEE600D2E8FB /* Select_SummerStyle.png in Resources */,
 				62266157185EB21D00D81719 /* Icon@2x.png in Resources */,
 				62F9607B182CDE6800152AE2 /* Default-Landscape~ipad.png in Resources */,
 				62DFF2F5193F5B3C00275DF2 /* IronStart_Info.png in Resources */,
@@ -1799,12 +1846,14 @@
 				62218105186D911E00030541 /* pause-replay-still-hd.png in Resources */,
 				62F96079182CDE6800152AE2 /* cocos_Default-568h@2x.png in Resources */,
 				62364AD918CB5BBB001E0AEC /* monster-1-right-2-hd.png in Resources */,
+				6223042C1941AEE600D2E8FB /* Select_Friends.png in Resources */,
 				626997E2186C693800E48552 /* example.psd in Resources */,
 				62364AE918CB5BBB001E0AEC /* monster-3-right-1-hd.png in Resources */,
 				62364AB018CB5BB3001E0AEC /* monster-4-down-2-hd.png in Resources */,
 				62DFF327194017EC00275DF2 /* IronMap.txt in Resources */,
 				626997DD186C693800E48552 /* ghost-3.png in Resources */,
 				626997D9186C693800E48552 /* cloud-5.png in Resources */,
+				6223042F1941AEE600D2E8FB /* Select_SummerStyle_HL.png in Resources */,
 				62DFF3241940139600275DF2 /* IronGame_Pause.png in Resources */,
 				626997DE186C693800E48552 /* ghost-4.png in Resources */,
 				62364AA318CB5199001E0AEC /* background-hd.png in Resources */,
@@ -1830,6 +1879,7 @@
 				622180F7186D90C500030541 /* PauseLayer.m in Sources */,
 				622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */,
 				62C03B9A182F7FA900CCA525 /* PlayerMan.m in Sources */,
+				622304351941AF6600D2E8FB /* SelectLayer.m in Sources */,
 				622180F4186D24CA00030541 /* IntroLayer.m in Sources */,
 				62F96202182CDE6A00152AE2 /* main.m in Sources */,
 				62C03B97182F7F6B00CCA525 /* MonsterMan.m in Sources */,
