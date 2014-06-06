@@ -38,5 +38,7 @@
 
 -(NSArray *)moveWithCentrePosition:(CGPoint)thePosition withLengthPoint:(int)length withFirstDirection:(int)theFirstDirection withSecondDirection:(int)theSecondDirection;
 
+- (BOOL)isBlockedWith:(CGPoint)theCentrePosition with:(int)length;
+
 
 @end

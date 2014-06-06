@@ -9,6 +9,7 @@
 #import "PlayerMan.h"
 #import "Maps.h"
 
+#import "GameData.h"
 
 @implementation PlayerMan
 
@@ -30,6 +31,8 @@
         [self testAnimation];
         
         score = 0;
+        
+        isJumping = NO;
     }
     return self;
 }
@@ -43,6 +46,24 @@
 - (int)score
 {
     return score;
+}
+
+- (void)jump
+{
+    //如果正在跳就返回
+    if (isJumping) {
+        return;
+    }
+    
+    //如果不能跳就返回
+    CGPoint jumpPosition = [self isJumpAvailabel];
+    if (CGPointEqualToPoint(jumpPosition, CGPointZero)) {
+        return;
+    }
+    
+    [self startJumpWithPosition:jumpPosition];
+//    NSLog(@"我跳啦");
+
 }
 
 - (BOOL)isCrashedWithRect:(CGRect)theRect
@@ -103,5 +124,87 @@
     }
 }
 
+
+- (CGPoint)isJumpAvailabel
+{
+    //格子长度
+    GLfloat pointLength = POINT_LENGTH;
+    //地图左下角坐标
+    GLfloat playViewX = [GameData sharedData].mapPosition.x;
+    GLfloat playViewY = [GameData sharedData].mapPosition.y;
+    //现在的位置
+    CGPoint nowPosition = CGPointMake((int)[self mapPosition].x, (int)[self mapPosition].y);
+    //nowDirection;
+    
+    //需要移动的长度
+    CGPoint movement = CGPointZero;
+    GLfloat moveX = 0;
+    GLfloat moveY = 0;
+    
+//    int temp;
+    switch (nowDirection) {
+        case leftDirection:
+            moveX = (((int)(nowPosition.x - playViewX + 1))/(int)pointLength) * pointLength - nowPosition.x - 3 * pointLength + playViewX;
+            break;
+        case rightDirection:
+//            temp = (((int)(nowPosition.x - playViewX))/(int)pointLength) * pointLength;
+            moveX = (((int)(nowPosition.x - playViewX - 1))/(int)pointLength) * pointLength + pointLength - nowPosition.x + 3 * pointLength + playViewX;
+            ;
+            break;
+        case upDirection:
+            moveY = (((int)(nowPosition.y - playViewY - 1))/(int)pointLength) * pointLength + pointLength - nowPosition.y + 3 * pointLength + playViewY;
+            break;
+        case downDirection:
+            moveY = (((int)(nowPosition.y - playViewY + 1))/(int)pointLength) * pointLength - nowPosition.y - 3 * pointLength + playViewY;
+            break;
+        default:
+            break;
+    }
+    
+    movement = CGPointMake(moveX, moveY);
+    
+    CGPoint jumpPosition = ccpAdd(nowPosition, movement);
+    
+    if (![theMap isBlockedWith:jumpPosition with:length]) {
+        return jumpPosition;
+    }
+    else{
+        return CGPointZero;
+    }
+    
+}
+
+- (void)startJumpWithPosition:(CGPoint)jumpPosition
+{
+    isJumping = YES;
+
+    CCJumpTo * jumpTo = [[CCJumpTo alloc] initWithDuration:0.3 position:jumpPosition height:5 jumps:1];
+    
+    
+//    [self stopActionByTag:TAG_SEQUENCE];
+    
+    CCCallFunc * move = [CCCallFunc actionWithTarget:self selector:@selector(jumpOver)];
+    
+    CCSequence * sequence = [CCSequence actions:jumpTo, move, nil];
+    
+//    [self.sprite runAction:sequence];
+    [self runSequence:sequence];
+
+}
+
+- (void)setDirectionAndMove:(int)theDirection
+{
+    if (isJumping) {
+        return;
+    }
+    [super setDirectionAndMove:theDirection];
+}
+
+- (void)jumpOver
+{
+    isJumping = NO;
+    
+    [super setDirectionAndMove:nowDirection];
+}
 
 @end

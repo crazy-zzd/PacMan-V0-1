@@ -184,6 +184,10 @@
     [theControNode moveWithDirection:theDirection];
 }
 
+- (void)playerJump
+{
+    [theControNode playerJump];
+}
 
 #pragma mark - testMethod
 //测试地图

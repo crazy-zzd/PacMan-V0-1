@@ -111,10 +111,22 @@
 
 - (void)moveWithDirection:(int)theDirection
 {
-    if (stateNow == gameBefore) {
-        return;
+//    if (stateNow == gameBefore) {
+//        return;
+//    }
+//    [player setDirectionAndMove:theDirection];
+    if (stateNow == gameStart) {
+        [player setDirectionAndMove:theDirection];
     }
-    [player setDirectionAndMove:theDirection];
+
+}
+
+- (void)playerJump
+{
+    if (stateNow == gameStart) {
+        [player jump];
+    }
+
 }
 
 #pragma mark - 玩家开始移动或者暂停移动

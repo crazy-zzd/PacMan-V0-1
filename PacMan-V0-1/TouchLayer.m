@@ -36,6 +36,9 @@
     
     nowPosition = touchedPosition;
     
+    beginPosition = touchedPosition;
+    beginTime = [NSDate date];
+    
 }
 
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -70,6 +73,19 @@
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     //触摸结束时设定
+    NSTimeInterval  timeInterval = [beginTime timeIntervalSinceNow];
+    timeInterval = - timeInterval;
+    
+    if (timeInterval < JUMP_TIME) {
+        CGPoint touchedPosition = [self locationFromTouches:touches];
+        CGPoint theChangedPosition = ccpSub(touchedPosition, beginPosition);
+        CGFloat changedDistance = fabsf(theChangedPosition.x) + fabsf(theChangedPosition.y);
+//        NSLog(@"%f", changedDistance);
+        if (changedDistance < JUMP_DISTANCE) {
+//            NSLog(@"Boom!!");
+            [self sendJumpSymble];
+        }
+    }
 }
 
 
@@ -85,6 +101,11 @@
 - (void)sendDirectionSymbole:(int)theDireciton
 {
     [self.delegate moveWithDirection:theDireciton];
+}
+
+- (void)sendJumpSymble
+{
+    [self.delegate playerJump];
 }
 
 

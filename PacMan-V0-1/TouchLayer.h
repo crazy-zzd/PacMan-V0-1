@@ -14,20 +14,27 @@
 
 #define MOVE_LIMITED 25
 
+#define JUMP_TIME 0.15
+#define JUMP_DISTANCE 10
+
 @class GameLayer;
 
 @interface TouchLayer : CCLayer {
     CGPoint nowPosition;
+    
+    NSDate * beginTime;
+    CGPoint beginPosition;
 }
 
 @property id<TouchLayerDelegate> delegate;
 
 -(void)sendDirectionSymbole:(int)theDireciton;
 
+-(void)sendJumpSymble;
 
--(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
--(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
--(void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
+//-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+//-(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+//-(void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 
 -(CGPoint)locationFromTouches:(NSSet *)touches;
