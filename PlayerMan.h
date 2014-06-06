@@ -16,6 +16,8 @@
 
 @interface PlayerMan : Man {
     int score;
+    
+    BOOL isJumping;
 }
 
 
@@ -23,8 +25,10 @@
 
 -(BOOL)isContainWithRect:(CGRect)theRect;
 
--(int)score;
-
 -(void)eatBean;
+
+-(void)jump;
+
+-(int)score;
 
 @end

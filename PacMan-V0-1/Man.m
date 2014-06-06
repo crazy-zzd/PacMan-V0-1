@@ -49,6 +49,9 @@
     
     if (numOfDirection == 0) {
         state = standing;
+        nextDirection = theDirection;
+        [self changeSpriteDirection];
+        nowDirection = theDirection;
         return;
     }
     state = moving;
@@ -80,7 +83,7 @@
 
 - (void)changeSpriteDirection
 {
-
+    //继承
 }
 
 //通过两个图坐标，得出CCAction用来移动

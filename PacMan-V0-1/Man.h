@@ -41,5 +41,8 @@
 //改变方向
 -(void)setDirectionAndMove:(int)theDirection;
 
+//运行动作
+- (void)runSequence:(CCSequence *)theSequence;
+
 
 @end

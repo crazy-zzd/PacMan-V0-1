@@ -14,6 +14,8 @@
 @required
 -(void)moveWithDirection:(int)theDirection;
 
+- (void)playerJump;
+
 @end
 
 #endif

@@ -27,6 +27,9 @@
 @property (nonatomic, strong) NSMutableArray * monstersPosition;
 @property (nonatomic, strong) NSMutableArray * monstersDirection;
 
+//豆子
+@property (nonatomic, copy) NSString * beanPngFile;
+
 //暂停按钮
 @property (nonatomic, assign) CGPoint pausePosition;
 @property (nonatomic, copy) NSString * pausePngFile;
