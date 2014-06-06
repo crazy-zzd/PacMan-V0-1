@@ -12,6 +12,7 @@
 #import "SelectLayer.h"
 
 #import "AboutUsLayer.h"
+#import "SettingLayer.h"
 
 @implementation StartLayer
 
@@ -71,6 +72,8 @@
     
     //关于我们界面
     infoLayer = [AboutUsLayer node];
+    //设置界面
+    setLayer = [SettingLayer node];
     
     [self addChild:ironBtnMenu];
 }
@@ -212,7 +215,12 @@
 
 - (IBAction)onPressSettingBtn:(id)sender
 {
-    NSLog(@"按下了设置按钮");
+    if ([setLayer parent] != nil) {
+        return;
+    }
+    setLayer = [SettingLayer node];
+    
+    [self addChild:setLayer];
 }
 
 @end

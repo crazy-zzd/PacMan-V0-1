@@ -12,6 +12,7 @@
 #import "GameLayer.h"
 
 @class AboutUsLayer;
+@class SettingLayer;
 
 @interface StartLayer : CCLayer {
     
@@ -28,6 +29,7 @@
     int theJumpMonster;
     
     AboutUsLayer * infoLayer;
+    SettingLayer * setLayer;
 }
 
 + (CCScene *)Scene;

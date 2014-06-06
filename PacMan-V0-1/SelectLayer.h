@@ -9,7 +9,11 @@
 #import "CCLayer.h"
 #import "cocos2d.h"
 
-@interface SelectLayer : CCLayer
+@class SettingLayer;
+
+@interface SelectLayer : CCLayer{
+    SettingLayer * setLayer;
+}
 
 + (CCScene *)Scene;
 

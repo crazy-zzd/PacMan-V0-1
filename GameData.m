@@ -45,6 +45,9 @@ static GameData * sharedData = nil;
 {
     mainStyle = theStyle;
     
+    _isMusic = YES;
+    _isSound = YES;
+    
     if (mainStyle == IronStyle) {
         [self ironInit];
     }

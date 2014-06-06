@@ -11,6 +11,7 @@
 #import "MyHeader.h"
 
 #import "GameLayer.h"
+#import "SettingLayer.h"
 
 @implementation SelectLayer
 
@@ -53,6 +54,8 @@
         CCMenu * menu = [CCMenu menuWithItems:ironBtn, summerBtn, ironSettingBtn, friendsBtn, nil];
         menu.position = CGPointZero;
         [self addChild:menu];
+        
+        setLayer = [SettingLayer node];
     }
     return self;
 }
@@ -75,7 +78,12 @@
 
 - (IBAction)onPressSettingBtn:(id)sender
 {
-    NSLog(@"按下了设置按钮");
+    if ([setLayer parent] != nil) {
+        return;
+    }
+    setLayer = [SettingLayer node];
+    
+    [self addChild:setLayer];
 }
 
 - (IBAction)onPressFriendsBtn:(id)sender

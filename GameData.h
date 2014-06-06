@@ -38,6 +38,9 @@
 //分数
 @property (nonatomic, assign) CGPoint scorePosition;
 
+//音乐音效设置
+@property (nonatomic, assign) BOOL isMusic;
+@property (nonatomic, assign) BOOL isSound;
 
 +(GameData *)sharedData;
 
