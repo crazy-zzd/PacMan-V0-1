@@ -11,6 +11,10 @@
 #import "MyHeader.h"
 #import "PauseLayerDelegate.h"
 
+#import "ControlNodeDelegate.h"
+
+
+
 @class Man;
 @class PlayerMan;
 @class MonsterMan;
@@ -43,6 +47,8 @@
 @property NSMutableArray * monsters;
 @property NSMutableArray * beans;
 @property CCLabelTTF * score;
+
+@property (nonatomic, weak) id<ControlNodeDelegate> theDelegate;
 
 - (void)moveWithDirection:(int)theDirection;
 - (void)playerJump;

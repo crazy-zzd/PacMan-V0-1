@@ -38,6 +38,7 @@
 //分数
 @property (nonatomic, assign) CGPoint scorePosition;
 @property (nonatomic, copy) NSString * scoreName;
+@property (nonatomic, assign) ccColor3B scoreColor;
 
 //时间条
 @property (nonatomic, copy) NSString * timeLineFile;

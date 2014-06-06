@@ -11,6 +11,8 @@
 #import "TouchLayerDelegate.h"
 #import "MyHeader.h"
 
+#import "ControlNodeDelegate.h"
+
 #define TIME_MAX 120.0
 
 @class PauseLayer;
@@ -26,7 +28,7 @@
 
 @class TimeSprite;
 
-@interface GameLayer : CCLayer<TouchLayerDelegate> {
+@interface GameLayer : CCLayer<TouchLayerDelegate, ControlNodeDelegate> {
     TouchLayer * theTouchLayer;
     ControlNode * theControNode;
     

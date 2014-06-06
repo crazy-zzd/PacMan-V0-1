@@ -22,7 +22,7 @@
         CCSprite * background = [[CCSprite alloc] initWithFile:[GameData sharedData].timeLineFile];
         [self addChild:background];
         
-        CCSprite * left = [[CCSprite alloc] initWithFile:@"Game_TimeLine_Left.png"];
+        left = [[CCSprite alloc] initWithFile:@"Game_TimeLine_Left.png"];
         left.position = CGPointMake(- 80.25, 0);
         [self addChild:left];
         
@@ -47,6 +47,12 @@
     middle.textureRect = CGRectMake(0, 0, thePercent * 158, 4.5);
     middle.position = CGPointMake((- 79 + thePercent * 79), 0);
 
+//    if (percent < 0.25) {
+    ccColor3B red = ccc3(56 * (1 - thePercent) + 197, 194 * thePercent, 214 * thePercent);
+    [left setColor:red];
+    [middle setColor:red];
+    [right setColor:red];
+//    }
 }
 
 @end

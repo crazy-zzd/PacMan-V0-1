@@ -51,7 +51,7 @@
         CCMenuItemImage * friendsBtn = [[CCMenuItemImage alloc] initWithNormalImage:@"Select_Friends.png" selectedImage:@"Select_Friends_HL.png" disabledImage:nil target:self selector:@selector(onPressFriendsBtn:)];
         friendsBtn.position = CGPointMake(990 / 2, SCREEN_HEIGHT - 38 / 2);
         
-        CCMenu * menu = [CCMenu menuWithItems:ironBtn, summerBtn, ironSettingBtn, friendsBtn, nil];
+        CCMenu * menu = [CCMenu menuWithItems:ironBtn, summerBtn, ironSettingBtn, nil];
         menu.position = CGPointZero;
         [self addChild:menu];
         

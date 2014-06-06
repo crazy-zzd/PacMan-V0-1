@@ -11,6 +11,7 @@
 @interface TimeSprite : CCSprite{
     GLfloat percent;
     
+    CCSprite * left;
     CCSprite * right;
     CCSprite * middle;
 }

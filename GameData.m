@@ -81,9 +81,12 @@ static GameData * sharedData = nil;
     _pausePosition = CGPointMake(1090 / 2, SCREEN_HEIGHT - 32 / 2);
     _pausePngFile = @"pause.png";
     _pausePngHLFile = @"pause_HL.png";
+//    _pausePngFile = @"IronGame_Pause.png";
+//    _pausePngHLFile = @"IronGame_Pause_HL.png";
     
     _scorePosition = CGPointMake(577.5 / 2, SCREEN_HEIGHT - 35.5 / 2);
     _scoreName = @"9PX2BUS";
+    _scoreColor = ccc3(0, 158, 219);
     
     _timeLineFile = @"Game_TimeLine_Background_Summer.png";
 }
@@ -111,11 +114,16 @@ static GameData * sharedData = nil;
     _beanPngFile = @"IronGame_Bean.png";
     
     _pausePosition = CGPointMake(548, SCREEN_HEIGHT - 15);
+
+//    _pausePngFile = @"pause.png";
+//    _pausePngHLFile = @"pause_HL.png";
+
     _pausePngFile = @"IronGame_Pause.png";
     _pausePngHLFile = @"IronGame_Pause_HL.png";
 
     _scorePosition = CGPointMake(577.5 / 2, SCREEN_HEIGHT - 35.5 / 2);
     _scoreName = @"9PX2BUS";
+    _scoreColor = ccc3(188, 188, 188);
     
     _timeLineFile = @"Game_TimeLine_Background.png";
 }

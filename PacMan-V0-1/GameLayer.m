@@ -70,6 +70,8 @@
 {
     //设置触摸委托
     theTouchLayer.delegate = self;
+    
+    theControNode.theDelegate = self;
 
     //设置数据
     mainGameData = [GameData sharedData];
@@ -82,8 +84,6 @@
     [self loadPlayer];
     [self loadBeans];
     [self loadMonsters];
-    
-
     
     //添加分数
     [self loadScore];
@@ -210,6 +210,18 @@
 - (void)playerJump
 {
     [theControNode playerJump];
+}
+
+#pragma mark - ControlNodeDelegate
+
+- (void)pauseTimeLine
+{
+    [self unschedule:@selector(updateTimeLine:)];
+}
+
+- (void)resumeTimeLine
+{
+    [self schedule:@selector(updateTimeLine:) interval:0.2];
 }
 
 #pragma mark - testMethod

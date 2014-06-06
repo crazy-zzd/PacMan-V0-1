@@ -103,6 +103,7 @@
 - (void)initScore
 {
     score = [[CCLabelTTF alloc] initWithString:SCORE_INIT_STRING fontName:[GameData sharedData].scoreName fontSize:SCORE_FONTSIZE];
+    [score setColor:[GameData sharedData].scoreColor];
     score.position = mainGameData.scorePosition;
 }
 
@@ -176,6 +177,9 @@
     thePauseLayer.delegate = self;
     [self addChild:thePauseLayer z:1 tag:TAG_PAUSELAYER];
     
+    //time line
+    [self.theDelegate pauseTimeLine];
+    
     //player
     [player pauseMove];
     [self unschedule:@selector(updatePlayer:)];
@@ -194,6 +198,10 @@
         [self removeChild:thePauseLayer];
         thePauseLayer = nil;
     }
+    
+    //time line
+    [self.theDelegate resumeTimeLine];
+    
     //player
     [player resumeMove];
     [self schedule:@selector(updatePlayer:) interval:1.0/PLAYER_SPEED];
