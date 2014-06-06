@@ -21,6 +21,8 @@
 #import "GameData.h"
 #import "Maps.h"
 
+#import "TimeSprite.h"
+
 @implementation GameLayer
 
 @synthesize theTouchLayer;
@@ -88,6 +90,7 @@
     
     //添加并初始化游戏界面元素
     [self loadPauseButton];
+    [self loadTimeLine];
     
     //添加倒数界面
     [self loadCountDownLayer];
@@ -148,6 +151,15 @@
     [self addChild:btnMenu z:1 tag:TAG_PAUSEBTN];
 }
 
+- (void)loadTimeLine
+{
+    timeLine = [[TimeSprite alloc] init];
+    timeLine.position = CGPointMake(193.5 / 2, SCREEN_HEIGHT - 32.5 / 2);
+    [self addChild:timeLine];
+    
+    restTime = TIME_MAX;
+//    [self schedule:@selector(updateTimeLine:) interval:0.2];
+}
 
 //添加分数
 - (void)loadScore
@@ -173,9 +185,20 @@
         [self unschedule:@selector(updateCountDown:)];
         CCMenu * pauseBtn = (CCMenu *)[self getChildByTag:TAG_PAUSEBTN];
         pauseBtn.enabled = YES;
+        [self schedule:@selector(updateTimeLine:) interval:0.2];
     }
 }
 
+- (void)updateTimeLine:(ccTime)delta
+{
+    if (restTime < 0.3) {
+        [self unschedule:@selector(updateTimeLine:)];
+        
+        [theControNode gameOver];
+    }
+    restTime = restTime - 0.2;
+    [timeLine setTimePercent:restTime / TIME_MAX];
+}
 
 #pragma mark - TouchLayerDelegate
 

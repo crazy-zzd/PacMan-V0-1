@@ -11,7 +11,7 @@
 #import "TouchLayerDelegate.h"
 #import "MyHeader.h"
 
-
+#define TIME_MAX 120.0
 
 @class PauseLayer;
 @class TouchLayer;
@@ -24,6 +24,8 @@
 
 @class GameData;
 
+@class TimeSprite;
+
 @interface GameLayer : CCLayer<TouchLayerDelegate> {
     TouchLayer * theTouchLayer;
     ControlNode * theControNode;
@@ -33,6 +35,11 @@
     GameData * mainGameData;
     
     enum GameStyle mainGameStyle;
+    
+    //计时器
+    TimeSprite * timeLine;
+    
+    GLfloat restTime;
 }
 
 @property (nonatomic, strong)TouchLayer * theTouchLayer;

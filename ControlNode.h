@@ -49,5 +49,6 @@
 
 - (void)onPressPause;
 - (void)gameStart;
+- (void)gameOver;
 
 @end
