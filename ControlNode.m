@@ -10,6 +10,7 @@
 
 #import "GameLayer.h"
 #import "StartLayer.h"
+#import "SimpleAudioEngine.h"
 
 #import "Man.h"
 #import "PlayerMan.h"
@@ -45,6 +46,8 @@
         [self initBeans];
         
         [self initScore];
+        
+        [self initSounds];
         
         stateNow = gameBefore;
     }
@@ -107,6 +110,12 @@
     score.position = mainGameData.scorePosition;
 }
 
+- (void)initSounds
+{
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"eat.wav"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"jump.wav"];
+}
+
 #pragma mark - 对外接口
 #pragma mark - 移动接口
 
@@ -125,7 +134,12 @@
 - (void)playerJump
 {
     if (stateNow == gameStart) {
-        [player jump];
+        if ([player jump]) {
+            if ([GameData sharedData].isSound) {
+                [[SimpleAudioEngine sharedEngine] playEffect:@"jump.wav"];
+            }
+        }
+
     }
 
 }
@@ -253,6 +267,16 @@
 {
     for (MonsterMan * theMonster in monsters) {
         if ([player isCrashedWithRect:[theMonster spriteRect]]) {
+            
+//            if ([GameData sharedData].isMusic) {
+//                [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+//            }
+//            
+//            if ([GameData sharedData].isSound) {
+//                [[SimpleAudioEngine sharedEngine] playEffect:@"lose.mp3"];
+//            }
+            [self playSoundWith:NO];
+            
             [self gameOver];
         }
     }
@@ -266,6 +290,14 @@
         if ([player isContainWithRect:[theBean spriteRect]]) {
             [theBean beEaten];
             [player eatBean];
+            
+
+            
+            if ([GameData sharedData].isSound) {
+                [[SimpleAudioEngine sharedEngine] playEffect:@"eat.wav"];
+            }
+
+            
             score.string = [NSString stringWithFormat:@"%d",player.score];
             [beans removeObjectAtIndex:i];
             i --;
@@ -273,8 +305,39 @@
     }
     
     if ([beans count] == 0) {
+        
+//        if ([GameData sharedData].isMusic) {
+//            [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+//        }
+//        
+//        if ([GameData sharedData].isSound) {
+//            [[SimpleAudioEngine sharedEngine] playEffect:@"win.mp3"];
+//        }
+        [self playSoundWith:YES];
+        
         [self gameOver];
     }
+}
+
+- (void)playSoundWith:(BOOL)isWin
+{
+    ALuint soundId;
+    
+    if ([GameData sharedData].isMusic) {
+        [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+    }
+    if (isWin) {
+        if ([GameData sharedData].isSound) {
+            soundId = [[SimpleAudioEngine sharedEngine] playEffect:@"win.mp3"];
+        }
+    }
+    else{
+        if ([GameData sharedData].isSound) {
+            soundId = [[SimpleAudioEngine sharedEngine] playEffect:@"lose.mp3"];
+        }
+    }
+    
+    [GameData sharedData].soundId = soundId;
 }
 
 #pragma mark - pauseLayer delegate

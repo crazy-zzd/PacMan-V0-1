@@ -15,6 +15,8 @@
 
 #import "SelectLayer.h"
 
+#import "SimpleAudioEngine.h"
+
 @implementation PauseLayer
 
 @synthesize delegate;
@@ -75,6 +77,12 @@
 
 - (IBAction)onPressRestart:(id)sender
 {
+    if (([GameData sharedData].isMusic) && (![[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying])) {
+        [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+    }
+    
+    [[SimpleAudioEngine sharedEngine] stopEffect:[GameData sharedData].soundId];
+    
     CCScene * scene = [GameLayer SceneWithStyle:[[GameData sharedData] nowStyle]];
     CCTransitionFadeBL * tran = [CCTransitionFadeBL
                                     transitionWithDuration:0.7 scene:scene];
@@ -83,6 +91,12 @@
 
 - (IBAction)onPressMenu:(id)sender
 {
+    if (([GameData sharedData].isMusic) && (![[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying])) {
+        [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+    }
+    
+    [[SimpleAudioEngine sharedEngine] stopEffect:[GameData sharedData].soundId];
+    
     CCScene * scene = [SelectLayer Scene];
     CCTransitionSlideInL * tran = [CCTransitionMoveInL
                                     transitionWithDuration:0.7 scene:scene];

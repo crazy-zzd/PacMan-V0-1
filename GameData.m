@@ -37,6 +37,10 @@ static GameData * sharedData = nil;
     self = [super init];
     if (self) {
         [self initWithStyle:IronStyle];
+        _isMusic = YES;
+        _isSound = YES;
+        
+        _soundId = 0;
     }
     return self;
 }
@@ -45,8 +49,6 @@ static GameData * sharedData = nil;
 {
     mainStyle = theStyle;
     
-    _isMusic = YES;
-    _isSound = YES;
     
     if (mainStyle == IronStyle) {
         [self ironInit];
@@ -89,6 +91,7 @@ static GameData * sharedData = nil;
     _scoreColor = ccc3(0, 158, 219);
     
     _timeLineFile = @"Game_TimeLine_Background_Summer.png";
+    
 }
 
 - (void)ironInit

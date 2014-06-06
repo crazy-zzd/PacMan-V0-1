@@ -23,6 +23,8 @@
 
 #import "TimeSprite.h"
 
+#import "SimpleAudioEngine.h"
+
 @implementation GameLayer
 
 @synthesize theTouchLayer;
@@ -170,6 +172,10 @@
 //添加倒数界面
 - (void)loadCountDownLayer
 {
+    if ([GameData sharedData].isMusic) {
+        [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+    }
+    
     theCountDownLayer = [[CountDownLayer alloc] init];
     [self addChild:theCountDownLayer z:1];
     
@@ -193,6 +199,16 @@
 {
     if (restTime < 0.3) {
         [self unschedule:@selector(updateTimeLine:)];
+        
+//        if ([GameData sharedData].isMusic) {
+//            [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+//        }
+//        
+//        if ([GameData sharedData].isSound) {
+//            [[SimpleAudioEngine sharedEngine] playEffect:@"win.mp3"];
+//        }
+
+        [theControNode playSoundWith:YES];
         
         [theControNode gameOver];
     }

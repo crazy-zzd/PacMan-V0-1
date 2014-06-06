@@ -57,4 +57,6 @@
 - (void)gameStart;
 - (void)gameOver;
 
+- (void)playSoundWith:(BOOL)isWin;
+
 @end

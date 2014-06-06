@@ -64,14 +64,15 @@
         [music setNormalImage:[CCSprite spriteWithFile:@"Setting_Music_On.png"]];
         [music setSelectedImage:[CCSprite spriteWithFile:@"Setting_Music_On_HL.png"]];
         if (! [[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying]) {
-            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"music-background.mp3" loop:YES];
+//            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"music-background.mp3" loop:YES];
+            [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
         }
     }
     else{
         [music setNormalImage:[CCSprite spriteWithFile:@"Setting_Music_Off.png"]];
         [music setSelectedImage:[CCSprite spriteWithFile:@"Setting_Music_Off_HL.png"]];
         if ([[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying]) {
-            [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+            [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
         }
     }
 }

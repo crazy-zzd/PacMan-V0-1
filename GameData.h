@@ -9,6 +9,7 @@
 #import "CCNode.h"
 
 #import "MyHeader.h"
+#import "SimpleAudioEngine.h"
 
 @interface GameData : CCNode{
     enum GameStyle mainStyle;
@@ -46,6 +47,8 @@
 //音乐音效设置
 @property (nonatomic, assign) BOOL isMusic;
 @property (nonatomic, assign) BOOL isSound;
+
+@property (nonatomic, assign) ALuint soundId;
 
 +(GameData *)sharedData;
 

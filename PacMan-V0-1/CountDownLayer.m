@@ -8,7 +8,8 @@
 
 #import "CountDownLayer.h"
 #import "MyHeader.h"
-
+#import "GameData.h"
+#import "SimpleAudioEngine.h"
 
 @implementation CountDownLayer
 - (id)init
@@ -36,19 +37,39 @@
         [number3 removeFromParentAndCleanup:YES];
         count --;
         [self addChild:number2];
+        
+        if ([GameData sharedData].isSound) {
+            [[SimpleAudioEngine sharedEngine] playEffect:@"321.mp3"];
+        }
+        
         return NO;
     }
     if (count == 2) {
         [number2 removeFromParentAndCleanup:YES];
         count --;
         [self addChild:number1];
+        
+        if ([GameData sharedData].isSound) {
+            [[SimpleAudioEngine sharedEngine] playEffect:@"321.mp3"];
+        }
         return NO;
     }
     if (count == 1) {
         [number1 removeFromParentAndCleanup:YES];
+        
+        if ([GameData sharedData].isSound) {
+            [[SimpleAudioEngine sharedEngine] playEffect:@"321.mp3"];
+        }
+        
+        if ([GameData sharedData].isMusic) {
+            [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+        }
+        
         return YES;
     }
     count --;
     return NO;
 }
+
+
 @end

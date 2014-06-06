@@ -27,7 +27,7 @@
 
 -(void)eatBean;
 
--(void)jump;
+-(BOOL)jump;
 
 -(int)score;
 

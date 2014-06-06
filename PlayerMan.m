@@ -11,6 +11,8 @@
 
 #import "GameData.h"
 
+#import "SimpleAudioEngine.h"
+
 @implementation PlayerMan
 
 - (id)initWithPointPosition:(CGPoint)thePointPosition withDirection:(int)theDrection
@@ -48,20 +50,22 @@
     return score;
 }
 
-- (void)jump
+- (BOOL)jump
 {
     //如果正在跳就返回
     if (isJumping) {
-        return;
+        return NO;
     }
     
     //如果不能跳就返回
     CGPoint jumpPosition = [self isJumpAvailabel];
     if (CGPointEqualToPoint(jumpPosition, CGPointZero)) {
-        return;
+        return NO;
     }
     
     [self startJumpWithPosition:jumpPosition];
+
+    return YES;
 //    NSLog(@"我跳啦");
 
 }
