@@ -77,7 +77,7 @@ static GameData * sharedData = nil;
     
     _pausePosition = CGPointMake(520, 40);
     _pausePngFile = @"pause.png";
-    _pausePngHLFile = @"pause.png";
+    _pausePngHLFile = @"pause_HL.png";
     
     _scorePosition = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 15);
 }

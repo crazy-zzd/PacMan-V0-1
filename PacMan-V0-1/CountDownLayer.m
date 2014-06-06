@@ -48,7 +48,7 @@
         [number1 removeFromParentAndCleanup:YES];
         return YES;
     }
-    
+    count --;
     return NO;
 }
 @end
