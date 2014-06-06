@@ -87,16 +87,16 @@ static GameData * sharedData = nil;
     _mapPngFile = @"IronGame_Background.png";
     _mapTextFile = @"IronMap";
     _mapWidthPoint = 56;
-    _mapHeightPoint = 29;
-    _mapPosition = CGPointMake(4, 0);
+    _mapHeightPoint = 24;
+    _mapPosition = CGPointMake(4, 50);
     
-    _playerPosition = CGPointMake(27, 12);
+    _playerPosition = CGPointMake(27, 7);
     _playerDirection = rightDirection;
     
     _monstersPosition = [NSMutableArray array];
-    [_monstersPosition addObject:[NSValue valueWithCGPoint:CGPointMake(25, 15)]];
-    [_monstersPosition addObject:[NSValue valueWithCGPoint:CGPointMake(27, 15)]];
-    [_monstersPosition addObject:[NSValue valueWithCGPoint:CGPointMake(29, 15)]];
+    [_monstersPosition addObject:[NSValue valueWithCGPoint:CGPointMake(25, 10)]];
+    [_monstersPosition addObject:[NSValue valueWithCGPoint:CGPointMake(27, 10)]];
+    [_monstersPosition addObject:[NSValue valueWithCGPoint:CGPointMake(29, 10)]];
     _monstersDirection = [NSMutableArray array];
     [_monstersDirection addObject:@(upDirection)];
     [_monstersDirection addObject:@(upDirection)];
