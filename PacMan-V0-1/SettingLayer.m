@@ -19,8 +19,6 @@
     self = [super init];
     if (self) {
         
-//        self.position = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-        
         CCSprite * background = [[CCSprite alloc] initWithFile:@"Setting_Background.png"];
         background.position = CGPointMake(569 / 2, SCREEN_HEIGHT - 343.5 / 2);
         [self addChild:background];

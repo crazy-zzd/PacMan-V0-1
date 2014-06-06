@@ -102,7 +102,7 @@
 
 - (void)initScore
 {
-    score = [[CCLabelTTF alloc] initWithString:SCORE_INIT_STRING fontName:SCORE_FONTNAME fontSize:SCORE_FONTSIZE];
+    score = [[CCLabelTTF alloc] initWithString:SCORE_INIT_STRING fontName:[GameData sharedData].scoreName fontSize:SCORE_FONTSIZE];
     score.position = mainGameData.scorePosition;
 }
 

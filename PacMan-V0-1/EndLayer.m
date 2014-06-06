@@ -8,7 +8,7 @@
 
 #import "EndLayer.h"
 
-
+#import "GameData.h"
 
 @implementation EndLayer
 
@@ -44,7 +44,7 @@
     [self addChild:yourscore];
 
     //分数
-    CCLabelTTF * theScoreLabel = [[CCLabelTTF alloc] initWithString:score fontName:SCORE_FONTNAME fontSize:72];
+    CCLabelTTF * theScoreLabel = [[CCLabelTTF alloc] initWithString:score fontName:[GameData sharedData].scoreName fontSize:72];
     theScoreLabel.position = CGPointMake(SCREEN_WIDTH / 2, 175);
     [self addChild:theScoreLabel];
 

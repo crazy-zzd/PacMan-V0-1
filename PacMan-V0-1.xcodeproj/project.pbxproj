@@ -70,6 +70,8 @@
 		622C4DD0194234D800065D52 /* Setting_Music_Off_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DCD194234D800065D52 /* Setting_Music_Off_HL.png */; };
 		622C4DD1194234D800065D52 /* Setting_Music_On_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DCE194234D800065D52 /* Setting_Music_On_HL.png */; };
 		622C4DD2194234D800065D52 /* Setting_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DCF194234D800065D52 /* Setting_Front.png */; };
+		622C4DD519423BFB00065D52 /* Herculanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DD419423BFB00065D52 /* Herculanum.ttf */; };
+		622C4DD919423CE800065D52 /* 9PX2BUS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DD819423CE800065D52 /* 9PX2BUS.TTF */; };
 		622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF571182F19AD0038BF0D /* TouchLayer.m */; };
 		622FF57B182F1B800038BF0D /* ControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF57A182F1B800038BF0D /* ControlNode.m */; };
 		62364AA318CB5199001E0AEC /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA218CB5199001E0AEC /* background-hd.png */; };
@@ -387,6 +389,8 @@
 		622C4DCD194234D800065D52 /* Setting_Music_Off_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_Music_Off_HL.png; sourceTree = "<group>"; };
 		622C4DCE194234D800065D52 /* Setting_Music_On_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_Music_On_HL.png; sourceTree = "<group>"; };
 		622C4DCF194234D800065D52 /* Setting_Front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_Front.png; sourceTree = "<group>"; };
+		622C4DD419423BFB00065D52 /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Herculanum.ttf; sourceTree = "<group>"; };
+		622C4DD819423CE800065D52 /* 9PX2BUS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9PX2BUS.TTF; sourceTree = "<group>"; };
 		622FF570182F19AD0038BF0D /* TouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLayer.h; sourceTree = "<group>"; };
 		622FF571182F19AD0038BF0D /* TouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayer.m; sourceTree = "<group>"; };
 		622FF579182F1B800038BF0D /* ControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlNode.h; path = ../ControlNode.h; sourceTree = "<group>"; };
@@ -1335,6 +1339,8 @@
 		62F96073182CDE6800152AE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				622C4DD419423BFB00065D52 /* Herculanum.ttf */,
+				622C4DD819423CE800065D52 /* 9PX2BUS.TTF */,
 				62F96074182CDE6800152AE2 /* cocos_Default.png */,
 				62F96076182CDE6800152AE2 /* cocos_Default@2x.png */,
 				62F96078182CDE6800152AE2 /* cocos_Default-568h@2x.png */,
@@ -1881,6 +1887,7 @@
 				62218104186D911E00030541 /* pause-next-touched-hd.png in Resources */,
 				62266156185EB21D00D81719 /* Icon.png in Resources */,
 				62DFF2FA193F5B3C00275DF2 /* IronStart_Start_HL.png in Resources */,
+				622C4DD919423CE800065D52 /* 9PX2BUS.TTF in Resources */,
 				62364ADE18CB5BBB001E0AEC /* monster-2-down-1-hd.png in Resources */,
 				622713D518CC754A00DB68B2 /* music-background.mp3 in Resources */,
 				626997DF186C693800E48552 /* ghost-5.png in Resources */,
@@ -1923,6 +1930,7 @@
 				621EB9B3186E798A009E0E73 /* pause-menu-touched-hd.png in Resources */,
 				62218106186D911E00030541 /* pause-replay-touched-hd.png in Resources */,
 				626997E6186C693800E48552 /* sunny.png in Resources */,
+				622C4DD519423BFB00065D52 /* Herculanum.ttf in Resources */,
 				622713CD18CC12B200DB68B2 /* end-logo-hd.png in Resources */,
 				6223043D1941BC5F00D2E8FB /* IronStart_Background.png in Resources */,
 				622C4DA91942283300065D52 /* IronGame_Background.png in Resources */,

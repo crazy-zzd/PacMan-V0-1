@@ -37,6 +37,7 @@
 
 //分数
 @property (nonatomic, assign) CGPoint scorePosition;
+@property (nonatomic, copy) NSString * scoreName;
 
 //音乐音效设置
 @property (nonatomic, assign) BOOL isMusic;

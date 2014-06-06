@@ -82,7 +82,8 @@ static GameData * sharedData = nil;
     _pausePngFile = @"pause.png";
     _pausePngHLFile = @"pause_HL.png";
     
-    _scorePosition = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 15);
+    _scorePosition = CGPointMake(577.5 / 2, SCREEN_HEIGHT - 35.5 / 2);
+    _scoreName = @"9PX2BUS";
 }
 
 - (void)ironInit
@@ -111,7 +112,8 @@ static GameData * sharedData = nil;
     _pausePngFile = @"IronGame_Pause.png";
     _pausePngHLFile = @"IronGame_Pause_HL.png";
 
-    _scorePosition = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 15);
+    _scorePosition = CGPointMake(577.5 / 2, SCREEN_HEIGHT - 35.5 / 2);
+    _scoreName = @"9PX2BUS";
 }
 
 @end
