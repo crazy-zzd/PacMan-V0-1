@@ -75,7 +75,7 @@ static GameData * sharedData = nil;
     
     _beanPngFile = @"bean.png";
     
-    _pausePosition = CGPointMake(520, 40);
+    _pausePosition = CGPointMake(1090 / 2, SCREEN_HEIGHT - 32 / 2);
     _pausePngFile = @"pause.png";
     _pausePngHLFile = @"pause_HL.png";
     

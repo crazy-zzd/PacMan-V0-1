@@ -11,6 +11,8 @@
 
 #import "SelectLayer.h"
 
+#import "AboutUsLayer.h"
+
 @implementation StartLayer
 
 + (CCScene *)Scene
@@ -196,7 +198,8 @@
 
 - (IBAction)onPressInfoBtn:(id)sender
 {
-    NSLog(@"按下了关于我们按钮");
+    AboutUsLayer * infoLayer = [AboutUsLayer node];
+    [self addChild:infoLayer];
 }
 
 - (IBAction)onPressSettingBtn:(id)sender

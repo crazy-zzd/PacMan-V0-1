@@ -31,6 +31,10 @@
 		6223043A1941B6FE00D2E8FB /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304381941B6FE00D2E8FB /* pause.png */; };
 		6223043B1941B6FE00D2E8FB /* pause_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304391941B6FE00D2E8FB /* pause_HL.png */; };
 		6223043D1941BC5F00D2E8FB /* IronStart_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6223043C1941BC5F00D2E8FB /* IronStart_Background.png */; };
+		622304411941BDD400D2E8FB /* AboutUs_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304401941BDD400D2E8FB /* AboutUs_Background.png */; };
+		622304441941BDEB00D2E8FB /* AboutUs_Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304421941BDEB00D2E8FB /* AboutUs_Close.png */; };
+		622304451941BDEB00D2E8FB /* AboutUs_Close_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = 622304431941BDEB00D2E8FB /* AboutUs_Close_HL.png */; };
+		622304481941BE1B00D2E8FB /* AboutUsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622304471941BE1B00D2E8FB /* AboutUsLayer.m */; };
 		62266156185EB21D00D81719 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266154185EB21D00D81719 /* Icon.png */; };
 		62266157185EB21D00D81719 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266155185EB21D00D81719 /* Icon@2x.png */; };
 		62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62266158185EB22A00D81719 /* Default-568h@2x.png */; };
@@ -321,6 +325,11 @@
 		622304381941B6FE00D2E8FB /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		622304391941B6FE00D2E8FB /* pause_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_HL.png; sourceTree = "<group>"; };
 		6223043C1941BC5F00D2E8FB /* IronStart_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IronStart_Background.png; sourceTree = "<group>"; };
+		622304401941BDD400D2E8FB /* AboutUs_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutUs_Background.png; sourceTree = "<group>"; };
+		622304421941BDEB00D2E8FB /* AboutUs_Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutUs_Close.png; sourceTree = "<group>"; };
+		622304431941BDEB00D2E8FB /* AboutUs_Close_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutUs_Close_HL.png; sourceTree = "<group>"; };
+		622304461941BE1B00D2E8FB /* AboutUsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsLayer.h; sourceTree = "<group>"; };
+		622304471941BE1B00D2E8FB /* AboutUsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsLayer.m; sourceTree = "<group>"; };
 		62266154185EB21D00D81719 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		62266155185EB21D00D81719 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		62266158185EB22A00D81719 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -808,6 +817,25 @@
 			name = pictures;
 			sourceTree = "<group>";
 		};
+		6223043E1941BDB400D2E8FB /* AboutUs_Layer */ = {
+			isa = PBXGroup;
+			children = (
+				622304471941BE1B00D2E8FB /* AboutUsLayer.m */,
+				6223043F1941BDC200D2E8FB /* pictures */,
+			);
+			name = AboutUs_Layer;
+			sourceTree = "<group>";
+		};
+		6223043F1941BDC200D2E8FB /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+				622304401941BDD400D2E8FB /* AboutUs_Background.png */,
+				622304421941BDEB00D2E8FB /* AboutUs_Close.png */,
+				622304431941BDEB00D2E8FB /* AboutUs_Close_HL.png */,
+			);
+			name = pictures;
+			sourceTree = "<group>";
+		};
 		62266152185EB1F700D81719 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1202,6 +1230,7 @@
 			children = (
 				62DFF2FE193F5C4100275DF2 /* Intro_Layer */,
 				62DFF2FC193F5BDE00275DF2 /* Start_Layer */,
+				6223043E1941BDB400D2E8FB /* AboutUs_Layer */,
 				622304231941AEB300D2E8FB /* Select_Layer */,
 				62DFF307193F648300275DF2 /* Game_Layer */,
 				62DFF3281940367B00275DF2 /* Countdown_Layer */,
@@ -1641,6 +1670,7 @@
 		62F966B2182CDF6700152AE2 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				622304461941BE1B00D2E8FB /* AboutUsLayer.h */,
 				622304331941AF6600D2E8FB /* SelectLayer.h */,
 				62DFF3301940375F00275DF2 /* CountDownLayer.h */,
 				62DFF3121940098B00275DF2 /* GameData.h */,
@@ -1777,8 +1807,10 @@
 				622304301941AEE600D2E8FB /* Select_IronStyle.png in Resources */,
 				626997E5186C693800E48552 /* sun.png in Resources */,
 				62A81D9C18B08C64006ACE85 /* bean-hd.png in Resources */,
+				622304411941BDD400D2E8FB /* AboutUs_Background.png in Resources */,
 				62364AAE18CB5BB3001E0AEC /* monster-4-up-2-hd.png in Resources */,
 				622713CC18CC12B200DB68B2 /* end-background-hd.png in Resources */,
+				622304451941BDEB00D2E8FB /* AboutUs_Close_HL.png in Resources */,
 				622713D218CC531000DB68B2 /* music-background1.mp3 in Resources */,
 				62F9607D182CDE6800152AE2 /* Icon-72.png in Resources */,
 				62218101186D911E00030541 /* pause-menu-still-hd.png in Resources */,
@@ -1863,6 +1895,7 @@
 				62364AA318CB5199001E0AEC /* background-hd.png in Resources */,
 				62364ADF18CB5BBB001E0AEC /* monster-2-down-2-hd.png in Resources */,
 				622713D018CC12B200DB68B2 /* end-yourscore-hd.png in Resources */,
+				622304441941BDEB00D2E8FB /* AboutUs_Close.png in Resources */,
 				622713D718CC783700DB68B2 /* music-background2.mp3 in Resources */,
 				62F96087182CDE6800152AE2 /* cocos_icon@2x.png in Resources */,
 				62DFF31F1940139600275DF2 /* IronGame_Wall.png in Resources */,
@@ -1881,6 +1914,7 @@
 				62F8B8D9182F499100858391 /* Man.m in Sources */,
 				62F96205182CDE6A00152AE2 /* AppDelegate.m in Sources */,
 				622180F7186D90C500030541 /* PauseLayer.m in Sources */,
+				622304481941BE1B00D2E8FB /* AboutUsLayer.m in Sources */,
 				622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */,
 				62C03B9A182F7FA900CCA525 /* PlayerMan.m in Sources */,
 				622304351941AF6600D2E8FB /* SelectLayer.m in Sources */,
