@@ -9,6 +9,8 @@
 #import "StartLayer.h"
 #import "SimpleAudioEngine.h"
 
+#import "SelectLayer.h"
+
 @implementation StartLayer
 
 + (CCScene *)Scene
@@ -184,8 +186,9 @@
 
 - (void)onPressStartButton:(id)sender
 {
-    CCScene * scene = [GameLayer SceneWithStyle:IronStyle];
-    CCTransitionCrossFade * tran = [CCTransitionFadeBL
+//    CCScene * scene = [GameLayer SceneWithStyle:IronStyle];
+    CCScene * scene = [SelectLayer Scene];
+    CCTransitionCrossFade * tran = [CCTransitionSlideInR
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];
 }

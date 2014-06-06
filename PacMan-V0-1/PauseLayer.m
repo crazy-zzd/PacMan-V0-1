@@ -13,6 +13,8 @@
 
 #import "GameData.h"
 
+#import "SelectLayer.h"
+
 @implementation PauseLayer
 
 @synthesize delegate;
@@ -81,7 +83,7 @@
 
 - (IBAction)onPressMenu:(id)sender
 {
-    CCScene * scene = [StartLayer Scene];
+    CCScene * scene = [SelectLayer Scene];
     CCTransitionSlideInL * tran = [CCTransitionMoveInL
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];
