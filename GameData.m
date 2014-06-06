@@ -84,6 +84,8 @@ static GameData * sharedData = nil;
     
     _scorePosition = CGPointMake(577.5 / 2, SCREEN_HEIGHT - 35.5 / 2);
     _scoreName = @"9PX2BUS";
+    
+    _timeLineFile = @"Game_TimeLine_Background_Summer.png";
 }
 
 - (void)ironInit
@@ -114,6 +116,8 @@ static GameData * sharedData = nil;
 
     _scorePosition = CGPointMake(577.5 / 2, SCREEN_HEIGHT - 35.5 / 2);
     _scoreName = @"9PX2BUS";
+    
+    _timeLineFile = @"Game_TimeLine_Background.png";
 }
 
 @end

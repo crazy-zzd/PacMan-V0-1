@@ -8,6 +8,8 @@
 
 #import "TimeSprite.h"
 
+#import "GameData.h"
+
 @implementation TimeSprite
 
 - (id)init
@@ -17,7 +19,7 @@
         
         percent = 1.0;
         
-        CCSprite * background = [[CCSprite alloc] initWithFile:@"Game_TimeLine_Background.png"];
+        CCSprite * background = [[CCSprite alloc] initWithFile:[GameData sharedData].timeLineFile];
         [self addChild:background];
         
         CCSprite * left = [[CCSprite alloc] initWithFile:@"Game_TimeLine_Left.png"];

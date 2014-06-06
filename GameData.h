@@ -39,6 +39,9 @@
 @property (nonatomic, assign) CGPoint scorePosition;
 @property (nonatomic, copy) NSString * scoreName;
 
+//时间条
+@property (nonatomic, copy) NSString * timeLineFile;
+
 //音乐音效设置
 @property (nonatomic, assign) BOOL isMusic;
 @property (nonatomic, assign) BOOL isSound;

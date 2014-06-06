@@ -72,9 +72,10 @@
 		622C4DD2194234D800065D52 /* Setting_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DCF194234D800065D52 /* Setting_Front.png */; };
 		622C4DD519423BFB00065D52 /* Herculanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DD419423BFB00065D52 /* Herculanum.ttf */; };
 		622C4DD919423CE800065D52 /* 9PX2BUS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DD819423CE800065D52 /* 9PX2BUS.TTF */; };
+		622C4DDB19423EBD00065D52 /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DDA19423EBD00065D52 /* background-hd.png */; };
+		622C4DDD19423F3C00065D52 /* Game_TimeLine_Background_Summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DDC19423F3C00065D52 /* Game_TimeLine_Background_Summer.png */; };
 		622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF571182F19AD0038BF0D /* TouchLayer.m */; };
 		622FF57B182F1B800038BF0D /* ControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF57A182F1B800038BF0D /* ControlNode.m */; };
-		62364AA318CB5199001E0AEC /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA218CB5199001E0AEC /* background-hd.png */; };
 		62364AAD18CB5BB3001E0AEC /* monster-4-up-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA518CB5BB3001E0AEC /* monster-4-up-1-hd.png */; };
 		62364AAE18CB5BB3001E0AEC /* monster-4-up-2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA618CB5BB3001E0AEC /* monster-4-up-2-hd.png */; };
 		62364AAF18CB5BB3001E0AEC /* monster-4-down-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA718CB5BB3001E0AEC /* monster-4-down-1-hd.png */; };
@@ -391,11 +392,12 @@
 		622C4DCF194234D800065D52 /* Setting_Front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_Front.png; sourceTree = "<group>"; };
 		622C4DD419423BFB00065D52 /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Herculanum.ttf; sourceTree = "<group>"; };
 		622C4DD819423CE800065D52 /* 9PX2BUS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9PX2BUS.TTF; sourceTree = "<group>"; };
+		622C4DDA19423EBD00065D52 /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-hd.png"; sourceTree = "<group>"; };
+		622C4DDC19423F3C00065D52 /* Game_TimeLine_Background_Summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Game_TimeLine_Background_Summer.png; sourceTree = "<group>"; };
 		622FF570182F19AD0038BF0D /* TouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLayer.h; sourceTree = "<group>"; };
 		622FF571182F19AD0038BF0D /* TouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayer.m; sourceTree = "<group>"; };
 		622FF579182F1B800038BF0D /* ControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlNode.h; path = ../ControlNode.h; sourceTree = "<group>"; };
 		622FF57A182F1B800038BF0D /* ControlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlNode.m; path = ../ControlNode.m; sourceTree = "<group>"; };
-		62364AA218CB5199001E0AEC /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-hd.png"; path = "../V0-1-1-map/background-hd.png"; sourceTree = "<group>"; };
 		62364AA518CB5BB3001E0AEC /* monster-4-up-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-4-up-1-hd.png"; sourceTree = "<group>"; };
 		62364AA618CB5BB3001E0AEC /* monster-4-up-2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-4-up-2-hd.png"; sourceTree = "<group>"; };
 		62364AA718CB5BB3001E0AEC /* monster-4-down-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-4-down-1-hd.png"; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 		622C4D9A1942073D00065D52 /* timeLine */ = {
 			isa = PBXGroup;
 			children = (
+				622C4DDC19423F3C00065D52 /* Game_TimeLine_Background_Summer.png */,
 				622C4D9C1942075500065D52 /* Game_TimeLine_Middle.png */,
 				622C4DA619421DF800065D52 /* Game_TimeLine_Right.png */,
 				622C4D9D1942075500065D52 /* Game_TimeLine_Left.png */,
@@ -1183,13 +1186,13 @@
 		62DFF30C193F975900275DF2 /* Summer_Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				622C4DDA19423EBD00065D52 /* background-hd.png */,
 				62A81D8E18B08C64006ACE85 /* bean-hd.png */,
 				62A81D8D18B08C64006ACE85 /* background-hd1.png */,
 				62A81D8F18B08C64006ACE85 /* HP.png */,
 				62A81D9018B08C64006ACE85 /* map.txt */,
 				62A81D9118B08C64006ACE85 /* monster-hd.png */,
 				62AB808118BA09B60025EA9F /* background-hd2.png */,
-				62364AA218CB5199001E0AEC /* background-hd.png */,
 				62A81D9818B08C64006ACE85 /* pacman@2x-hd.png */,
 				622304381941B6FE00D2E8FB /* pause.png */,
 				622304391941B6FE00D2E8FB /* pause_HL.png */,
@@ -1922,6 +1925,7 @@
 				62DFF335194064D200275DF2 /* IronGame_Bean-hd.png in Resources */,
 				62DFF2F8193F5B3C00275DF2 /* IronStart_Setting_HL.png in Resources */,
 				6223042D1941AEE600D2E8FB /* Select_Friends_HL.png in Resources */,
+				622C4DDD19423F3C00065D52 /* Game_TimeLine_Background_Summer.png in Resources */,
 				62DFF3221940139600275DF2 /* IronGame_Life.png in Resources */,
 				622713CA18CC12B200DB68B2 /* end-menu-touched-hd.png in Resources */,
 				62266159185EB22A00D81719 /* Default-568h@2x.png in Resources */,
@@ -1940,6 +1944,7 @@
 				62A81DA618B08C64006ACE85 /* pacman@2x-hd.png in Resources */,
 				62AB808218BA09B60025EA9F /* background-hd2.png in Resources */,
 				6219FDF318C867DA008020B0 /* pac-man-2-hd.png in Resources */,
+				622C4DDB19423EBD00065D52 /* background-hd.png in Resources */,
 				622C4DB8194229D900065D52 /* Setting_Background.png in Resources */,
 				62364AEC18CB5BBB001E0AEC /* monster-3-left-2-hd.png in Resources */,
 				6219FDF518C867DA008020B0 /* pac-man-4-hd.png in Resources */,
@@ -2000,7 +2005,6 @@
 				6223042F1941AEE600D2E8FB /* Select_SummerStyle_HL.png in Resources */,
 				62DFF3241940139600275DF2 /* IronGame_Pause.png in Resources */,
 				626997DE186C693800E48552 /* ghost-4.png in Resources */,
-				62364AA318CB5199001E0AEC /* background-hd.png in Resources */,
 				62364ADF18CB5BBB001E0AEC /* monster-2-down-2-hd.png in Resources */,
 				622713D018CC12B200DB68B2 /* end-yourscore-hd.png in Resources */,
 				622C4DA11942075500065D52 /* Game_TimeLine_Left.png in Resources */,
