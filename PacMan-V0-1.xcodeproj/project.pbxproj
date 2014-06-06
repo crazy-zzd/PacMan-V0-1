@@ -50,6 +50,7 @@
 		622713D218CC531000DB68B2 /* music-background1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 622713D118CC531000DB68B2 /* music-background1.mp3 */; };
 		622713D518CC754A00DB68B2 /* music-background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 622713D418CC754A00DB68B2 /* music-background.mp3 */; };
 		622713D718CC783700DB68B2 /* music-background2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 622713D618CC783700DB68B2 /* music-background2.mp3 */; };
+		622C4D99194205CD00065D52 /* AboutUs_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 622C4D98194205CD00065D52 /* AboutUs_Transparent.png */; };
 		622FF572182F19AD0038BF0D /* TouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF571182F19AD0038BF0D /* TouchLayer.m */; };
 		622FF57B182F1B800038BF0D /* ControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 622FF57A182F1B800038BF0D /* ControlNode.m */; };
 		62364AA318CB5199001E0AEC /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62364AA218CB5199001E0AEC /* background-hd.png */; };
@@ -346,6 +347,7 @@
 		622713D118CC531000DB68B2 /* music-background1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-background1.mp3"; sourceTree = "<group>"; };
 		622713D418CC754A00DB68B2 /* music-background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-background.mp3"; sourceTree = "<group>"; };
 		622713D618CC783700DB68B2 /* music-background2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-background2.mp3"; sourceTree = "<group>"; };
+		622C4D98194205CD00065D52 /* AboutUs_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutUs_Transparent.png; sourceTree = "<group>"; };
 		622FF570182F19AD0038BF0D /* TouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLayer.h; sourceTree = "<group>"; };
 		622FF571182F19AD0038BF0D /* TouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayer.m; sourceTree = "<group>"; };
 		622FF579182F1B800038BF0D /* ControlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlNode.h; path = ../ControlNode.h; sourceTree = "<group>"; };
@@ -829,6 +831,7 @@
 		6223043F1941BDC200D2E8FB /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				622C4D98194205CD00065D52 /* AboutUs_Transparent.png */,
 				622304401941BDD400D2E8FB /* AboutUs_Background.png */,
 				622304421941BDEB00D2E8FB /* AboutUs_Close.png */,
 				622304431941BDEB00D2E8FB /* AboutUs_Close_HL.png */,
@@ -1862,6 +1865,7 @@
 				62A81D9E18B08C64006ACE85 /* map.txt in Resources */,
 				626997D8186C693800E48552 /* cloud-4.png in Resources */,
 				626997E1186C693800E48552 /* mountains.png in Resources */,
+				622C4D99194205CD00065D52 /* AboutUs_Transparent.png in Resources */,
 				62364AE818CB5BBB001E0AEC /* monster-3-down-2-hd.png in Resources */,
 				62364AD818CB5BBB001E0AEC /* monster-1-right-1-hd.png in Resources */,
 				62364AE718CB5BBB001E0AEC /* monster-3-down-1-hd.png in Resources */,

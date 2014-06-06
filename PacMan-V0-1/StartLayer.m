@@ -68,6 +68,10 @@
     //Menu
     CCMenu * ironBtnMenu = [CCMenu menuWithItems:ironInfoBtn, ironSettingBtn, ironStartBtn, nil];
     ironBtnMenu.position = CGPointMake(0, 0);
+    
+    //关于我们界面
+    infoLayer = [AboutUsLayer node];
+    
     [self addChild:ironBtnMenu];
 }
 
@@ -198,7 +202,11 @@
 
 - (IBAction)onPressInfoBtn:(id)sender
 {
-    AboutUsLayer * infoLayer = [AboutUsLayer node];
+    if ([infoLayer parent] != nil) {
+        return;
+    }
+    infoLayer = [AboutUsLayer node];
+    
     [self addChild:infoLayer];
 }
 

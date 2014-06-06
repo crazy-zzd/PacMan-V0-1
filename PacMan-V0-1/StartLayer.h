@@ -11,6 +11,7 @@
 #import "MyHeader.h"
 #import "GameLayer.h"
 
+@class AboutUsLayer;
 
 @interface StartLayer : CCLayer {
     
@@ -25,6 +26,8 @@
     NSMutableArray * monsters;
     
     int theJumpMonster;
+    
+    AboutUsLayer * infoLayer;
 }
 
 + (CCScene *)Scene;
