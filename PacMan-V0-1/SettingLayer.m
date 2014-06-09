@@ -29,10 +29,13 @@
         sound = [[CCMenuItemImage alloc] initWithNormalImage:@"Setting_Sound_On.png" selectedImage:@"Setting_Sound_On_HL.png" disabledImage:nil target:self selector:@selector(onPressSound:)];
         sound.position = CGPointMake(758.0 / 2, SCREEN_HEIGHT - 343.5 / 2);
         
+        CCMenuItemImage * closeBtn = [[CCMenuItemImage alloc] initWithNormalImage:@"AboutUs_Close.png" selectedImage:@"AboutUs_Close_HL.png" disabledImage:nil target:self selector:@selector(onPressCloseBtn:)];
+        closeBtn.position = CGPointMake(920 / 2, 510 / 2);
+        
         CCMenuItemImage * transparent = [[CCMenuItemImage alloc] initWithNormalImage:@"AboutUs_Transparent.png" selectedImage:@"AboutUs_Transparent.png" disabledImage:nil target:self selector:@selector(onPressCloseBtn:)];
         transparent.position = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
         
-        CCMenu * menu = [CCMenu menuWithItems:music, sound, transparent, nil];
+        CCMenu * menu = [CCMenu menuWithItems: closeBtn,music, sound, transparent, nil];
         menu.position = CGPointZero;
         [self addChild:menu];
         

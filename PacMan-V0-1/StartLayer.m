@@ -197,7 +197,7 @@
 {
 //    CCScene * scene = [GameLayer SceneWithStyle:IronStyle];
     CCScene * scene = [SelectLayer Scene];
-    CCTransitionCrossFade * tran = [CCTransitionSlideInR
+    CCTransitionCrossFade * tran = [CCTransitionFadeDown
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];
 }

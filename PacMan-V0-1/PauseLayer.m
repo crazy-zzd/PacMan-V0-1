@@ -98,7 +98,7 @@
     [[SimpleAudioEngine sharedEngine] stopEffect:[GameData sharedData].soundId];
     
     CCScene * scene = [SelectLayer Scene];
-    CCTransitionSlideInL * tran = [CCTransitionMoveInL
+    CCTransitionSlideInL * tran = [CCTransitionFadeTR
                                     transitionWithDuration:0.7 scene:scene];
     [[CCDirector sharedDirector] replaceScene:tran];
 }
