@@ -175,6 +175,8 @@
 		62EAA1111AF7AB7300ED9754 /* timebean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA1101AF7AB7300ED9754 /* timebean-hd.png */; };
 		62EAA1141AF7ADDB00ED9754 /* DoubleBeans.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */; };
 		62EAA1161AF7B3B400ED9754 /* doublebean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA1151AF7B3B400ED9754 /* doublebean-hd.png */; };
+		62EAA1191AF7C45E00ED9754 /* FruitBeans.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAA1181AF7C45E00ED9754 /* FruitBeans.m */; };
+		62EAA11B1AF7C52500ED9754 /* fruitbean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA11A1AF7C52500ED9754 /* fruitbean-hd.png */; };
 		62F8B8D9182F499100858391 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F8B8D8182F499100858391 /* Man.m */; };
 		62F9605F182CDE6800152AE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F9605E182CDE6800152AE2 /* QuartzCore.framework */; };
 		62F96061182CDE6800152AE2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F96060182CDE6800152AE2 /* OpenGLES.framework */; };
@@ -508,6 +510,9 @@
 		62EAA1121AF7ADDB00ED9754 /* DoubleBeans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleBeans.h; sourceTree = "<group>"; };
 		62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleBeans.m; sourceTree = "<group>"; };
 		62EAA1151AF7B3B400ED9754 /* doublebean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doublebean-hd.png"; sourceTree = "<group>"; };
+		62EAA1171AF7C45E00ED9754 /* FruitBeans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FruitBeans.h; sourceTree = "<group>"; };
+		62EAA1181AF7C45E00ED9754 /* FruitBeans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FruitBeans.m; sourceTree = "<group>"; };
+		62EAA11A1AF7C52500ED9754 /* fruitbean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruitbean-hd.png"; sourceTree = "<group>"; };
 		62F8B8D6182F42A700858391 /* MyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeader.h; sourceTree = "<group>"; };
 		62F8B8D7182F499100858391 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		62F8B8D8182F499100858391 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
@@ -1192,6 +1197,7 @@
 			children = (
 				622C4DDA19423EBD00065D52 /* background-hd.png */,
 				62EAA1151AF7B3B400ED9754 /* doublebean-hd.png */,
+				62EAA11A1AF7C52500ED9754 /* fruitbean-hd.png */,
 				62A81D8E18B08C64006ACE85 /* bean-hd.png */,
 				62EAA1101AF7AB7300ED9754 /* timebean-hd.png */,
 				62A81D8D18B08C64006ACE85 /* background-hd1.png */,
@@ -1280,6 +1286,7 @@
 				62C03B9F182FA46D00CCA525 /* Beans.m */,
 				62EAA1041AF78A4C00ED9754 /* TimeBeans.m */,
 				62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */,
+				62EAA1181AF7C45E00ED9754 /* FruitBeans.m */,
 				62F8B8D8182F499100858391 /* Man.m */,
 				62C03B96182F7F6B00CCA525 /* MonsterMan.m */,
 				62C03B99182F7FA900CCA525 /* PlayerMan.m */,
@@ -1760,6 +1767,7 @@
 		62F966B2182CDF6700152AE2 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				62EAA1171AF7C45E00ED9754 /* FruitBeans.h */,
 				62EAA1121AF7ADDB00ED9754 /* DoubleBeans.h */,
 				62EAA1031AF78A4C00ED9754 /* TimeBeans.h */,
 				622C4DC219422A6100065D52 /* SettingLayer.h */,
@@ -1862,6 +1870,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EAA11B1AF7C52500ED9754 /* fruitbean-hd.png in Resources */,
 				6223043B1941B6FE00D2E8FB /* pause_HL.png in Resources */,
 				62DFF32F194036B500275DF2 /* CountDown_3.png in Resources */,
 				622C4DED1942576C00065D52 /* eat.wav in Resources */,
@@ -2039,6 +2048,7 @@
 				62DFF3141940098B00275DF2 /* GameData.m in Sources */,
 				62C03BA0182FA46D00CCA525 /* Beans.m in Sources */,
 				622FF57B182F1B800038BF0D /* ControlNode.m in Sources */,
+				62EAA1191AF7C45E00ED9754 /* FruitBeans.m in Sources */,
 				6287118E1836584A00A66DA7 /* Maps.m in Sources */,
 				62CA9A791835CD56009A584C /* GameLayer.m in Sources */,
 				62C03B9D182FA2EE00CCA525 /* Things.m in Sources */,

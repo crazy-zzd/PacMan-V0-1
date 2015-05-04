@@ -80,6 +80,7 @@ static GameData * sharedData = nil;
     
     _beanPngFile = @"bean.png";
     _timeBeanPngFile = @"timebean.png";
+    _fruitBean = @"fruitbean.png";
     _doubleBeanPngFile = @"doublebean.png";
     
     _pausePosition = CGPointMake(1090 / 2, SCREEN_HEIGHT - 32 / 2);
@@ -123,6 +124,7 @@ static GameData * sharedData = nil;
     
     _beanPngFile = @"IronGame_Bean.png";
     _timeBeanPngFile = @"IronGame_TimeBean.png";
+    _fruitBean = @"fruitbean.png";
     _doubleBeanPngFile = @"doublebean.png";
     
     _pausePosition = CGPointMake(548, SCREEN_HEIGHT - 15);
