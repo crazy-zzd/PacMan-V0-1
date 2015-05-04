@@ -96,7 +96,7 @@
 //    director_ 
     
 	// Display FSP and SPF
-	[director_ setDisplayStats:NO];
+	[director_ setDisplayStats:YES];
 	
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];

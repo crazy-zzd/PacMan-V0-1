@@ -86,6 +86,9 @@
         }
     }
     
+    /**
+     *  鬼出生的区域去掉所有豆子
+     */
     for (int i = 0; i < [beans count]; i++) {
         Beans * theBean = [beans objectAtIndex:i];
         CGPoint thePosition = [theBean sprite].position;

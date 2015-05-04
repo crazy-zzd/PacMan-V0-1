@@ -142,17 +142,23 @@
 }
 
 //添加并初始化暂停按钮
+//添加并初始化功能按钮
 - (void)loadPauseButton
 {
     CCMenuItemImage * pauseBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.pausePngFile selectedImage:mainGameData.pausePngHLFile disabledImage:nil target:theControNode selector:@selector(onPressPause)];
     pauseBtn.position = mainGameData.pausePosition;
     
-    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
+    CCMenuItemImage * addTimeBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.addTimeFile selectedImage:mainGameData.addTimeHLFile disabledImage:mainGameData.addTimeDisFile target:self selector:@selector(onPressAddTimeBtn:)];
+    addTimeBtn.position = mainGameData.addTimePosition;
+    
+    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, addTimeBtn, nil];
+//    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
     btnMenu.position = CGPointZero;
     btnMenu.enabled = NO;
     [self addChild:btnMenu z:1 tag:TAG_PAUSEBTN];
 }
 
+//添加时间条
 - (void)loadTimeLine
 {
     timeLine = [[TimeSprite alloc] init];
@@ -181,6 +187,36 @@
     
 //    [self schedule:@selector(updateCountDown:) interval:1.0 repeat:YES delay:0.0];
     [self schedule:@selector(updateCountDown:) interval:1.0];
+}
+
+//// 添加功能按钮
+//- (void)loadAddTimeButton
+//{
+//    CCMenuItemImage * addTimeBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.addTimeFile selectedImage:mainGameData.addTimeHLFile disabledImage:mainGameData.addTimeDisFile target:self selector:@selector(onPressAddTimeBtn)];
+//    addTimeBtn.position = mainGameData.addTimePosition;
+//    
+//    CCMenu * btnMenu = [CCMenu menuWithItems:addTimeBtn, nil];
+//    btnMenu.position = CGPointZero;
+//    btnMenu.enabled = NO;
+//    [self addChild:btnMenu z:1 tag:TAG_TIMEBTN];
+//}
+
+- (void)onPressAddTimeBtn:(id)sender
+{
+    restTime += 30;
+    if (restTime > TIME_MAX) {
+        restTime = TIME_MAX;
+    }
+    
+    NSLog(@"%@", sender);
+    if (sender) {
+        CCMenuItemImage * button = (CCMenuItemImage *)sender;
+//        button.isEnabled = NO;
+//        button.isSelected = YES;
+        [button setTarget:nil selector:nil];
+        [button setNormalImage:[[CCSprite alloc] initWithFile:mainGameData.addTimeDisFile]];
+    }
+    
 }
 
 - (void)updateCountDown:(ccTime)delta

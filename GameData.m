@@ -92,6 +92,11 @@ static GameData * sharedData = nil;
     
     _timeLineFile = @"Game_TimeLine_Background_Summer.png";
     
+    _addTimePosition = CGPointMake(1090 / 2, 32 / 2);
+    _addTimeFile = @"Summer_Pause.png";
+    _addTimeHLFile = @"pause_HL.png";
+    _addTimeDisFile = @"pause_HL.png";
+    
 }
 
 - (void)ironInit
@@ -129,6 +134,11 @@ static GameData * sharedData = nil;
     _scoreColor = ccc3(188, 188, 188);
     
     _timeLineFile = @"Game_TimeLine_Background.png";
+    
+    _addTimePosition = CGPointMake(1090 / 2, 32 / 2);
+    _addTimeFile = @"Summer_Pause.png";
+    _addTimeHLFile = @"pause_HL.png";
+    _addTimeDisFile = @"pause_HL.png";
 }
 
 @end

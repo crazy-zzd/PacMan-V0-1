@@ -44,6 +44,12 @@
 //时间条
 @property (nonatomic, copy) NSString * timeLineFile;
 
+//增加时间按钮
+@property (nonatomic, assign) CGPoint addTimePosition;
+@property (nonatomic, copy) NSString * addTimeFile;
+@property (nonatomic, copy) NSString * addTimeHLFile;
+@property (nonatomic, copy) NSString * addTimeDisFile;
+
 //音乐音效设置
 @property (nonatomic, assign) BOOL isMusic;
 @property (nonatomic, assign) BOOL isSound;

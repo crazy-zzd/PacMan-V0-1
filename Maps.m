@@ -59,6 +59,8 @@ static Maps * sharedMap = nil;
     return theCentrePosition;
 }
 
+#pragma mark - 对外接口
+
 //给出中心图坐标，长度，第一方向，第二方向，返回一个数据包，分别是两个CGPoint，两个目的地
 - (NSArray * )moveWithCentrePosition:(CGPoint)theCentrePosition withLengthPoint:(int)length withFirstDirection:(int)theFirstDirection withSecondDirection:(int)theSecondDirection
 {
