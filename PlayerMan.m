@@ -9,6 +9,8 @@
 #import "PlayerMan.h"
 #import "Maps.h"
 
+#import "Beans.h"
+
 #import "GameData.h"
 
 #import "SimpleAudioEngine.h"
@@ -35,14 +37,25 @@
         score = 0;
         
         isJumping = NO;
+        isDouble = NO;
     }
     return self;
 }
 
 
-- (void)eatBean
+- (void)eatBean:(Beans *)theBean
 {
-    score ++;
+    if (isDouble) {
+        score += [theBean beanScore] * 2;
+    }
+    else{
+        score += [theBean beanScore];
+    }
+}
+
+- (void)startDouble
+{
+    isDouble = YES;
 }
 
 - (int)score

@@ -1,5 +1,5 @@
 //
-//  TimeBeans.h
+//  DoubleBeans.h
 //  PacMan-V0-1
 //
 //  Created by 朱 俊健 on 15-5-4.
@@ -8,7 +8,6 @@
 
 #import "Beans.h"
 
-@interface TimeBeans : Beans
-
+@interface DoubleBeans : Beans
 
 @end

@@ -174,6 +174,7 @@
 		62EAA10F1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA10E1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png */; };
 		62EAA1111AF7AB7300ED9754 /* timebean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA1101AF7AB7300ED9754 /* timebean-hd.png */; };
 		62EAA1141AF7ADDB00ED9754 /* DoubleBeans.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */; };
+		62EAA1161AF7B3B400ED9754 /* doublebean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA1151AF7B3B400ED9754 /* doublebean-hd.png */; };
 		62F8B8D9182F499100858391 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F8B8D8182F499100858391 /* Man.m */; };
 		62F9605F182CDE6800152AE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F9605E182CDE6800152AE2 /* QuartzCore.framework */; };
 		62F96061182CDE6800152AE2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F96060182CDE6800152AE2 /* OpenGLES.framework */; };
@@ -506,6 +507,7 @@
 		62EAA1101AF7AB7300ED9754 /* timebean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timebean-hd.png"; sourceTree = "<group>"; };
 		62EAA1121AF7ADDB00ED9754 /* DoubleBeans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleBeans.h; sourceTree = "<group>"; };
 		62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleBeans.m; sourceTree = "<group>"; };
+		62EAA1151AF7B3B400ED9754 /* doublebean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doublebean-hd.png"; sourceTree = "<group>"; };
 		62F8B8D6182F42A700858391 /* MyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeader.h; sourceTree = "<group>"; };
 		62F8B8D7182F499100858391 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		62F8B8D8182F499100858391 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
@@ -1189,6 +1191,7 @@
 			isa = PBXGroup;
 			children = (
 				622C4DDA19423EBD00065D52 /* background-hd.png */,
+				62EAA1151AF7B3B400ED9754 /* doublebean-hd.png */,
 				62A81D8E18B08C64006ACE85 /* bean-hd.png */,
 				62EAA1101AF7AB7300ED9754 /* timebean-hd.png */,
 				62A81D8D18B08C64006ACE85 /* background-hd1.png */,
@@ -1927,6 +1930,7 @@
 				626997E6186C693800E48552 /* sunny.png in Resources */,
 				622713CD18CC12B200DB68B2 /* end-logo-hd.png in Resources */,
 				6223043D1941BC5F00D2E8FB /* IronStart_Background.png in Resources */,
+				62EAA1161AF7B3B400ED9754 /* doublebean-hd.png in Resources */,
 				622C4DA91942283300065D52 /* IronGame_Background.png in Resources */,
 				6219FDF218C867DA008020B0 /* pac-man-1-hd.png in Resources */,
 				62364AB318CB5BB3001E0AEC /* monster-4-left-1-hd.png in Resources */,

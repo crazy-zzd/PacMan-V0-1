@@ -30,7 +30,14 @@
 
 - (void)beEaten
 {
+    if (eatenBlock) {
+        eatenBlock();
+        NSLog(@"eatenBlock");
+    }
     [sprite removeFromParent];
 }
-
+- (void)setBeanEatenCallBack:(void (^)())theEatenBlock
+{
+    eatenBlock = theEatenBlock;
+}
 @end

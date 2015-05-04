@@ -18,6 +18,7 @@
 #import "MonsterMan.h"
 #import "Beans.h"
 #import "TimeBeans.h"
+#import "DoubleBeans.h"
 
 #import "GameData.h"
 #import "Maps.h"
@@ -133,8 +134,14 @@
         aBean = (Beans *)[beans objectAtIndex:i];
         if ([aBean isKindOfClass:[TimeBeans class]]) {
             TimeBeans * theTimeBean = (TimeBeans *)aBean;
-            [theTimeBean setTimeBeanEatenCallBack:^{
-                [weakSelf onPressAddTimeBtn:nil];
+            [theTimeBean setBeanEatenCallBack:^{
+                [weakSelf addTimeBean];
+            }];
+        }
+        if ([aBean isKindOfClass:[DoubleBeans class]]) {
+            DoubleBeans * theDoubleBean = (DoubleBeans *)aBean;
+            [theDoubleBean setBeanEatenCallBack:^{
+                [weakSelf doubleBeanStart];
             }];
         }
         [self addChild:[aBean sprite]];
@@ -156,10 +163,11 @@
     CCMenuItemImage * pauseBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.pausePngFile selectedImage:mainGameData.pausePngHLFile disabledImage:nil target:theControNode selector:@selector(onPressPause)];
     pauseBtn.position = mainGameData.pausePosition;
     
-    CCMenuItemImage * addTimeBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.addTimeFile selectedImage:mainGameData.addTimeHLFile disabledImage:mainGameData.addTimeDisFile target:self selector:@selector(onPressAddTimeBtn:)];
-    addTimeBtn.position = mainGameData.addTimePosition;
-    
-    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, addTimeBtn, nil];
+//    CCMenuItemImage * addTimeBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.addTimeFile selectedImage:mainGameData.addTimeHLFile disabledImage:mainGameData.addTimeDisFile target:self selector:@selector(:)];
+//    addTimeBtn.position = mainGameData.addTimePosition;
+//    
+//    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, addTimeBtn, nil];
+    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
 //    CCMenu * btnMenu = [CCMenu menuWithItems:pauseBtn, nil];
     btnMenu.position = CGPointZero;
     btnMenu.enabled = NO;
@@ -197,36 +205,6 @@
     [self schedule:@selector(updateCountDown:) interval:1.0];
 }
 
-//// 添加功能按钮
-//- (void)loadAddTimeButton
-//{
-//    CCMenuItemImage * addTimeBtn = [[CCMenuItemImage alloc] initWithNormalImage:mainGameData.addTimeFile selectedImage:mainGameData.addTimeHLFile disabledImage:mainGameData.addTimeDisFile target:self selector:@selector(onPressAddTimeBtn)];
-//    addTimeBtn.position = mainGameData.addTimePosition;
-//    
-//    CCMenu * btnMenu = [CCMenu menuWithItems:addTimeBtn, nil];
-//    btnMenu.position = CGPointZero;
-//    btnMenu.enabled = NO;
-//    [self addChild:btnMenu z:1 tag:TAG_TIMEBTN];
-//}
-
-- (void)onPressAddTimeBtn:(id)sender
-{
-    restTime += 30;
-    if (restTime > TIME_MAX) {
-        restTime = TIME_MAX;
-    }
-    
-    NSLog(@"%@", sender);
-    if (sender) {
-        CCMenuItemImage * button = (CCMenuItemImage *)sender;
-//        button.isEnabled = NO;
-//        button.isSelected = YES;
-        [button setTarget:nil selector:nil];
-        [button setNormalImage:[[CCSprite alloc] initWithFile:mainGameData.addTimeDisFile]];
-    }
-    
-}
-
 - (void)updateCountDown:(ccTime)delta
 {
     if ([theCountDownLayer countNumber]) {
@@ -258,6 +236,21 @@
     }
     restTime = restTime - 0.2;
     [timeLine setTimePercent:restTime / TIME_MAX];
+}
+
+#pragma mark - 功能豆子
+
+- (void)addTimeBean
+{
+    restTime += 30;
+    if (restTime > TIME_MAX) {
+        restTime = TIME_MAX;
+    }
+}
+
+- (void)doubleBeanStart
+{
+    [theControNode.player startDouble];
 }
 
 #pragma mark - TouchLayerDelegate

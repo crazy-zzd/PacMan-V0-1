@@ -31,6 +31,7 @@
 //豆子
 @property (nonatomic, copy) NSString * beanPngFile;
 @property (nonatomic, copy) NSString * timeBeanPngFile;
+@property (nonatomic, copy) NSString * doubleBeanPngFile;
 
 //暂停按钮
 @property (nonatomic, assign) CGPoint pausePosition;

@@ -12,12 +12,15 @@
 #import "MyHeader.h"
 
 @class Maps;
+@class Beans;
 
 
 @interface PlayerMan : Man {
     int score;
     
     BOOL isJumping;
+    
+    BOOL isDouble;
 }
 
 
@@ -25,10 +28,12 @@
 
 -(BOOL)isContainWithRect:(CGRect)theRect;
 
--(void)eatBean;
+-(void)eatBean:(Beans *)theBean;
 
 -(BOOL)jump;
 
 -(int)score;
+
+-(void)startDouble;
 
 @end

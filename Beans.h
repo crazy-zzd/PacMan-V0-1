@@ -13,6 +13,7 @@
 
 @interface Beans : Things {
     int beanScore;
+    void(^eatenBlock)();
 }
 
 - (id)initWithPosition:(CGPoint)thePosition withScore:(int)theScore;
@@ -21,4 +22,5 @@
 
 - (void)beEaten;
 
+- (void)setBeanEatenCallBack:(void(^)())theEatenBlock;
 @end
