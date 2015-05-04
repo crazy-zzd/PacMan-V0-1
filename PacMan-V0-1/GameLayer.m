@@ -17,6 +17,7 @@
 #import "PlayerMan.h"
 #import "MonsterMan.h"
 #import "Beans.h"
+#import "TimeBeans.h"
 
 #import "GameData.h"
 #import "Maps.h"
@@ -125,10 +126,17 @@
 //添加豆子
 - (void)loadBeans
 {
+    __weak GameLayer * weakSelf = self;
     NSMutableArray * beans = theControNode.beans;
     Beans * aBean;
     for (int i = 0; i < beans.count; i ++) {
         aBean = (Beans *)[beans objectAtIndex:i];
+        if ([aBean isKindOfClass:[TimeBeans class]]) {
+            TimeBeans * theTimeBean = (TimeBeans *)aBean;
+            [theTimeBean setTimeBeanEatenCallBack:^{
+                [weakSelf onPressAddTimeBtn:nil];
+            }];
+        }
         [self addChild:[aBean sprite]];
     }
 }

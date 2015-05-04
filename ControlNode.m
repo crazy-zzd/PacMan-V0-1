@@ -16,6 +16,7 @@
 #import "PlayerMan.h"
 #import "MonsterMan.h"
 #import "Beans.h"
+#import "TimeBeans.h"
 #import "Maps.h"
 #import "PauseLayer.h"
 #import "EndLayer.h"
@@ -73,6 +74,7 @@
 
 - (void)initBeans
 {
+    BOOL isTimeBean = NO;
     beans = [[NSMutableArray alloc] init];
     for (int x = 0; x < mainGameData.mapWidthPoint - 1; x ++) {
         for (int y = 0; y < mainGameData.mapHeightPoint- 1; y ++) {
@@ -80,7 +82,14 @@
                 GLfloat theX = 0, theY = 0;
                 theX = mainGameData.mapPosition.x + POINT_LENGTH * (x + 1);
                 theY = mainGameData.mapPosition.y + POINT_LENGTH * (y + 1);
-                Beans * theBean = [[Beans alloc] initWithPosition:CGPointMake(theX, theY) withScore:BEAN_SCORE];
+                Beans * theBean;
+                if (round(CCRANDOM_0_1() * 100 + 1) == 1 && !isTimeBean) {
+                    isTimeBean = YES;
+                    theBean = [[TimeBeans alloc] initWithPosition:CGPointMake(theX, theY) withScore:BEAN_SCORE];
+                }
+                else{
+                    theBean = [[Beans alloc] initWithPosition:CGPointMake(theX, theY) withScore:BEAN_SCORE];
+                }
                 [beans addObject:theBean];
             }
         }

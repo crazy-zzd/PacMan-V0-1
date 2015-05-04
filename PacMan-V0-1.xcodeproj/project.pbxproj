@@ -170,6 +170,10 @@
 		62DFF32F194036B500275DF2 /* CountDown_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF32C194036B500275DF2 /* CountDown_3.png */; };
 		62DFF3321940375F00275DF2 /* CountDownLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DFF3311940375F00275DF2 /* CountDownLayer.m */; };
 		62DFF335194064D200275DF2 /* IronGame_Bean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DFF334194064D200275DF2 /* IronGame_Bean-hd.png */; };
+		62EAA1051AF78A4C00ED9754 /* TimeBeans.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAA1041AF78A4C00ED9754 /* TimeBeans.m */; };
+		62EAA10F1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA10E1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png */; };
+		62EAA1111AF7AB7300ED9754 /* timebean-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAA1101AF7AB7300ED9754 /* timebean-hd.png */; };
+		62EAA1141AF7ADDB00ED9754 /* DoubleBeans.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */; };
 		62F8B8D9182F499100858391 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F8B8D8182F499100858391 /* Man.m */; };
 		62F9605F182CDE6800152AE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F9605E182CDE6800152AE2 /* QuartzCore.framework */; };
 		62F96061182CDE6800152AE2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F96060182CDE6800152AE2 /* OpenGLES.framework */; };
@@ -496,6 +500,12 @@
 		62DFF3301940375F00275DF2 /* CountDownLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownLayer.h; sourceTree = "<group>"; };
 		62DFF3311940375F00275DF2 /* CountDownLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownLayer.m; sourceTree = "<group>"; };
 		62DFF334194064D200275DF2 /* IronGame_Bean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IronGame_Bean-hd.png"; sourceTree = "<group>"; };
+		62EAA1031AF78A4C00ED9754 /* TimeBeans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBeans.h; sourceTree = "<group>"; };
+		62EAA1041AF78A4C00ED9754 /* TimeBeans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeBeans.m; sourceTree = "<group>"; };
+		62EAA10E1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IronGame_TimeBean-hd.png"; sourceTree = "<group>"; };
+		62EAA1101AF7AB7300ED9754 /* timebean-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timebean-hd.png"; sourceTree = "<group>"; };
+		62EAA1121AF7ADDB00ED9754 /* DoubleBeans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleBeans.h; sourceTree = "<group>"; };
+		62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleBeans.m; sourceTree = "<group>"; };
 		62F8B8D6182F42A700858391 /* MyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeader.h; sourceTree = "<group>"; };
 		62F8B8D7182F499100858391 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		62F8B8D8182F499100858391 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
@@ -1180,6 +1190,7 @@
 			children = (
 				622C4DDA19423EBD00065D52 /* background-hd.png */,
 				62A81D8E18B08C64006ACE85 /* bean-hd.png */,
+				62EAA1101AF7AB7300ED9754 /* timebean-hd.png */,
 				62A81D8D18B08C64006ACE85 /* background-hd1.png */,
 				62A81D8F18B08C64006ACE85 /* HP.png */,
 				62A81D9018B08C64006ACE85 /* map.txt */,
@@ -1217,6 +1228,7 @@
 			isa = PBXGroup;
 			children = (
 				62DFF334194064D200275DF2 /* IronGame_Bean-hd.png */,
+				62EAA10E1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png */,
 				62DFF3161940139600275DF2 /* IronGame_TimeBackground.png */,
 				62DFF3171940139600275DF2 /* IronGame_Wall.png */,
 				62DFF3181940139600275DF2 /* IronGame_WallBackground.png */,
@@ -1263,6 +1275,8 @@
 			children = (
 				62C03B9C182FA2EE00CCA525 /* Things.m */,
 				62C03B9F182FA46D00CCA525 /* Beans.m */,
+				62EAA1041AF78A4C00ED9754 /* TimeBeans.m */,
+				62EAA1131AF7ADDB00ED9754 /* DoubleBeans.m */,
 				62F8B8D8182F499100858391 /* Man.m */,
 				62C03B96182F7F6B00CCA525 /* MonsterMan.m */,
 				62C03B99182F7FA900CCA525 /* PlayerMan.m */,
@@ -1743,6 +1757,8 @@
 		62F966B2182CDF6700152AE2 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				62EAA1121AF7ADDB00ED9754 /* DoubleBeans.h */,
+				62EAA1031AF78A4C00ED9754 /* TimeBeans.h */,
 				622C4DC219422A6100065D52 /* SettingLayer.h */,
 				622C4DA3194215A700065D52 /* TimeSprite.h */,
 				622304461941BE1B00D2E8FB /* AboutUsLayer.h */,
@@ -1979,6 +1995,8 @@
 				622C4DE61942530100065D52 /* Select_Background.png in Resources */,
 				622C4DF319425BBC00065D52 /* 吃豆人-经典小游戏 - 铃声.mp3 in Resources */,
 				6223042F1941AEE600D2E8FB /* Select_SummerStyle_HL.png in Resources */,
+				62EAA10F1AF7AB6000ED9754 /* IronGame_TimeBean-hd.png in Resources */,
+				62EAA1111AF7AB7300ED9754 /* timebean-hd.png in Resources */,
 				626997DE186C693800E48552 /* ghost-4.png in Resources */,
 				62364ADF18CB5BBB001E0AEC /* monster-2-down-2-hd.png in Resources */,
 				622713D018CC12B200DB68B2 /* end-yourscore-hd.png in Resources */,
@@ -2007,10 +2025,12 @@
 				62C03B9A182F7FA900CCA525 /* PlayerMan.m in Sources */,
 				622304351941AF6600D2E8FB /* SelectLayer.m in Sources */,
 				622180F4186D24CA00030541 /* IntroLayer.m in Sources */,
+				62EAA1051AF78A4C00ED9754 /* TimeBeans.m in Sources */,
 				62F96202182CDE6A00152AE2 /* main.m in Sources */,
 				622C4DA5194215A700065D52 /* TimeSprite.m in Sources */,
 				62C03B97182F7F6B00CCA525 /* MonsterMan.m in Sources */,
 				626997EB186C69E200E48552 /* StartLayer.m in Sources */,
+				62EAA1141AF7ADDB00ED9754 /* DoubleBeans.m in Sources */,
 				62DFF3321940375F00275DF2 /* CountDownLayer.m in Sources */,
 				62DFF3141940098B00275DF2 /* GameData.m in Sources */,
 				62C03BA0182FA46D00CCA525 /* Beans.m in Sources */,
